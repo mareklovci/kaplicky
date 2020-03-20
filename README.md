@@ -1,6 +1,6 @@
 # Aplikace pro muzea - MERLOT
 
-Jak zprovoznit projekt:
+###### Jak zprovoznit projekt:
 
 1. Stáhněte **PHPStorm** (zdarma přes školní licenci), **PHP** (ideálně verze 7.4 a výš, minimálně verze 7.2.5) a **Composer**. Všechny tyto nainstalujte (PHP se neinstaluje).
 2. Ve složce s PHP přejmenujte _php.ini-developement_ na _php.ini_ a v souboru odkomentujte všechny extension kromě _ffi_, _ftp_, _mbstring_, _exif_, _oci8_12c_, _openssl_, _pdo_firebird_, _pdo_oci_.
@@ -14,3 +14,9 @@ Jak zprovoznit projekt:
     3. `php artisan key:generate`
 8. V PHPStorm v **Run/Edit Configurations** přidejte **PHP Build-in Web Server** , jeho _document root_ je složka projektu a _use router script_ ukazuje na **server.php** ve stejné složce.
 9. Spusťte projekt projekt. Na localhost by vám měl vyjet nápis **Laravel** s funkčním menu.
+
+###### Jak zprovoznit databázi:
+
+1. Zajistěte databázi se spojením určeným v souboru `.env`.
+2. Spusťte v terminálu (PHPStorm nebo cmd ve složce projektu) příkaz `php artisan migrate`.
+
