@@ -17,7 +17,7 @@ class CreateArtefactCategoryTable extends Migration
             $table->integer('artefact_id')->unsigned();;
             $table->integer('catagory_id')->unsigned();;
             $table->foreign('artefact_id')->references('id')->on('artefacts');
-            $table->foreign('catagory_id')->references('id')->on('catagories');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
