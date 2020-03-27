@@ -20,8 +20,15 @@
 1. Zajistěte databázi se spojením určeným v souboru `.env`.
 2. Spusťte v terminálu (PHPStorm nebo cmd ve složce projektu) příkaz `php artisan migrate`.
 
-###### SQLite databáze
+###### SQLite databáze: 
 
-1. Soubor SQLite datábaze umístěte do `database\database.sqlite` (může to být i nový prázdný soubor).
+1. Soubor SQLite databáze umístěte do `database\database.sqlite` (může to být i nový prázdný soubor).
 2. Pro připojení k databázi je v potřeba v souboru `.env` nastavit `DB_CONNECTION=sqlite` (ostatní nastavení pro databázi odstranit).
 3. Pro **čistou** migraci spusťte příkaz `php artisan migrate:fresh`.
+
+###### Jak zprovoznit bootstrap a kompilaci SASS souborů:
+
+1. Ujistěte se, že v sekci **Run/Edit Configurations** máte nastavený **Document root** na složku `public` v kořenovém adresáři (jinak aplikace **nenajde** vygenerované css soubory).
+2. Spusťte `composer install` (soubor pro composer už by měl být updatován) pro nainstalování balíčku `laravel/ui`.
+3. Spusťte v terminálu příkaz `npm install && npm run dev`, příkaz zkompiluje všechny dostupné sass (`resources/sass`) do css souboru typicky do složky `public/css`.
+    1. Nastavením příkazu `npm run watch` se sass automaticky překompiluje při detekci změny.
