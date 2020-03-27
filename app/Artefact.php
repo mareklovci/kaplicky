@@ -36,6 +36,14 @@ class Artefact extends Model
     }
 
     /**
+     * Get the main category for the artefact.
+     */
+    public function main_category()
+    {
+        return $this->hasOne('App\Category', 'main_category_id');
+    }
+
+    /**
      * Get the categories for the artefact.
      */
     public function categories()
