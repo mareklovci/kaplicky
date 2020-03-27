@@ -20,3 +20,8 @@
 1. Zajistěte databázi se spojením určeným v souboru `.env`.
 2. Spusťte v terminálu (PHPStorm nebo cmd ve složce projektu) příkaz `php artisan migrate`.
 
+###### SQLite databáze
+
+1. Soubor SQLite datábaze umístěte do `database\database.sqlite` (může to být i nový prázdný soubor).
+2. Pro připojení k databázi je v potřeba v souboru `.env` nastavit `DB_CONNECTION=sqlite` (ostatní nastavení pro databázi odstranit).
+3. Pro **čistou** migraci spusťte příkaz `php artisan migrate:fresh`.
