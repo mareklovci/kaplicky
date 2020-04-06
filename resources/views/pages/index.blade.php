@@ -18,6 +18,7 @@
                 Morbi scelerisque luctus velit.
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
+            <a class="btn btn-primary btn-lg" href="{{ url('/artefact') }}" role="button">Continue</a>
         </div>
     </div>
 
