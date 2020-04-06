@@ -1,7 +1,25 @@
+image: docker:git
 stages:
+  - build
   - test
+
+variables:
+  CONTAINER_TEST_IMAGE: gitlab.kiv.zcu.cz:5000/aswi/aswi-2020/aswi2020merlot
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.kiv.zcu.cz:5000
+
+build:
+  stage: build
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
 
 unit_test:
   stage: test
   script:
+    - cp .env.example .env
+    - composer install
+    - php artisan key:generate
+    - php artisan migrate
     - vendor/bin/phpunit
