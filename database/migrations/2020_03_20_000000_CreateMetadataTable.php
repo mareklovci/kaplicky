@@ -23,7 +23,7 @@ class CreateMetadataTable extends Migration
             $table->longText('noteEN');
 
             $table->integer('page');
-            $table->integer('likes');
+            //$table->integer('likes');
         });
     }
 

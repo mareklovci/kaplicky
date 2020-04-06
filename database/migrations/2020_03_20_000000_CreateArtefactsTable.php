@@ -21,7 +21,7 @@ class CreateArtefactsTable extends Migration
             $table->string('publisher');
             $table->integer('year');
             $table->integer('pages');
-            $table->integer('likes');
+            //$table->integer('likes');
 
             $table->integer('main_category_id')->unsigned();
             $table->foreign('main_category_id')->references('id')->on('categories');

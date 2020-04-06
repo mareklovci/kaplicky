@@ -16,9 +16,9 @@ class Artefact extends Model
      *
      * @var array
      */
-    protected $attributes = [
+    /*protected $attributes = [
         'likes' => 0,
-    ];
+    ];*/
 
     /**
      * Indicates if the model should be timestamped.
@@ -36,14 +36,6 @@ class Artefact extends Model
     }
 
     /**
-     * Get the main category for the artefact.
-     */
-    public function main_category()
-    {
-        return $this->hasOne('App\Category', 'main_category_id');
-    }
-
-    /**
      * Get the categories for the artefact.
      */
     public function categories()
@@ -51,6 +43,13 @@ class Artefact extends Model
         return $this->belongsToMany('App\Category');
     }
 
+    /**
+     * Get the users for the artefact.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 
 
 

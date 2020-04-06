@@ -22,7 +22,7 @@ class Category extends Model
     /**
      * Get the artefacts for the catagory.
      */
-    public function atrefacts()
+    public function artefacts()
     {
         return $this->belongsToMany('App\Artefact');
     }

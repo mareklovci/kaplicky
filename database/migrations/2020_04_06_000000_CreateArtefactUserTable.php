@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtefactCategoryTable extends Migration
+class CreateArtefactUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateArtefactCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('artefact_category', function (Blueprint $table) {
-            $table->integer('artefact_id')->unsigned();;
-            $table->integer('catagory_id')->unsigned();;
+        Schema::create('artefact_user', function (Blueprint $table) {
+            $table->unsignedBigInteger('artefact_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('artefact_id')->references('id')->on('artefacts');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateArtefactCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artefact_category');
+        Schema::dropIfExists('artefact_user');
     }
 }

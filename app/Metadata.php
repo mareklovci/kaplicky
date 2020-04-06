@@ -16,9 +16,9 @@ class Metadata extends Model
      *
      * @var array
      */
-    protected $attributes = [
+    /*protected $attributes = [
         'likes' => 0,
-    ];
+    ];*/
 
     /**
      * Indicates if the model should be timestamped.
