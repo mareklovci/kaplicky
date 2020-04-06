@@ -7,19 +7,25 @@ stages:
   - test
 
 variables:
-  CONTAINER_TEST_IMAGE: gitlab.kiv.zcu.cz:5000/aswi/aswi-2020/aswi2020merlot:$CI_BUILD_REF_NAME
+  CONTAINER_TEST_IMAGE: gitlab.kiv.zcu.cz/aswi/aswi-2020/aswi2020merlot:$CI_BUILD_REF_NAME
 
 before_script:
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.kiv.zcu.cz:5000
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.kiv.zcu.cz
 
 build:
   stage: build
+  only:
+    refs:
+      - master
   script:
     - docker build -t $CONTAINER_TEST_IMAGE .
     - docker push $CONTAINER_TEST_IMAGE
 
 unit_test:
   stage: test
+  only:
+    refs:
+      - master
   script:
     - cp .env.example .env
     - composer install
