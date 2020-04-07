@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+Route::get('/users/{id}', function ($id) {
+    return 'Thhis is user ' . $id;
 });
+
+Route::get('/detail', function () {
+    return view('pages.detail');
+});
+ */
+
+Route::get('/', 'PagesController@index');
+Route::get('/info', 'PagesController@info');
+Route::get('/services', 'PagesController@services');
+Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
+
+

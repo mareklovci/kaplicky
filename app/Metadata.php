@@ -28,7 +28,7 @@ class Metadata extends Model
     public $timestamps = false;
 
     /**
-     * Get the artafact for this single metadata.
+     * Get the artefact for this single metadata.
      */
     public function artefact(){
         return $this->belongsTo('App\Artefact');

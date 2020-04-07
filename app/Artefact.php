@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artefact extends Model
 {
     // Table Name
-    protected $table = 'artafacts';//unnecessery?
+    protected $table = 'artefacts';//unnecessery?
     // Primary Key
     public $primaryKey = 'id';//unnecessery?
 
