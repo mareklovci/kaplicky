@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class ArtefactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Returns view of all artefacts.
      *
