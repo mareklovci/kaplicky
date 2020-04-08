@@ -10,13 +10,18 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // Table Name
+    protected $table = 'users';
+    // Primary Key
+    public $primaryKey = 'id';//unnecessery?
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+         'name', 'email', 'password'
     ];
 
     /**
@@ -25,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token', 'password'
     ];
 
     /**
@@ -36,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the artefacts for the user.
+     */
+    public function likes()
+    {
+        return $this->hasMany('App\Artefact');
+    }
 }
