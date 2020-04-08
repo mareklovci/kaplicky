@@ -1,9 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('title', 'Artefacts')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Artefacts</li>
 @endsection
 
@@ -29,7 +29,7 @@
         </div>
     @else
         @foreach ($artefacts as $artefact)
-            <div class="artefact-area mb-5">
+            <div class="artefacts-area mb-5">
                 <div class="card">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="45%" y="50%" fill="#dee2e6" dy=".3em">Artefact image</text></svg>
                     <div class="card-body">
