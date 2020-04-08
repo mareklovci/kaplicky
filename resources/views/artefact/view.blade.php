@@ -3,9 +3,9 @@
 @section('title', 'Artefacts')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
-    <li class="breadcrumb-item" aria-current="page"><a href="{{ URL::to('/artefact') }}">Artefacts</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="{{ url('/artefact') }}">Artefacts</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Artefact</li>
 @endsection
 
 
@@ -44,7 +44,7 @@
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
                     <p>
-                        @if (!is_null($artefact->metadata))
+                        @if (count($artefact->metadata) > 0)
                             <a href="{{ url('/detail/' . $artefact->id) }}">Notes related to artefact</a>
                         @endif
                     </p>
