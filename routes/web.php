@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index');
 
 Route::get('/artefact', 'ArtefactController@default');
-
 Route::get('/artefact/{id}', 'ArtefactController@view');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
