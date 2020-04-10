@@ -45,8 +45,16 @@ class User extends Authenticatable
     /**
      * Get the artefacts for the user.
      */
-    public function likes()
+    public function likesArtefacts()
     {
         return $this->hasMany('App\Artefact');
+    }
+
+    /**
+     * Get the metadata for the user.
+     */
+    public function likesMetadata()
+    {
+        return $this->hasMany('App\Metadata');
     }
 }

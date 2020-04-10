@@ -34,5 +34,11 @@ class Metadata extends Model
         return $this->belongsTo('App\Artefact');
     }
 
-
+    /**
+     * Get the users for the metadata.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
