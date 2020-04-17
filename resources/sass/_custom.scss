@@ -14,6 +14,30 @@ body
     letter-spacing: 3px;
 }
 
+.card-body
+{
+    background-color: $cusBlack;
+    font-family: Avenir;
+    color: $cusBrown3;
+}
+
+.btn-primary{
+    background-color: $cusBlack;
+    border-color: $cusWhite;
+}
+
+.form-control{
+    background-color: $cusBlack;
+    margin-top: -1px;
+    //border: 0px;
+    //border-bottom: 1px;
+    border-top-color: $cusBlack;
+    border-left-color: $cusBlack;
+    border-right-color: $cusBlack;
+    border-bottom-color: $cusWhite;
+    color: $cusWhite;
+}
+
 .bouton-image:before
 {
     content: "";
