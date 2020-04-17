@@ -10883,12 +10883,12 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
   background-color: #272727;
 }
 
 body .head-title h1 {
   color: #ffffff;
+  font-family: Avenir;
   font-size: 60pt;
   font-weight: bold;
   letter-spacing: 3px;
@@ -10914,6 +10914,51 @@ body .carousel .carousel-caption h2 {
 body .carousel .carousel-caption p {
   font-size: 9pt;
   color: #000;
+}
+
+body .card-body {
+  background-color: #272727;
+  font-family: Avenir;
+  color: #ead4b0;
+}
+
+body .btn-primary {
+  background-color: #272727;
+  border-color: #ffffff;
+}
+
+body .btn-primary:hover {
+  background-color: #ffffff;
+  color: #272727;
+  border-color: #ffffff;
+}
+
+body .btn-primary:focus {
+  background-color: #ffffff;
+  color: #272727;
+  border-color: #ffffff;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body .btn-primary:active {
+  background-color: #ffffff;
+  color: #272727;
+  border-color: #ffffff;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+body .form-control {
+  background-color: #272727;
+  margin-top: -1px;
+  border-top-color: #272727;
+  border-left-color: #272727;
+  border-right-color: #272727;
+  border-bottom-color: #ffffff;
+  color: #ffffff;
 }
 
 body .button-square {
