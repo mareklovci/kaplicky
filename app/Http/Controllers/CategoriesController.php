@@ -58,7 +58,7 @@ class CategoriesController extends Controller
             $categories = array();
             for($i = 1; $i <= $countCategory;$i++)
             {
-                array_push($categories, ArtefactCategory::where('category_id', $i)->get());
+                array_push($categories, Category::where('category_id', $i)->get());
             }
             $clusters = $this->calculateClusters($categories);
 
