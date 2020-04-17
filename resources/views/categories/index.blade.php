@@ -6,7 +6,7 @@
     @if(isset($user))
         {{--<p><?php dd($categories); ?></p>--}}
         <div>
-            <button type="button" class="btn btn-primary bouton-image monBouton"></button>
+            <button type="button" class="btn btn-primary button-image monButton"></button>
         </div>
         <div class="head-title text-center">
             <h1>choose a few topics</h1>
