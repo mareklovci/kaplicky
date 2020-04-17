@@ -21,20 +21,14 @@ class FavoriteArtefactsController extends Controller
      */
     public function index()
     {
-        if(isset(Auth::user()->id))
+        if(Auth::check())
         {
-            $userId = Auth::user()->id;
-            $list = ArtefactUser::where('user_id', $userId)->get();
-            $finalData = array();
-            foreach($list as $item)
-            {
-                array_push($finalData, Artefact::where('id', $item->artefact_id)->get());
-            }
+            $artefacts = User::find(Auth::id())->likesArtefacts()->get();
 
             $data = array(
                 'title' => 'Favorite artefacts',
-                'user' => User::find($userId),
-                'artefacts' => $finalData
+                'user' => Auth::user(),
+                'artefacts' => $artefacts
             );
             return view('favartefacts.index') -> with($data);
         }
@@ -56,19 +50,18 @@ class FavoriteArtefactsController extends Controller
      */
     public function show($id)
     {
-        $list = ArtefactUser::where('user_id', $id)->get();
-        $finalData = array();
-        foreach($list as $item)
+        $artefacts = [];
+        if (!is_null(User::find($id)))
         {
-            array_push($finalData, Artefact::where('id', $item->artefact_id)->get());
+            $artefacts = User::find($id)->likesArtefacts()->get();
         }
 
         $data = array(
             'title' => 'Favorite artefacts',
             'id' => $id,
-            'user' => User::find($id),
-            'userId' => Auth::user()->id,
-            'artefacts' => $finalData
+            'user' => Auth::user(),
+            'userId' => Auth::id(),
+            'artefacts' => $artefacts
         );
         return view('favartefacts.index') -> with($data);
     }

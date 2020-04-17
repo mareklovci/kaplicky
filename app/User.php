@@ -47,7 +47,7 @@ class User extends Authenticatable
      */
     public function likesArtefacts()
     {
-        return $this->hasMany('App\Artefact');
+        return $this->belongsToMany('App\Artefact');
     }
 
     /**
@@ -55,6 +55,6 @@ class User extends Authenticatable
      */
     public function likesMetadata()
     {
-        return $this->hasMany('App\Metadata');
+        return $this->belongsToMany('App\Metadata');
     }
 }
