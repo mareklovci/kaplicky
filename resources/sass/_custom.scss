@@ -1,145 +1,174 @@
 // Ready for custom styling
 
-body
-{
+body {
+    font-family: 'Nunito Sans', sans-serif;
     background-color: $cusBlack;
+
+    .head-title h1 {
+        color: $cusWhite;
+        font-size: 60pt;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    .carousel {
+        .carousel-inner {
+            img {
+                filter: grayscale(100%);
+            }
+        }
+
+        .carousel-caption {
+            top: 20%;
+            bottom: 20%;
+            background-color:  rgba(239, 218, 179, 0.5);
+
+            h2 {
+                font-size: 11pt;
+                letter-spacing: 3pt;
+                color: $white;
+
+            }
+
+            p {
+                font-size: 9pt;
+                color: $black;
+            }
+        }
+    }
+
+    .button-square {
+        background-color: $black;
+        color: $white;
+        border: 1pt solid $white;
+        border-radius: 0;
+    }
+
+    .button-image {
+        background-color: transparent;
+        border-color: transparent;
+
+        &:before {
+            content: "";
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: text-top;
+            background-color: transparent;
+            background-position : center center;
+            background-repeat:no-repeat;
+        }
+    }
+
+    .monButton {
+
+        &:before {
+            background-image : url(../images/Button_Arrow_Small.png);
+        }
+
+        &:hover {
+            background-color: transparent;
+            border-color: $cusBrown3;
+        }
+
+        &:focus {
+            background-color: transparent;
+            border-color: $cusBrown3;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        &:active {
+            background-color: transparent !important;
+            border-color: transparent !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+
+    .content {
+        position: relative;
+
+        //Circle style button
+        .btn-circle.rounded-circle.btn-sm {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            background-color: $cusBlack;
+            border-color: $cusBrown3;
+            border-width: 5px;
+            color:$cusBrown3;
+            outline: none !important;
+            box-shadow: none !important;
+
+            &:active {
+                background-color: $cusBrown2;
+                border-color: $cusBrown3;
+                outline: none !important;
+                box-shadow: none !important;
+                color:$cusBlack;
+            }
+        }
+
+        .btn-circle.rounded-circle.btn-dm
+        {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            padding: 6px 0;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            background-color: $cusBlack;
+            border-color: $cusBrown3;
+            color:$cusBrown3;
+            border-width: 5px;
+            outline: none !important;
+            box-shadow: none !important;
+
+            &:active {
+                background-color: $cusBrown2;
+                border-color: $cusBrown3;
+                outline: none !important;
+                box-shadow: none !important;
+                color:$cusBlack;
+            }
+        }
+
+        .btn-circle.rounded-circle.btn-xl
+        {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            background-color: $cusBlack;
+            border-color: $cusBrown3;
+            color:$cusBrown3;
+            border-width: 5px;
+            outline: none !important;
+            box-shadow: none !important;
+
+            &:active {
+                background-color: $cusBrown2;
+                border-color: $cusBrown3;
+                outline: none !important;
+                box-shadow: none !important;
+                color:$cusBlack;
+            }
+        }
+    }
 }
 
-.head-title.text-center h1
-{
-    color: $cusWhite;
-    font-family: Avenir;
-    font-size: 60pt;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
 
-.bouton-image:before
-{
-    content: "";
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: text-top;
-    background-color: transparent;
-    background-position : center center;
-    background-repeat:no-repeat;
-}
-
-.bouton-image
-{
-    background-color: transparent;
-    border-color: transparent;
-}
-
-.monBouton:before
-{
-    background-image : url(../images/Button_Arrow_Small.png);
-}
-
-.monBouton:hover
-{
-    background-color: transparent;
-    border-color: $cusBrown3;
-}
-
-.monBouton:focus
-{
-    background-color: transparent;
-    border-color: $cusBrown3;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.monBouton:active
-{
-    background-color: transparent !important;
-    border-color: transparent !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.content {
-    position: relative;
-}
-
-//Circle style button
-.btn-circle.rounded-circle.btn-sm
-{
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    padding: 6px 0px;
-    border-radius: 15px;
-    font-size: 16px;
-    text-align: center;
-    background-color: $cusBlack;
-    border-color: $cusBrown3;
-    border-width: 5px;
-    color:$cusBrown3;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.btn-circle.rounded-circle.btn-sm:active
-{
-    background-color: $cusBrown2;
-    border-color: $cusBrown3;
-    outline: none !important;
-    box-shadow: none !important;
-    color:$cusBlack;
-}
-
-.btn-circle.rounded-circle.btn-dm
-{
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    padding: 6px 0px;
-    border-radius: 15px;
-    font-size: 16px;
-    text-align: center;
-    background-color: $cusBlack;
-    border-color: $cusBrown3;
-    color:$cusBrown3;
-    border-width: 5px;
-    outline: none !important;
-    box-shadow: none !important;
-}
-.btn-circle.rounded-circle.btn-dm:active
-{
-    background-color: $cusBrown2;
-    border-color: $cusBrown3;
-    outline: none !important;
-    box-shadow: none !important;
-    color:$cusBlack;
-}
-
-.btn-circle.rounded-circle.btn-xl
-{
-    position: absolute;
-    width: 360px;
-    height: 360px;
-    padding: 6px 0px;
-    border-radius: 15px;
-    font-size: 16px;
-    text-align: center;
-    background-color: $cusBlack;
-    border-color: $cusBrown3;
-    color:$cusBrown3;
-    border-width: 5px;
-    outline: none !important;
-    box-shadow: none !important;
-}
-.btn-circle.rounded-circle.btn-xl:active
-{
-    background-color: $cusBrown2;
-    border-color: $cusBrown3;
-    outline: none !important;
-    box-shadow: none !important;
-    color:$cusBlack;
-}
 
 @media only screen and (max-width: 540px)
 {
