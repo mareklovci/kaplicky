@@ -26,6 +26,30 @@ body
     border-color: $cusWhite;
 }
 
+.btn-primary:hover{
+    background-color: $cusWhite;
+    color: $cusBlack;
+    border-color: $cusWhite;
+}
+
+.btn-primary:focus{
+    background-color: $cusWhite;
+    color: $cusBlack;
+    border-color: $cusWhite;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:active{
+    background-color: $cusWhite;
+    color: $cusBlack;
+    border-color: $cusWhite;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
 .form-control{
     background-color: $cusBlack;
     margin-top: -1px;
