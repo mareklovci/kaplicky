@@ -1,11 +1,12 @@
 // Ready for custom styling
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    //font-family: 'Nunito Sans', sans-serif;
     background-color: $cusBlack;
 
     .head-title h1 {
         color: $cusWhite;
+        font-family: Avenir;
         font-size: 60pt;
         font-weight: bold;
         letter-spacing: 3px;
@@ -36,6 +37,53 @@ body {
             }
         }
     }
+    
+    .card-body {
+    	background-color: $cusBlack;
+    	font-family: Avenir;
+    	color: $cusBrown3;
+	}
+
+	.btn-primary {
+    	background-color: $cusBlack;
+    	border-color: $cusWhite;
+	}
+
+	.btn-primary:hover {
+    	background-color: $cusWhite;
+    	color: $cusBlack;
+    	border-color: $cusWhite;
+	}
+
+	.btn-primary:focus {
+    	background-color: $cusWhite;
+    	color: $cusBlack;
+    	border-color: $cusWhite;
+    	outline: none !important;
+    	box-shadow: none !important;
+	}
+
+	.btn-primary:active {
+    	background-color: $cusWhite;
+    	color: $cusBlack;
+    	border-color: $cusWhite;
+    	outline: none !important;
+    	box-shadow: none !important;
+    	background-color: transparent !important;
+    	border-color: transparent !important;
+	}
+
+	.form-control {
+    	background-color: $cusBlack;
+    	margin-top: -1px;
+    	//border: 0px;
+    	//border-bottom: 1px;
+    	border-top-color: $cusBlack;
+    	border-left-color: $cusBlack;
+    	border-right-color: $cusBlack;
+    	border-bottom-color: $cusWhite;
+    	color: $cusWhite;
+	}
 
     .button-square {
         background-color: $black;
