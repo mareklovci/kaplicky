@@ -29,8 +29,8 @@
                     <div class="card">
                         <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="45%" y="50%" fill="#dee2e6" dy=".3em">Artefact image</text></svg>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="{{ url('/artefact/' . $artefact[0]->id) }}">{{$artefact[0]->name}}</a> - {{$artefact[0]->author}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{$artefact[0]->year}}, {{$artefact[0]->pages}} pages</h6>
+                            <h5 class="card-title"><a href="{{ url('/artefact/' . $artefact->id) }}">{{$artefact->name}}</a> - {{$artefact->author}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{$artefact->year}}, {{$artefact->pages}} pages</h6>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                                 Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus.
