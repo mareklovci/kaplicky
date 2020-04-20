@@ -10,6 +10,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="auth">
             <div class="card">
                 {{--<div class="card-header">{{ __('Verify Your Email Address') }}</div>--}}
 
@@ -27,6 +28,7 @@
                         <button type="submit" class="btn button-square">{{ __('click here to request another') }}</button>.
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>

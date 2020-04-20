@@ -10,6 +10,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="auth">
             <div class="card">
                 {{--<div class="card-header">{{ __('Reset Password') }}</div>--}}
 
@@ -64,6 +65,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>
