@@ -37,53 +37,58 @@ body {
             }
         }
     }
-    
+
+    .col-md-8{
+        .card{
+            border: none;
+            text-align: center;
+            font-size: 8pt;
+        }
+        .btn{
+            font-size: 8pt;
+        }
+    }
+
     .card-body {
     	background-color: $cusBlack;
     	font-family: Avenir;
     	color: $cusBrown3;
+
 	}
 
-	.btn-primary {
-    	background-color: $cusBlack;
-    	border-color: $cusWhite;
-	}
-
-	.btn-primary:hover {
-    	background-color: $cusWhite;
-    	color: $cusBlack;
-    	border-color: $cusWhite;
-	}
-
-	.btn-primary:focus {
-    	background-color: $cusWhite;
-    	color: $cusBlack;
-    	border-color: $cusWhite;
-    	outline: none !important;
-    	box-shadow: none !important;
-	}
-
-	.btn-primary:active {
-    	background-color: $cusWhite;
-    	color: $cusBlack;
-    	border-color: $cusWhite;
-    	outline: none !important;
-    	box-shadow: none !important;
-    	background-color: transparent !important;
-    	border-color: transparent !important;
-	}
+    .logo{
+        color: $cusWhite;
+        font-size: 11pt;
+        font-family: Avenir Black;
+    }
 
 	.form-control {
     	background-color: $cusBlack;
     	margin-top: -1px;
-    	//border: 0px;
     	//border-bottom: 1px;
     	border-top-color: $cusBlack;
     	border-left-color: $cusBlack;
     	border-right-color: $cusBlack;
-    	border-bottom-color: $cusWhite;
+    	border-bottom-color: 0.5pt $cusWhite;
     	color: $cusWhite;
+        box-shadow: none;
+        //transition: none;
+        font-size: 8pt;
 	}
+
+    .form-control:focus {
+        background-color: $cusBlack;
+        margin-top: -1px;
+        //border-bottom: 1px;
+        border-top-color: $cusBlack;
+        border-left-color: $cusBlack;
+        border-right-color: $cusBlack;
+        border-bottom-color: 0.5pt $cusWhite;
+        color: $cusWhite;
+        box-shadow: none;
+        //transition: none;
+        font-size: 8pt;
+    }
 
     .button-square {
         background-color: $black;
