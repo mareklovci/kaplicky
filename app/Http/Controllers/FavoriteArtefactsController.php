@@ -6,6 +6,7 @@ use App\ArtefactUser;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Artefact;
+use App\Http\Controllers\Image;
 
 class FavoriteArtefactsController extends Controller
 {
@@ -28,7 +29,9 @@ class FavoriteArtefactsController extends Controller
             $finalData = array();
             foreach($list as $item)
             {
-                array_push($finalData, Artefact::where('id', $item->artefact_id)->get());
+                $tmp = Artefact::where('id', $item->artefact_id)->get();
+                $tmp['likes'] = Artefact::find($item->artefact_id)->users()->count();
+                array_push($finalData, $tmp);
             }
 
             $data = array(
@@ -60,7 +63,9 @@ class FavoriteArtefactsController extends Controller
         $finalData = array();
         foreach($list as $item)
         {
-            array_push($finalData, Artefact::where('id', $item->artefact_id)->get());
+            $tmp = Artefact::where('id', $item->artefact_id)->get();
+            $tmp['likes'] = Artefact::find($item->artefact_id)->users()->count();
+            array_push($finalData, $tmp);
         }
 
         $data = array(

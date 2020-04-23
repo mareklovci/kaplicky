@@ -1,44 +1,37 @@
-@extends('layouts.app')
+@extends('layouts.art')
 
 @section('title', 'Favorite artefacts')
 
-@section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Favorite artefacts</li>
-@endsection
-
 @section('content')
-    <div class="jumbotron">
-        <div class="text-center">
-            <h1>Favorite artefacts</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus.
-                Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
-                Morbi scelerisque luctus velit. Vivamus porttitor turpis ac leo.
-                Morbi scelerisque luctus velit.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </div>
     {{--<p>The id of the user is {{$user->id}}</p>--}}
     @if(isset($artefacts))
         @if(count($artefacts) >= 1)
             @foreach($artefacts as $artefact)
                 <div class="artefacts-area mb-5">
                     <div class="card">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="45%" y="50%" fill="#dee2e6" dy=".3em">Artefact image</text></svg>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="{{ url('/artefact/' . $artefact[0]->id) }}">{{$artefact[0]->name}}</a> - {{$artefact[0]->author}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{$artefact[0]->year}}, {{$artefact[0]->pages}} pages</h6>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus.
-                                Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
-                                Morbi scelerisque luctus velit. Vivamus porttitor turpis ac leo.
-                                Morbi scelerisque luctus velit.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
+                        {{--<svg class="bd-placeholder-img card-img-top" width="100%" height="180" src="{{asset('images/artefacts/book_cover_01.jpg')}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>{{$artefact[0]->name}}</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="45%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>--}}
+                        <a href="{{ url('/artefact/' . $artefact[0]->id) }}">
+                            <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto>
+                        </a>
+                        <div class="container card-cus-bottom">
+                            <div class="flex-row row-list">
+                                <div class="col-xs-2 float-left left_panel_info">
+                                    <h5 class="card-title ">{{$artefact[0]->name}}</h5>
+                                    <h6 class="card-title">{{$artefact[0]->author}}</h6>
+                                </div>
+                                <div class="col-xs-2 float-right right_panel_info">
+                                    <div class="float-left">
+                                        <button id="info_butt_{{$artefact[0]->id}}" type="button" class="btn btn-primary bouton-image inter_info"></button>
+                                    </div>
+                                    <div class="float-right text-center">
+                                        <button id="like_butt_{{$artefact[0]->id}}" onclick="myFunction({{$artefact[0]->id}}, 1)" type="button" class="btn btn-primary bouton-image inter_like"></button>
+                                        <button id="like_butt2_{{$artefact[0]->id}}" onclick="myFunction({{$artefact[0]->id}}, 0)" type="button" class="btn btn-primary bouton-image inter_like_filled"></button>
+                                        <span class="likes_text">
+                                          <h6>{{$artefact['likes']}}</h6>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,4 +50,19 @@
             </li>
         </ul>
     @endif
+    <script>
+        function myFunction(id, type)
+        {
+            if(type === 1)
+            {
+                $('#like_butt_' + id).css('display', "none");
+                $('#like_butt2_' + id).css('display', "inline");
+            }
+            else
+            {
+                $('#like_butt_' + id).css('display', "inline");
+                $('#like_butt2_' + id).css('display', "none");
+            }
+        }
+    </script>
 @endsection
