@@ -74,6 +74,57 @@ body {
         }
     }
 
+    /////////text types
+    //většina běžných textů
+    .text {
+        font-family: Avenir Roman;
+        font-size: 8pt;
+        line-height: 9pt;
+    }
+
+    //text inputu a název artefaktů
+    .text2{
+        font-family: Avenir Medium;
+        font-size: 8pt;
+    }
+
+    //název "kaplicky" a "choose a few" v categories (tam má jinou barvu)
+    .kaplicky{
+        color: $theme-color-one;
+        font-size: 11pt;
+        font-family: Avenir Black;
+        letter-spacing: 3pt;
+    }
+
+    //autor artefaktu
+    .text-author{
+        font-family: Avenir Roman;
+        font-size: 7pt;
+        color: $theme-color-four;
+    }
+
+    //počet lajků
+    .text-number{
+        font-family: Avenir Medium;
+        font-size: 5pt;
+        color: $theme-color-four;
+    }
+
+    //notes u metadat, about v about, text levého menu
+    .text-headline{
+        font-family: Avenir Medium;
+        font-size: 12pt;
+        color: $theme-color-four;
+    }
+
+    //název metadata, text pravého menu
+    .text-page{
+        font-family: Avenir Medium;
+        font-size: 7pt;
+    }
+
+
+    ////login
     .auth{
         .card{
             border: none;
@@ -89,23 +140,17 @@ body {
         .form-control{
             padding: 0px;
             height: 17pt;
+            //font-family: Avenir Medium;
+            //font-size: 8pt;
         }
     }
 
     .card-body {
     	background-color: $theme-color-five;
-    	font-family: Avenir;
+    	font-family: Avenir Roman;
     	color: $theme-color-four;
 
 	}
-
-    .kaplicky{
-        color: $theme-color-one;
-        font-size: 11pt;
-        font-family: Avenir Black;
-        //width: 100pt;
-        letter-spacing: 3pt;
-    }
 
 	.form-control {
     	background-color: $theme-color-five;
@@ -143,6 +188,7 @@ body {
         border-radius: 0;
         width: 6.5rem;
         height: 2rem;
+        font-family: Avenir Roman;
 
         &:active, &:focus, &:visited {
             outline: none;
@@ -197,7 +243,7 @@ body {
         position: relative;
 
         //Circle style button
-            //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories
+            //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories.
         .btn-circle.rounded-circle {
             padding: 6px 0px;
             font-size: 16px;
@@ -212,6 +258,7 @@ body {
             color:$theme-color-four;
             outline: none !important;
             box-shadow: none !important;
+            font-family: Avenir Medium;
 
             &:active
             {
