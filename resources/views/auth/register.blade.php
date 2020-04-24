@@ -18,7 +18,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <label for="logo" class="col-md-4 logo">{{ __('kaplicky') }}</label>
+                        <label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
 

@@ -59,13 +59,13 @@ body {
             transform: translateY(-50%);
             background-color:  rgba(239, 218, 179, 0.5);
 
-            h2 {
+            /*h2 {
                 font-family: Avenir Black;
                 font-size: 11pt;
                 letter-spacing: 3pt;
                 color: $white;
 
-            }
+            }*/
 
             p {
                 font-size: 8pt;
@@ -80,9 +80,6 @@ body {
             text-align: center;
             font-size: 8pt;
         }
-        .btn{
-            font-size: 8pt;
-        }
 
         .col-form-label{
             text-align: left;
@@ -93,10 +90,6 @@ body {
             padding: 0px;
             height: 17pt;
         }
-
-        .button-square {
-            width: 100pt;
-        }
     }
 
     .card-body {
@@ -106,12 +99,12 @@ body {
 
 	}
 
-    .logo{
+    .kaplicky{
         color: $cusWhite;
         font-size: 11pt;
         font-family: Avenir Black;
-        width: 100pt;
-        letter-spacing: 1pt;
+        //width: 100pt;
+        letter-spacing: 3pt;
     }
 
 	.form-control {
