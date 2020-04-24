@@ -148,8 +148,13 @@ body {
         color: $white;
         border: 0.5pt solid $white;
         border-radius: 0;
-        width: 28mm;
-        height: 8mm;
+        width: 6.5rem;
+        height: 2rem;
+
+        &:active, &:focus, &:visited {
+            outline: none;
+            box-shadow: none;
+        }
     }
 
     .button-image {
@@ -194,7 +199,6 @@ body {
             box-shadow: none !important;
         }
     }
-
 
     .content {
         position: relative;

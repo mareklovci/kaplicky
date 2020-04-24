@@ -11017,8 +11017,15 @@ body .button-square {
   color: #ffff;
   border: 0.5pt solid #ffff;
   border-radius: 0;
-  width: 28mm;
-  height: 8mm;
+  width: 6.5rem;
+  height: 2rem;
+}
+
+body .button-square:active,
+body .button-square:focus,
+body .button-square:visited {
+  outline: none;
+  box-shadow: none;
 }
 
 body .button-image {
