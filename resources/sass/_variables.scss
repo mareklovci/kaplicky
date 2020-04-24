@@ -6,7 +6,7 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-// Colors
+// Colors - nepoužívat!
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
@@ -20,10 +20,23 @@ $cyan: #6cb2eb;
 $white: #ffff;
 $black: #000;
 
-// Custom colors
+// Custom colors - deprecated - nepoužívat, odstranit!
 $cusWhite: #ffffff;
 $cusBrown1: #ddd1b9;
 $cusBrown2: #efdab3;
 $cusBrown3: #ead4b0;
 $cusBlack: #272727;
+
+// Design colors - nepoužívat!
+$white: #ffffff;
+$pastel-grey: #ddd1b9;
+$whey: #efdab3;
+$desert-sand: #ead4b0;
+$raisin-black: #272727;
+// Theme colors - TOHLE POUŽÍVAT!, úpravy jen z Design colors
+$theme-color-one: $white;
+$theme-color-two: $pastel-grey;
+$theme-color-three: $whey;
+$theme-color-four: $desert-sand;
+$theme-color-five: $raisin-black;
 

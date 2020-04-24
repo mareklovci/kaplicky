@@ -2,10 +2,10 @@
 
 body {
     //font-family: 'Nunito Sans', sans-serif;
-    background-color: $cusBlack;
+    background-color: $theme-color-five;
 
     .head-title h1 {
-        color: $cusWhite;
+        color: $theme-color-one;
         font-family: Avenir;
         font-size: 60pt;
         font-weight: bold;
@@ -69,7 +69,7 @@ body {
 
             p {
                 font-size: 8pt;
-                color: $black;
+                color: $theme-color-five;
             }
         }
     }
@@ -93,14 +93,14 @@ body {
     }
 
     .card-body {
-    	background-color: $cusBlack;
+    	background-color: $theme-color-five;
     	font-family: Avenir;
-    	color: $cusBrown3;
+    	color: $theme-color-four;
 
 	}
 
     .kaplicky{
-        color: $cusWhite;
+        color: $theme-color-one;
         font-size: 11pt;
         font-family: Avenir Black;
         //width: 100pt;
@@ -108,28 +108,28 @@ body {
     }
 
 	.form-control {
-    	background-color: $cusBlack;
+    	background-color: $theme-color-five;
     	margin-top: -1px;
     	//border-bottom: 1px;
-    	border-top-color: $cusBlack;
-    	border-left-color: $cusBlack;
-    	border-right-color: $cusBlack;
-    	border-bottom-color: 0.5pt $cusWhite;
-    	color: $cusWhite;
+    	border-top-color: $theme-color-five;
+    	border-left-color: $theme-color-five;
+    	border-right-color: $theme-color-five;
+    	border-bottom-color: 0.5pt $theme-color-one;
+    	color: $theme-color-one;
         box-shadow: none;
         //transition: none;
         font-size: 8pt;
 	}
 
     .form-control:focus {
-        background-color: $cusBlack;
+        background-color: $theme-color-five;
         margin-top: -1px;
         //border-bottom: 1px;
-        border-top-color: $cusBlack;
-        border-left-color: $cusBlack;
-        border-right-color: $cusBlack;
-        border-bottom-color: 0.5pt $cusWhite;
-        color: $cusWhite;
+        border-top-color: $theme-color-five;
+        border-left-color: $theme-color-five;
+        border-right-color: $theme-color-five;
+        border-bottom-color: 0.5pt $theme-color-one;
+        color: $theme-color-one;
         box-shadow: none;
         //transition: none;
         font-size: 8pt;
@@ -137,9 +137,9 @@ body {
 
     .button-square {
         font-size: 8pt;
-        background-color: $cusBlack;
-        color: $white;
-        border: 0.5pt solid $white;
+        background-color: $theme-color-five;
+        color: $theme-color-one;
+        border: 0.5pt solid $theme-color-one;
         border-radius: 0;
         width: 6.5rem;
         height: 2rem;
@@ -175,12 +175,12 @@ body {
 
         &:hover {
             background-color: transparent;
-            border-color: $cusBrown3;
+            border-color: $theme-color-four;
         }
 
         &:focus {
             background-color: transparent;
-            border-color: $cusBrown3;
+            border-color: $theme-color-four;
             outline: none !important;
             box-shadow: none !important;
         }
@@ -197,84 +197,54 @@ body {
         position: relative;
 
         //Circle style button
-        .btn-circle.rounded-circle.btn-sm {
+            //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories
+        .btn-circle.rounded-circle {
+            padding: 6px 0px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn-categories
+        {
             position: absolute;
+            border-width: 5px;
+            background-color: $theme-color-five;
+            border-color: $theme-color-four;
+            color:$theme-color-four;
+            outline: none !important;
+            box-shadow: none !important;
+
+            &:active
+            {
+                background-color: $cusBrown2;
+                border-color: $theme-color-four;
+                outline: none !important;
+                box-shadow: none !important;
+                color:$theme-color-five;
+            }
+        }
+
+        .btn-sm
+        {
             width: 120px;
             height: 120px;
-            padding: 6px 0px;
-            border-radius: 15px;
-            font-size: 16px;
-            text-align: center;
-            background-color: $cusBlack;
-            border-color: $cusBrown3;
-            border-width: 5px;
-            color:$cusBrown3;
-            outline: none !important;
-            box-shadow: none !important;
-
-            &:active {
-                background-color: $cusBrown2;
-                border-color: $cusBrown3;
-                outline: none !important;
-                box-shadow: none !important;
-                color:$cusBlack;
-            }
         }
-
-        .btn-circle.rounded-circle.btn-dm
+        .btn-dm
         {
-            position: absolute;
             width: 240px;
             height: 240px;
-            padding: 6px 0;
-            border-radius: 15px;
-            font-size: 16px;
-            text-align: center;
-            background-color: $cusBlack;
-            border-color: $cusBrown3;
-            color:$cusBrown3;
-            border-width: 5px;
-            outline: none !important;
-            box-shadow: none !important;
-
-            &:active {
-                background-color: $cusBrown2;
-                border-color: $cusBrown3;
-                outline: none !important;
-                box-shadow: none !important;
-                color:$cusBlack;
-            }
         }
-
-        .btn-circle.rounded-circle.btn-xl
+        .btn-xl
         {
-            position: absolute;
             width: 360px;
             height: 360px;
-            padding: 6px 0px;
-            border-radius: 15px;
-            font-size: 16px;
-            text-align: center;
-            background-color: $cusBlack;
-            border-color: $cusBrown3;
-            color:$cusBrown3;
-            border-width: 5px;
-            outline: none !important;
-            box-shadow: none !important;
-
-            &:active {
-                background-color: $cusBrown2;
-                border-color: $cusBrown3;
-                outline: none !important;
-                box-shadow: none !important;
-                color:$cusBlack;
-            }
         }
+
     }
 }
 
 @media only screen and (max-width: 540px)
 {
+
     .head-title.text-center h1
     {
         font-size: 45pt;
@@ -297,10 +267,7 @@ body {
         width: 180px;
         height: 180px;
     }
-}
 
-@media only screen and (max-width: 540px)
-{
     body{
         .carousel {
             .carousel-inner {

@@ -15,11 +15,11 @@
             {{--@for($k = 1; $k <= count($categories);$k++)--}}
             @for($k = 1; $k <= 10;$k++)
                 @if($categorySizes[$k-1] == 1)
-                        <button type="button" class="btn btn-primary btn-circle rounded-circle btn-sm" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
+                        <button type="button" class="btn btn-circle rounded-circle btn-categories btn-sm" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
                 @elseif($categorySizes[$k-1] == 2)
-                        <button type="button" class="btn btn-primary btn-circle rounded-circle btn-dm" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
+                        <button type="button" class="btn btn-circle rounded-circle btn-categories btn-dm" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
                 @else
-                        <button type="button" class="btn btn-primary btn-circle rounded-circle btn-xl" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
+                        <button type="button" class="btn btn-circle rounded-circle btn-categories btn-xl" id="cat-{{$k}}">{{$categoryNames[$k-1]->nameEN}}</button>
                 @endif
             @endfor
         </div>
