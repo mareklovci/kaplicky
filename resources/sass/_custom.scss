@@ -1,12 +1,11 @@
 // Ready for custom styling
 
 body {
-    //font-family: 'Nunito Sans', sans-serif;
     background-color: $theme-color-five;
 
     .head-title h1 {
         color: $theme-color-one;
-        font-family: Avenir;
+        font-family: $font-family-avenir-roman;
         font-size: 60pt;
         font-weight: bold;
         letter-spacing: 3px;
@@ -60,7 +59,7 @@ body {
             background-color:  rgba(239, 218, 179, 0.5);
 
             /*h2 {
-                font-family: Avenir Black;
+                font-family: $font-family-avenir-black;
                 font-size: 11pt;
                 letter-spacing: 3pt;
                 color: $white;
@@ -77,14 +76,14 @@ body {
     /////////text types
     //většina běžných textů
     .text {
-        font-family: Avenir Roman;
+        font-family: $font-family-avenir-roman;
         font-size: 8pt;
         line-height: 9pt;
     }
 
     //text inputu a název artefaktů
     .text2{
-        font-family: Avenir Medium;
+        font-family: $font-family-avenir-medium;
         font-size: 8pt;
     }
 
@@ -92,35 +91,46 @@ body {
     .kaplicky{
         color: $theme-color-one;
         font-size: 11pt;
-        font-family: Avenir Black;
+        font-family: $font-family-avenir-black;
         letter-spacing: 3pt;
     }
 
     //autor artefaktu
     .text-author{
-        font-family: Avenir Roman;
+        font-family: $font-family-avenir-roman;
         font-size: 7pt;
         color: $theme-color-four;
     }
 
     //počet lajků
     .text-number{
-        font-family: Avenir Medium;
+        font-family: $font-family-avenir-medium;
         font-size: 5pt;
         color: $theme-color-four;
     }
 
     //notes u metadat, about v about, text levého menu
     .text-headline{
-        font-family: Avenir Medium;
+        font-family: $font-family-avenir-medium;
         font-size: 12pt;
         color: $theme-color-four;
     }
 
     //název metadata, text pravého menu
     .text-page{
-        font-family: Avenir Medium;
+        font-family: $font-family-avenir-medium;
         font-size: 7pt;
+    }
+
+    ////color pro změnu jen barvy
+    .black{
+        color: $theme-color-five;
+    }
+    .white{
+        color: $theme-color-one;
+    }
+    .colored{
+        color: $theme-color-four;
     }
 
 
@@ -140,14 +150,12 @@ body {
         .form-control{
             padding: 0px;
             height: 17pt;
-            //font-family: Avenir Medium;
-            //font-size: 8pt;
         }
     }
 
     .card-body {
     	background-color: $theme-color-five;
-    	font-family: Avenir Roman;
+    	font-family: $font-family-avenir-roman;
     	color: $theme-color-four;
 
 	}
@@ -188,12 +196,35 @@ body {
         border-radius: 0;
         width: 6.5rem;
         height: 2rem;
-        font-family: Avenir Roman;
+        font-family: $font-family-avenir-roman;
 
         &:active, &:focus, &:visited {
             outline: none;
             box-shadow: none;
         }
+    }
+
+    //spendlik
+    .pin-left:before {
+        content: '';
+        position: relative;
+        height: 0.35433rem;
+        width: 0.35433rem;
+        background-color: $theme-color-one;
+        border-radius: 50%;
+        display: inline-block;
+        top: -0.35433rem;
+        left: -0.2rem;
+
+    }
+
+    .pin-left {
+        border-left: .5pt solid $theme-color-four;
+        display: inline-block;
+        margin: 50px;
+        height: 200px;
+        text-align: left;
+        width: 100%;
     }
 
     .button-image {
@@ -258,7 +289,7 @@ body {
             color:$theme-color-four;
             outline: none !important;
             box-shadow: none !important;
-            font-family: Avenir Medium;
+            font-family: $font-family-avenir-medium;
 
             &:active
             {
@@ -289,8 +320,17 @@ body {
     }
 }
 
+@media (max-width: 990px) {
+    body {
+        .pin-left {
+            margin-left: 0px;
+        }
+    }
+}
+
 @media only screen and (max-width: 540px)
 {
+
 
     .head-title.text-center h1
     {
