@@ -215,44 +215,83 @@ body {
             background-repeat:no-repeat;
         }
     }
-    
-    .inter_info:before {
-    	background-image : url(../images/interface/Button_Info_60.png);
-    	content: "";
-    	width: 60px;
-    	height: 60px;
-	}
 
-	.inter_info:focus, .inter_info:active, .inter_info:hover {
-    	background-color: transparent !important;
-    	border-color: transparent !important;
-    	outline: none !important;
-    	box-shadow: none !important;
-	}
+    .artefacts-area {
 
-	.inter_like:before, .inter_like_filled:before {
-	    background-image : url(../images/interface/Hearth_Empty_60.png);
-	    width: 60px;
-	    height: 60px;
-	}
+        h5 {
+            color: $theme-color-two;
+            font-family: "Avenir Medium LINK";
+            line-height: 20pt;
+            font-size: 21pt;
+        }
 
-	.inter_like_filled:before {
-	    background-image : url(../images/interface/Hearth_Filled_60.png);
-	    width: 60px;
-	    height: 60px;
-	}
+        h6 {
+            color: $theme-color-two;
+            font-size: 14pt;
+            font-weight: lighter;
+            font-family: "Avenir Roman LINK";
+        }
 
-	.inter_like {
-	    display: none;
-	}
+        img {
+            border: transparent;
+            border-radius: 1px;
+        }
 
+        .card {
+            margin: 10px;
+            border: none !important;
+        }
 
-	.inter_like:focus, .inter_like:active, .inter_like:hover {
-    	background-color: transparent !important;
-    	border-color: transparent !important;
-    	outline: none !important;
-    	box-shadow: none !important;
-	}
+        .left_panel_info {
+            margin-top: 15px;
+            margin-left: -10px;
+            max-width: 250px;
+        }
+
+        .right_panel_info {
+            margin-top: 15px;
+            margin-right: -15px;
+        }
+
+        .card-cus-bottom {
+            background-color: $theme-color-five;
+        }
+
+        .inter_info {
+            &:before {
+                background-image: url(../images/interface/Button_Info_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_like {
+            display: none;
+            &:before {
+                background-image : url(../images/interface/Hearth_Empty_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_like_filled {
+            &:before {
+                background-image : url(../images/interface/Hearth_Filled_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_info, .inter_like, .inter_like_filled {
+            padding: 0;
+            &:focus, &:active, &:hover {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                outline: none !important;
+                box-shadow: none !important;
+            };
+        }
+    }
 
     .monButton {
 

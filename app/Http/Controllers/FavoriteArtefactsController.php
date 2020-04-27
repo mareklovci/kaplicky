@@ -24,20 +24,17 @@ class FavoriteArtefactsController extends Controller
     {
         if(Auth::check())
         {
-            $userId = Auth::user()->id;
-            $list = ArtefactUser::where('user_id', $userId)->get();
-            $finalData = array();
-            foreach($list as $item)
+            $id = Auth::id();
+            $artefacts = User::find($id)->likesArtefacts()->get();
+            foreach($artefacts as $item)
             {
-                $tmp = Artefact::where('id', $item->artefact_id)->get();
-                $tmp['likes'] = Artefact::find($item->artefact_id)->users()->count();
-                array_push($finalData, $tmp);
+                $item['likes'] = Artefact::find($item->id)->users()->count();
             }
 
             $data = array(
                 'title' => 'Favorite artefacts',
-                'user' => User::find($userId),
-                'artefacts' => $finalData
+                'user' => $id,
+                'artefacts' => $artefacts
             );
             return view('favartefacts.index') -> with($data);
         }
@@ -59,21 +56,19 @@ class FavoriteArtefactsController extends Controller
      */
     public function show($id)
     {
-        $list = ArtefactUser::where('user_id', $id)->get();
-        $finalData = array();
-        foreach($list as $item)
+        $artefacts = User::find($id)->likesArtefacts()->get();
+        foreach($artefacts as $item)
         {
-            $tmp = Artefact::where('id', $item->artefact_id)->get();
-            $tmp['likes'] = Artefact::find($item->artefact_id)->users()->count();
-            array_push($finalData, $tmp);
+            $item['likes'] = Artefact::find($item->id)->users()->count();
         }
+
 
         $data = array(
             'title' => 'Favorite artefacts',
             'id' => $id,
             'user' => User::find($id),
-            'userId' => Auth::user()->id,
-            'artefacts' => $finalData
+            'userId' => Auth::id(),
+            'artefacts' => $artefacts
         );
         return view('favartefacts.index') -> with($data);
     }
