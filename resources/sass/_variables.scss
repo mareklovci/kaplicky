@@ -5,9 +5,16 @@ $body-bg: #f8fafc;
 //$font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+// Design fonts
 $font-family-avenir-roman: Avenir Roman;
 $font-family-avenir-medium: Avenir Medium;
 $font-family-avenir-black: Avenir Black;
+
+// Theme fonts
+$font-family-style-one: $font-family-avenir-roman;
+$font-family-style-two: $font-family-avenir-medium;
+$font-family-style-three: $font-family-avenir-black;
 
 // Colors
 $blue: #3490dc;

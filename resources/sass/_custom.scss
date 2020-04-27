@@ -8,7 +8,7 @@ body {
 
     .head-title h1 {
         color: $theme-color-one;
-        font-family: $font-family-avenir-roman;
+        font-family: $font-family-style-one;
         font-size: 60pt;
         font-weight: bold;
         letter-spacing: 3px;
@@ -62,7 +62,7 @@ body {
             background-color:  rgba(239, 218, 179, 0.5);
 
             /*h2 {
-                font-family: $font-family-avenir-black;
+                font-family: $font-family-style-three;
                 font-size: 11pt;
                 letter-spacing: 3pt;
                 color: $white;
@@ -79,14 +79,14 @@ body {
     /////////text types
     //většina běžných textů
     .text {
-        font-family: $font-family-avenir-roman;
+        font-family: $font-family-style-one;
         font-size: 8pt;
         line-height: 9pt;
     }
 
     //text inputu a název artefaktů
     .text2{
-        font-family: $font-family-avenir-medium;
+        font-family: $font-family-style-two;
         font-size: 8pt;
     }
 
@@ -94,34 +94,34 @@ body {
     .kaplicky{
         color: $theme-color-one;
         font-size: 11pt;
-        font-family: $font-family-avenir-black;
+        font-family: $font-family-style-three;
         letter-spacing: 3pt;
     }
 
     //autor artefaktu
     .text-author{
-        font-family: $font-family-avenir-roman;
+        font-family: $font-family-style-one;
         font-size: 7pt;
         color: $theme-color-four;
     }
 
     //počet lajků
     .text-number{
-        font-family: $font-family-avenir-medium;
+        font-family: $font-family-style-two;
         font-size: 5pt;
         color: $theme-color-four;
     }
 
     //notes u metadat, about v about, text levého menu
     .text-headline{
-        font-family: $font-family-avenir-medium;
+        font-family: $font-family-style-two;
         font-size: 12pt;
         color: $theme-color-four;
     }
 
     //název metadata, text pravého menu
     .text-page{
-        font-family: $font-family-avenir-medium;
+        font-family: $font-family-style-two;
         font-size: 7pt;
     }
 
@@ -158,7 +158,7 @@ body {
 
     .card-body {
     	background-color: $theme-color-five;
-    	font-family: $font-family-avenir-roman;
+    	font-family: $font-family-style-one;
     	color: $theme-color-four;
 
 	}
@@ -199,7 +199,7 @@ body {
         border-radius: 0;
         width: 6.5rem;
         height: 2rem;
-        font-family: $font-family-avenir-roman;
+        font-family: $font-family-style-one;
 
         &:active, &:focus, &:visited {
             outline: none;
@@ -251,7 +251,7 @@ body {
 
         h5 {
             color: $theme-color-two;
-            font-family: $font-family-avenir-medium;
+            font-family: $font-family-style-two;
             line-height: 20pt;
             font-size: 21pt;
         }
@@ -260,7 +260,7 @@ body {
             color: $theme-color-two;
             font-size: 14pt;
             font-weight: lighter;
-            font-family: $font-family-avenir-roman;
+            font-family: $font-family-style-one;
         }
 
         img {
@@ -369,7 +369,7 @@ body {
             color:$theme-color-four;
             outline: none !important;
             box-shadow: none !important;
-            font-family: $font-family-avenir-medium;
+            font-family: $font-family-style-two;
 
             &:active
             {
