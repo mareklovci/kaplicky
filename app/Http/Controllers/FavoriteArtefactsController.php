@@ -6,6 +6,7 @@ use App\ArtefactUser;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Artefact;
+use App\Http\Controllers\Image;
 
 class FavoriteArtefactsController extends Controller
 {
@@ -23,11 +24,16 @@ class FavoriteArtefactsController extends Controller
     {
         if(Auth::check())
         {
-            $artefacts = User::find(Auth::id())->likesArtefacts()->get();
+            $id = Auth::id();
+            $artefacts = User::find($id)->likesArtefacts()->get();
+            foreach($artefacts as $item)
+            {
+                $item['likes'] = Artefact::find($item->id)->users()->count();
+            }
 
             $data = array(
                 'title' => 'Favorite artefacts',
-                'user' => Auth::user(),
+                'user' => $id,
                 'artefacts' => $artefacts
             );
             return view('favartefacts.index') -> with($data);
@@ -50,16 +56,17 @@ class FavoriteArtefactsController extends Controller
      */
     public function show($id)
     {
-        $artefacts = [];
-        if (!is_null(User::find($id)))
+        $artefacts = User::find($id)->likesArtefacts()->get();
+        foreach($artefacts as $item)
         {
-            $artefacts = User::find($id)->likesArtefacts()->get();
+            $item['likes'] = Artefact::find($item->id)->users()->count();
         }
+
 
         $data = array(
             'title' => 'Favorite artefacts',
             'id' => $id,
-            'user' => Auth::user(),
+            'user' => User::find($id),
             'userId' => Auth::id(),
             'artefacts' => $artefacts
         );

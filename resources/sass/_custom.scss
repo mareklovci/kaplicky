@@ -1,4 +1,7 @@
 // Ready for custom styling
+@font-face {font-family: "Avenir Black LINK"; src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot"); src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff") format("woff"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.svg#Avenir Black") format("svg"); }
+@font-face {font-family: "Avenir Roman LINK"; src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot"); src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg"); }
+@font-face {font-family: "Avenir Medium LINK"; src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot"); src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg"); }
 
 body {
     background-color: $theme-color-five;
@@ -241,6 +244,83 @@ body {
             background-color: transparent;
             background-position : center center;
             background-repeat:no-repeat;
+        }
+    }
+
+    .artefacts-area {
+
+        h5 {
+            color: $theme-color-two;
+            font-family: "Avenir Medium LINK";
+            line-height: 20pt;
+            font-size: 21pt;
+        }
+
+        h6 {
+            color: $theme-color-two;
+            font-size: 14pt;
+            font-weight: lighter;
+            font-family: "Avenir Roman LINK";
+        }
+
+        img {
+            border: transparent;
+            border-radius: 1px;
+        }
+
+        .card {
+            margin: 10px;
+            border: none !important;
+        }
+
+        .left_panel_info {
+            margin-top: 15px;
+            margin-left: -10px;
+            max-width: 250px;
+        }
+
+        .right_panel_info {
+            margin-top: 15px;
+            margin-right: -15px;
+        }
+
+        .card-cus-bottom {
+            background-color: $theme-color-five;
+        }
+
+        .inter_info {
+            &:before {
+                background-image: url(../images/interface/Button_Info_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_like {
+            display: none;
+            &:before {
+                background-image : url(../images/interface/Hearth_Empty_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_like_filled {
+            &:before {
+                background-image : url(../images/interface/Hearth_Filled_50.png);
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .inter_info, .inter_like, .inter_like_filled {
+            padding: 0;
+            &:focus, &:active, &:hover {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                outline: none !important;
+                box-shadow: none !important;
+            };
         }
     }
 
