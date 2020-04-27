@@ -1,4 +1,7 @@
 // Ready for custom styling
+@font-face {font-family: "Avenir Black LINK"; src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot"); src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff") format("woff"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.svg#Avenir Black") format("svg"); }
+@font-face {font-family: "Avenir Roman LINK"; src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot"); src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg"); }
+@font-face {font-family: "Avenir Medium LINK"; src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot"); src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg"); }
 
 body {
     //font-family: 'Nunito Sans', sans-serif;
@@ -212,6 +215,44 @@ body {
             background-repeat:no-repeat;
         }
     }
+    
+    .inter_info:before {
+    	background-image : url(../images/interface/Button_Info_60.png);
+    	content: "";
+    	width: 60px;
+    	height: 60px;
+	}
+
+	.inter_info:focus, .inter_info:active, .inter_info:hover {
+    	background-color: transparent !important;
+    	border-color: transparent !important;
+    	outline: none !important;
+    	box-shadow: none !important;
+	}
+
+	.inter_like:before, .inter_like_filled:before {
+	    background-image : url(../images/interface/Hearth_Empty_60.png);
+	    width: 60px;
+	    height: 60px;
+	}
+
+	.inter_like_filled:before {
+	    background-image : url(../images/interface/Hearth_Filled_60.png);
+	    width: 60px;
+	    height: 60px;
+	}
+
+	.inter_like {
+	    display: none;
+	}
+
+
+	.inter_like:focus, .inter_like:active, .inter_like:hover {
+    	background-color: transparent !important;
+    	border-color: transparent !important;
+    	outline: none !important;
+    	box-shadow: none !important;
+	}
 
     .monButton {
 

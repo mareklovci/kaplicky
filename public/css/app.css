@@ -10882,14 +10882,70 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: "Avenir Black LINK";
+  src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot");
+  src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff") format("woff"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.svg#Avenir Black") format("svg");
+}
+
+@font-face {
+  font-family: "Avenir Roman LINK";
+  src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot");
+  src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg");
+}
+
+@font-face {
+  font-family: "Avenir Medium LINK";
+  src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot");
+  src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg");
+}
+
 body {
+  background-color: #272727;
+}
+
+h5 {
+  color: #efdab3;
+  font-family: "Avenir Medium LINK";
+  line-height: 20pt;
+  font-size: 21pt;
+}
+
+h6 {
+  color: #efdab3;
+  font-size: 14pt;
+  font-weight: lighter;
+  font-family: "Avenir Roman LINK";
+}
+
+img {
+  border: transparent;
+  border-radius: 1px;
+}
+
+.card {
+  margin: 10px;
+  border: none !important;
+}
+
+.left_panel_info {
+  margin-top: 20pt;
+  margin-left: -10pt;
+  max-width: 250px;
+}
+
+.right_panel_info {
+  margin-top: 15pt;
+}
+
+.card-cus-bottom {
   background-color: #272727;
 }
 
 body .head-title h1 {
   color: #ffffff;
-  font-family: Avenir;
-  font-size: 60pt;
+  font-family: "Avenir Black LINK";
+  font-size: 45pt;
   font-weight: bold;
   letter-spacing: 3px;
 }
@@ -11043,6 +11099,47 @@ body .button-image:before {
   background-color: transparent;
   background-position: center center;
   background-repeat: no-repeat;
+}
+.inter_info:before {
+  background-image: url(/images/Button_Info_60.png?fed957d534034a220f3fb939523ba297);
+  content: "";
+  width: 60px;
+  height: 60px;
+}
+
+.inter_info:focus,
+.inter_info:active,
+.inter_info:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.inter_like:before,
+.inter_like_filled:before {
+  background-image: url(/images/Hearth_Empty_60.png?07807b2bf7f8018c15473360e4cb97e0);
+  width: 60px;
+  height: 60px;
+}
+
+.inter_like_filled:before {
+  background-image: url(/images/Hearth_Filled_60.png?e1a8e6298bf4fdce9b9592128ee82e81);
+  width: 60px;
+  height: 60px;
+}
+
+.inter_like {
+  display: none;
+}
+
+.inter_like:focus,
+.inter_like:active,
+.inter_like:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 body .monButton:before {
