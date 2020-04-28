@@ -1,10 +1,6 @@
-// Ready for custom styling
-//@font-face {font-family: "Avenir Black LINK"; src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot"); src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff") format("woff"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.svg#Avenir Black") format("svg"); }
-//@font-face {font-family: "Avenir Roman LINK"; src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot"); src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg"); }
-//@font-face {font-family: "Avenir Medium LINK"; src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot"); src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg"); }
-
 // Variables
 @import 'variables';
+
 body {
     background-color: $theme-color-five;
     font-family: $font-family-one;
@@ -423,6 +419,45 @@ body {
         }
 
     }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
 
 @media (max-width: 990px) {

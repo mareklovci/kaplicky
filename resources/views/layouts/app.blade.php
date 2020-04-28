@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         @if(!Request::is('/'))
-            @include('inc/navbar')
+            @include('inc/sidebar')
         @endif
 
         <main class="py">
