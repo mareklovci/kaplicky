@@ -14,7 +14,7 @@
             <div class="card">
                 {{--<div class="card-header">{{ __('Login') }}</div>--}}
 
-                <div class="card-body">
+                <div class="card-body" style="padding-bottom: 0px">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -24,9 +24,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('e-mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control text2 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-
+                                <input id="email" type="email" class="form-control text2 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" {{--required autocomplete="email" autofocus--}}>
                             </div>
                         </div>
 
@@ -34,9 +32,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control text2 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-
+                                <input id="password" type="password" class="form-control text2 @error('password') is-invalid @enderror" name="password" {{--required autocomplete="current-password"--}}>
                             </div>
                         </div>
 
@@ -56,7 +52,6 @@
                                 <button type="submit" class="btn button-square ">
                                     {{ __('join') }}
                                 </button>
-
                                 {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
@@ -64,19 +59,19 @@
                                 @endif --}}
                             </div>
 
+                        @if($errors->any())
                             <div class="col-md-6 offset-md-2">
-                             @error('email')
                                 <span class="text white pin-left" role="alert">
-                                             <text>{{ $message }}</text>
+                                    <p> </p>
+                                    @error('email')
+                                             <p class="text">{{ $message }}</p>
+                                     @enderror
+                                    @error('password')
+                                             <p class="text">{{ $message }}</p>
+                                     @enderror
                                 </span>
-                             @enderror
-
-                             @error('password')
-                                <span class="text white pin-left" role="alert">
-                                            <text>{{ $message }}</text>
-                                </span>
-                             @enderror
                             </div>
+                        @endif
                     </form>
                 </div>
             </div>

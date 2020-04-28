@@ -10,14 +10,16 @@ $line-height-base: 1.6;
 //$font-family-avenir-roman: Avenir Roman;
 //$font-family-avenir-medium: Avenir Medium;
 //$font-family-avenir-black: Avenir Black;
-$font-family-nunito-roman: Nunito Roman;
-$font-family-nunito-medium: Nunito Medium;
-$font-family-nunito-black: Nunito Black;
+$font-family-nunito: Nunito;
+$weight-roman:  400;
+$weight-medium: 600;
+$weight-black:  900;
 
 // Theme fonts
-$font-family-style-one: $font-family-nunito-roman;
-$font-family-style-two: $font-family-nunito-medium;
-$font-family-style-three: $font-family-nunito-black;
+$font-family-one: $font-family-nunito;
+$font-weight-one: $weight-roman;
+$font-weight-two: $weight-medium;
+$font-weight-three: $weight-black;
 
 // Colors
 $blue: #3490dc;

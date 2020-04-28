@@ -5,12 +5,13 @@
 
 body {
     background-color: $theme-color-five;
+    font-family: $font-family-one;
 
     .head-title h1 {
         color: $theme-color-one;
-        font-family: $font-family-style-one;
+        font-weight: $font-weight-one;
         font-size: 60pt;
-        font-weight: bold;
+        //font-weight: bold;
         letter-spacing: 3px;
     }
 
@@ -61,14 +62,6 @@ body {
             transform: translateY(-50%);
             background-color:  rgba(239, 218, 179, 0.5);
 
-            /*h2 {
-                font-family: $font-family-style-three;
-                font-size: 11pt;
-                letter-spacing: 3pt;
-                color: $white;
-
-            }*/
-
             p {
                 font-size: 8pt;
                 color: $theme-color-five;
@@ -79,14 +72,14 @@ body {
     /////////text types
     //většina běžných textů
     .text {
-        font-family: $font-family-style-one;
+        font-weight: $font-weight-one;
         font-size: 8pt;
         line-height: 9pt;
     }
 
     //text inputu a název artefaktů
     .text2{
-        font-family: $font-family-style-two;
+        font-weight: $font-weight-two;
         font-size: 8pt;
     }
 
@@ -94,34 +87,34 @@ body {
     .kaplicky{
         color: $theme-color-one;
         font-size: 11pt;
-        font-family: $font-family-style-three;
+        font-weight: $font-weight-three;
         letter-spacing: 3pt;
     }
 
     //autor artefaktu
     .text-author{
-        font-family: $font-family-style-one;
+        font-weight: $font-weight-one;
         font-size: 7pt;
         color: $theme-color-four;
     }
 
     //počet lajků
     .text-number{
-        font-family: $font-family-style-two;
+        font-weight: $font-weight-two;
         font-size: 5pt;
         color: $theme-color-four;
     }
 
     //notes u metadat, about v about, text levého menu
     .text-headline{
-        font-family: $font-family-style-two;
+        font-weight: $font-weight-two;
         font-size: 12pt;
         color: $theme-color-four;
     }
 
     //název metadata, text pravého menu
     .text-page{
-        font-family: $font-family-style-two;
+        font-weight: $font-weight-two;
         font-size: 7pt;
     }
 
@@ -158,7 +151,7 @@ body {
 
     .card-body {
     	background-color: $theme-color-five;
-    	font-family: $font-family-style-one;
+    	font-weight: $font-weight-one;
     	color: $theme-color-four;
 
 	}
@@ -166,28 +159,24 @@ body {
 	.form-control {
     	background-color: $theme-color-five;
     	margin-top: -1px;
-    	//border-bottom: 1px;
     	border-top-color: $theme-color-five;
     	border-left-color: $theme-color-five;
     	border-right-color: $theme-color-five;
     	border-bottom-color: 0.5pt $theme-color-one;
     	color: $theme-color-one;
         box-shadow: none;
-        //transition: none;
         font-size: 8pt;
 	}
 
     .form-control:focus {
         background-color: $theme-color-five;
         margin-top: -1px;
-        //border-bottom: 1px;
         border-top-color: $theme-color-five;
         border-left-color: $theme-color-five;
         border-right-color: $theme-color-five;
         border-bottom-color: 0.5pt $theme-color-one;
         color: $theme-color-one;
         box-shadow: none;
-        //transition: none;
         font-size: 8pt;
     }
 
@@ -199,7 +188,7 @@ body {
         border-radius: 0;
         width: 6.5rem;
         height: 2rem;
-        font-family: $font-family-style-one;
+        font-weight: $font-weight-one;
 
         &:active, &:focus, &:visited {
             outline: none;
@@ -225,9 +214,21 @@ body {
         border-left: .5pt solid $theme-color-four;
         display: inline-block;
         margin: 50px;
-        height: 200px;
+        margin-bottom: 0pt;
+        min-height: 75vh;
+        height: auto;
         text-align: left;
         width: 100%;
+        .text{
+            //padding-top: 5rem;//0.35433rem;
+            //margin-top: 5rem;
+            //top: 5rem;
+            margin-left: 0.5rem;
+        }
+        p{
+            margin-top: 0pt;
+            margin-bottom: 0pt;
+        }
     }
 
     .button-image {
@@ -251,7 +252,7 @@ body {
 
         h5 {
             color: $theme-color-two;
-            font-family: $font-family-style-two;
+            font-weight: $font-weight-two;
             line-height: 20pt;
             font-size: 21pt;
         }
@@ -259,8 +260,8 @@ body {
         h6 {
             color: $theme-color-two;
             font-size: 14pt;
-            font-weight: lighter;
-            font-family: $font-family-style-one;
+            //font-weight: lighter;
+            font-weight: $font-weight-one;
         }
 
         img {
@@ -369,7 +370,7 @@ body {
             color:$theme-color-four;
             outline: none !important;
             box-shadow: none !important;
-            font-family: $font-family-style-two;
+            font-weight: $font-weight-two;
 
             &:active
             {

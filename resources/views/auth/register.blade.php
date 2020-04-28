@@ -14,7 +14,7 @@
             <div class="card">
                 {{--<div class="card-header">{{ __('Register') }}</div>--}}
 
-                <div class="card-body">
+                <div class="card-body" style="padding-bottom: 0px">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -23,13 +23,8 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control text2 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control text2 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" {{--required autocomplete="name" autofocus--}}>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -37,13 +32,8 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('e-mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control text2 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control text2 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" {{--required autocomplete="email"--}}>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -51,13 +41,8 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" {{--required autocomplete="new-password"--}}>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -65,16 +50,32 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('confirm password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" {{--required autocomplete="new-password"--}}>
                             </div>
                         </div>
-
 
                             <div class="col-md-12">
                                 <button type="submit" class="btn button-square">
                                     {{ __('Register') }}
                                 </button>
                             </div>
+
+                        @if($errors->any())
+                            <div class="col-md-6 offset-md-2">
+                                <span class="text white pin-left" role="alert">
+                                    <p> </p>
+                                    @error('email')
+                                             <p class="text">{{ $message }}</p>
+                                     @enderror
+                                    @error('password')
+                                             <p class="text">{{ $message }}</p>
+                                     @enderror
+                                    @error('name')
+                                             <p class="text">{{ $message }}</p>
+                                     @enderror
+                                </span>
+                            </div>
+                        @endif
 
                     </form>
                 </div>
