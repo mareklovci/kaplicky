@@ -349,6 +349,8 @@ body {
 
         &:before {
             background-image : url(../images/Button_Arrow_Small.png);
+            //height: 0.9685rem;
+            //width: 0.59055rem;
         }
 
         &:hover {
@@ -421,6 +423,31 @@ body {
     }
 }
 
+.arrow-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-top: 50px;
+    //height: 0.9685rem;
+    //width: 0.59055rem;
+    margin-left: 90%;
+    border-top: 0.59055rem solid transparent;
+    border-bottom: 0.59055rem solid transparent;
+
+    border-right:0.59055rem solid $theme-color-four;
+}
+.arrow-right {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    margin: 50px;
+    border-top: 0.59055rem solid transparent;
+    border-bottom: 0.59055rem solid transparent;
+
+    border-left:0.59055rem solid $theme-color-four;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -428,32 +455,34 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    //margin-top: 50px;
+    background-color: $theme-color-five;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    //padding-top: 60px;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    //padding: 8px 8px 8px 50px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    //font-size: 25px;
+    color: $theme-color-four;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: $theme-color-five;
+    background-color: $theme-color-one;
 }
 
-.sidenav .closebtn {
+/*.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
+}*/
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

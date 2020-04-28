@@ -1,5 +1,9 @@
 <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="arrow-left" style="cursor:pointer" onclick="closeNav()"></a>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
         @guest
         <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -11,16 +15,16 @@
         @endif
         @else
         <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+           {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url('/favartefacts') }}">Favorite artefacts</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
+                <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">Favorite artefacts</a>
 
-                <a class="dropdown-item" href="{{ url('/favmetadata') }}">Favorite metadata</a>
+                <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">Favorite metadata</a>
 
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item text-headline" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
@@ -29,17 +33,17 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-            </div>
+            {{-- </div>--}}
         </li>
         @endguest
 
 </div>
 
-<span style="font-size:30px;cursor:pointer;background-color: #3f9ae5" onclick="openNav()">&#9776; open</span>
+<span class="arrow-right" style="cursor:pointer" onclick="openNav()"></span>
 
 <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "50vh";
     }
 
     function closeNav() {
