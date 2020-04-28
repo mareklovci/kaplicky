@@ -3,6 +3,8 @@
 //@font-face {font-family: "Avenir Roman LINK"; src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot"); src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg"); }
 //@font-face {font-family: "Avenir Medium LINK"; src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot"); src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg"); }
 
+// Variables
+@import 'variables';
 body {
     background-color: $theme-color-five;
     font-family: $font-family-one;
@@ -146,6 +148,7 @@ body {
         .form-control{
             padding: 0px;
             height: 17pt;
+            border-radius: 0%;
         }
     }
 
@@ -166,9 +169,30 @@ body {
     	color: $theme-color-one;
         box-shadow: none;
         font-size: 8pt;
-	}
 
-    .form-control:focus {
+        &:active, &:focus, &:visited{
+            background-color: $theme-color-five;
+            margin-top: -1px;
+            border-top-color: $theme-color-five;
+            border-left-color: $theme-color-five;
+            border-right-color: $theme-color-five;
+            border-bottom-color: 0.5pt $theme-color-one;
+            color: $theme-color-one;
+            box-shadow: none;
+        }
+
+	}
+    .form-control.is-invalid{
+        box-shadow: none;
+        border-color: $theme-color-four;
+        background-image: none;
+        &:active, &:focus, &:visited{
+            box-shadow: none;
+            border-color: $theme-color-four;
+        }
+    }
+
+    /*.form-control:focus {
         background-color: $theme-color-five;
         margin-top: -1px;
         border-top-color: $theme-color-five;
@@ -178,7 +202,7 @@ body {
         color: $theme-color-one;
         box-shadow: none;
         font-size: 8pt;
-    }
+    }*/
 
     .button-square {
         font-size: 8pt;
