@@ -39,7 +39,7 @@ class DetailsController extends Controller
         $data = array(
             'id' => $id,
             'arrArtefact' => Artefact::find($id),
-            'likes' => ArtefactUser::where('artefact_id', $id)->count(),
+            'likes' => Artefact::find($id)->users()->count(),
             'metadata' => Metadata::where('artefact_id', $id)->get()
         );
         return view('detail.index') -> with($data);

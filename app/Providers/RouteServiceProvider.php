@@ -24,6 +24,13 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/artefact';
 
     /**
+     * The path to categories.
+     *
+     * @var string
+     */
+    public const CATEGORIES = '/categories';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void

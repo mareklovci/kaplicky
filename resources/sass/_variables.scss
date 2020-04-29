@@ -2,9 +2,24 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+//$font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+// Design fonts
+//$font-family-avenir-roman: Avenir Roman;
+//$font-family-avenir-medium: Avenir Medium;
+//$font-family-avenir-black: Avenir Black;
+$font-family-nunito: Nunito;
+$weight-roman:  400;
+$weight-medium: 600;
+$weight-black:  900;
+
+// Theme fonts
+$font-family-one: $font-family-nunito;
+$font-weight-one: $weight-roman;
+$font-weight-two: $weight-medium;
+$font-weight-three: $weight-black;
 
 // Colors
 $blue: #3490dc;
@@ -17,3 +32,18 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$white: #ffffff;
+$black: #000;
+
+// Design colors
+$pastel-grey: #ddd1b9;
+$whey: #efdab3;
+$desert-sand: #ead4b0;
+$raisin-black: #272727;
+
+// Theme colors
+$theme-color-one: $white;
+$theme-color-two: $pastel-grey;
+$theme-color-three: $whey;
+$theme-color-four: $desert-sand;
+$theme-color-five: $raisin-black;
