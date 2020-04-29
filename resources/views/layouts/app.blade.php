@@ -14,31 +14,22 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        @include('inc/navbar')
+        @if(!Request::is('/'))
+            @include('inc/sidebar')
+        @endif
 
-        <main class="py-4">
-            <div class="container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        @yield('breadcrumb')
-                    </ol>
-                </nav>
-
+        <main class="py">
+            <div class="custom-container">
                 <div class="content-area">
                     @yield('content')
                 </div>
-
-                <hr>
-                <footer class="container">
-                    © 2020
-                </footer>
             </div>
         </main>
     </div>

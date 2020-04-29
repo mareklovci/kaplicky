@@ -18,6 +18,9 @@ Route::get('/', 'PagesController@index');
 Route::get('/artefact', 'ArtefactController@default');
 Route::get('/artefact/{id}', 'ArtefactController@view');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
+Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
+Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => array('index', 'show')));
+Route::get('/favmetadata', 'FavoriteMetadataController@index');
 
 Auth::routes();
 

@@ -7,18 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Artefact extends Model
 {
     // Table Name
-    protected $table = 'artefacts';//unnecessery?
+    protected $table = 'artefacts';
     // Primary Key
-    public $primaryKey = 'id';//unnecessery?
-
-    /**
-     * The model's default values for attributes.
-     *
-     * @var array
-     */
-    /*protected $attributes = [
-        'likes' => 0,
-    ];*/
+    public $primaryKey = 'id';
 
     /**
      * Indicates if the model should be timestamped.
@@ -50,7 +41,4 @@ class Artefact extends Model
     {
         return $this->belongsToMany('App\User');
     }
-
-
-
 }

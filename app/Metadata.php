@@ -7,18 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Metadata extends Model
 {
     // Table Name
-    protected $table = 'metadata';//same name could make problems
+    protected $table = 'metadata';
     // Primary Key
-    public $primaryKey = 'id';//unnecessery?
-
-    /**
-     * The model's default values for attributes.
-     *
-     * @var array
-     */
-    /*protected $attributes = [
-        'likes' => 0,
-    ];*/
+    public $primaryKey = 'id';
 
     /**
      * Indicates if the model should be timestamped.
@@ -34,5 +25,11 @@ class Metadata extends Model
         return $this->belongsTo('App\Artefact');
     }
 
-
+    /**
+     * Get the users for the metadata.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

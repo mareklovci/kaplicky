@@ -9,8 +9,7 @@ class Category extends Model
     // Table Name
     protected $table = 'categories';
     // Primary Key
-    public $primaryKey = 'id';//unnecessery?
-
+    public $primaryKey = 'id';
 
     /**
      * Indicates if the model should be timestamped.
@@ -20,12 +19,10 @@ class Category extends Model
     public $timestamps = false;
 
     /**
-     * Get the artefacts for the catagory.
+     * Get the artefacts for the category.
      */
     public function artefacts()
     {
         return $this->belongsToMany('App\Artefact');
     }
-
-
 }
