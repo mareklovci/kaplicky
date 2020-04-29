@@ -360,34 +360,6 @@ body {
         }
     }
 
-    .monButton {
-
-        &:before {
-            background-image : url(../images/Button_Arrow_Small.png);
-            //height: 0.9685rem;
-            //width: 0.59055rem;
-        }
-
-        &:hover {
-            background-color: transparent;
-            border-color: $theme-color-four;
-        }
-
-        &:focus {
-            background-color: transparent;
-            border-color: $theme-color-four;
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        &:active {
-            background-color: transparent !important;
-            border-color: transparent !important;
-            outline: none !important;
-            box-shadow: none !important;
-        }
-    }
-
     .content {
         position: relative;
 
@@ -418,24 +390,50 @@ body {
                 color:$theme-color-five;
             }
         }
-
-        .btn-sm
-        {
-            width: 120px;
-            height: 120px;
-        }
-        .btn-dm
-        {
-            width: 240px;
-            height: 240px;
-        }
-        .btn-xl
-        {
-            width: 360px;
-            height: 360px;
-        }
-
     }
+
+    //CATEGORIES - TILES
+    .btn.btn-dark.cat-tile
+    {
+        //STYLING
+        border-color: $theme-color-four;
+        border-radius: 0;
+        border-style: solid;
+        border-width: 2px;
+        color: $theme-color-four;
+        background-color: $theme-color-five;
+        text-align: center;
+        outline: none !important;
+        box-shadow: none !important;
+
+        //FONT
+        font-size: 8mm;
+        word-wrap: break-word;
+
+        //SPACING
+        margin: 10pt 32pt;
+        height: 40mm;
+        width: 86%;
+
+        &:active, &:focus
+        {
+            background-color: $theme-color-three;
+            border-color: $theme-color-four;
+            outline: none !important;
+            box-shadow: none !important;
+            color: $theme-color-five;
+        }
+    }
+
+    //CATEGORIES - enter button
+    .btn.button-square.cat-enter-butt
+    {
+        position: fixed;
+        bottom: 8%;
+        right: 40%;
+        display: none;
+    }
+
 }
 
 .arrow{
@@ -515,7 +513,11 @@ body {
 {
     .head-title.text-center h1
     {
-        font-size: 45pt;
+        font-size: 23pt;
+        padding-top: 50pt;
+        margin-left: 36pt;
+        white-space: nowrap;
+
     }
 
     .btn-circle.rounded-circle.btn-sm
