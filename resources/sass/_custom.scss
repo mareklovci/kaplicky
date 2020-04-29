@@ -255,7 +255,11 @@ body {
         }
     }
 
-    footer {
+    li{
+        list-style-type: none;
+    }
+
+    /*footer {
         background: $theme-color-four;
         color: $theme-color-five;
         display: block;
@@ -264,7 +268,7 @@ body {
         left: 0;
         bottom: 0;
         width: 100%;
-    }
+    }*/
 
     .button-image {
         background-color: transparent;
@@ -364,7 +368,6 @@ body {
         position: relative;
 
         //Circle style button
-            //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories.
         .btn-circle.rounded-circle {
             padding: 6px 0px;
             font-size: 16px;
@@ -464,6 +467,7 @@ body {
 .sidenav {
     height: 100%;
     width: 0;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -511,6 +515,9 @@ body {
 
 @media only screen and (max-width: 540px)
 {
+    .sidenav{
+        width: 0;
+    }
     .head-title.text-center h1
     {
         font-size: 23pt;

@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" s onclick="closeNav()"></a>
-    <li class="nav-item"></li>
-    <li class="nav-item"></li>
-    <li class="nav-item"></li>
-    <li class="nav-item"></li>
+    <li class="nav-item"> &#160;</li>
+    <li class="nav-item"> &#160;</li>
+    <li class="nav-item"> &#160;</li>
+    <li class="nav-item"> &#160;</li>
         @guest
         <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -26,11 +26,13 @@
 
             <a class="dropdown-item text-headline" href="{{ url('/artefact') }}">books</a>
 
+            <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">my books</a>
+
+                <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">my notes</a>
 
 
-                <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">notes</a>
 
-                <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">charts</a>
+            <a class="dropdown-item text-headline" href="{{ url('/charts') }}">charts</a>
 
                 <a class="dropdown-item text-headline" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
