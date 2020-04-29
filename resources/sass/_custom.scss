@@ -360,77 +360,81 @@ body {
         }
     }
 
-    .content {
-    position: relative;
+    .monButton {
 
-    //Circle style button
-    //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories.
-    .btn-circle.rounded-circle {
-        padding: 6px 0px;
-        font-size: 16px;
-        text-align: center;
-    }
+        &:before {
+            background-image : url(../images/Button_Arrow_Small.png);
+            //height: 0.9685rem;
+            //width: 0.59055rem;
+        }
 
-    .btn-categories {
-        position: absolute;
-        border-width: 5px;
-        background-color: $theme-color-five;
-        border-color: $theme-color-four;
-        color: $theme-color-four;
-        outline: none !important;
-        box-shadow: none !important;
-        font-weight: $font-weight-two;
+        &:hover {
+            background-color: transparent;
+            border-color: $theme-color-four;
+        }
+
+        &:focus {
+            background-color: transparent;
+            border-color: $theme-color-four;
+            outline: none !important;
+            box-shadow: none !important;
+        }
 
         &:active {
-            background-color: $theme-color-three;
-            border-color: $theme-color-four;
+            background-color: transparent !important;
+            border-color: transparent !important;
             outline: none !important;
             box-shadow: none !important;
-            color: $theme-color-five;
         }
     }
-}
 
-    //CATEGORIES - TILES
-    .btn.btn-dark.cat-tile
-    {
-        //STYLING
-        border-color: $theme-color-four;
-        border-radius: 0;
-        border-style: solid;
-        border-width: 2px;
-        color: $theme-color-four;
-        background-color: $theme-color-five;
-        text-align: center;
-        outline: none !important;
-        box-shadow: none !important;
+    .content {
+        position: relative;
 
-        //FONT
-        font-size: 8mm;
-        word-wrap: break-word;
-
-        //SPACING
-        margin: 10pt 32pt;
-        height: 40mm;
-        width: 86%;
-
-        &:active, &:focus
+        //Circle style button
+            //Toto možná nebude zcela optimální pro ostatní circle buttony. Nehodící se propagujte do btn-categories.
+        .btn-circle.rounded-circle {
+            padding: 6px 0px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn-categories
         {
-            background-color: $theme-color-three;
+            position: absolute;
+            border-width: 5px;
+            background-color: $theme-color-five;
             border-color: $theme-color-four;
+            color:$theme-color-four;
             outline: none !important;
             box-shadow: none !important;
-            color: $theme-color-five;
-        }
-    }
+            font-weight: $font-weight-two;
 
-    //CATEGORIES - enter button
-    .btn.button-square.cat-enter-butt
-    {
-        position: fixed;
-        bottom: 8%;
-        right: 45%;
-        display: none;
+            &:active
+            {
+                background-color: $theme-color-three;
+                border-color: $theme-color-four;
+                outline: none !important;
+                box-shadow: none !important;
+                color:$theme-color-five;
+            }
+        }
+
+        .btn-sm
+        {
+            width: 120px;
+            height: 120px;
+        }
+        .btn-dm
+        {
+            width: 240px;
+            height: 240px;
+        }
+        .btn-xl
+        {
+            width: 360px;
+            height: 360px;
+        }
+
     }
 }
 
@@ -511,10 +515,7 @@ body {
 {
     .head-title.text-center h1
     {
-        font-size: 23pt;
-        padding-top: 50pt;
-        margin-left: 36pt;
-        white-space: nowrap;
+        font-size: 45pt;
     }
 
     .btn-circle.rounded-circle.btn-sm
