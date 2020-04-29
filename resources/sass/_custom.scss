@@ -233,10 +233,14 @@ body {
     .pin-left {
         border-left: .5pt solid $theme-color-four;
         display: inline-block;
-        margin: 50px;
-        margin-bottom: 0pt;
-        min-height: 75vh;
-        height: auto;
+        //margin: 50px;
+        //margin-bottom: 0pt;
+        margin: 10rem 50px 0px -5rem;
+        //min-height: 75vh;
+        //height: auto;
+        position: fixed;
+        top: 0;
+        bottom: 0;
         text-align: left;
         width: 100%;
         .text{
@@ -249,6 +253,17 @@ body {
             margin-top: 0pt;
             margin-bottom: 0pt;
         }
+    }
+
+    footer {
+        background: $theme-color-four;
+        color: $theme-color-five;
+        display: block;
+        height: 50px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     .button-image {
@@ -423,29 +438,29 @@ body {
     }
 }
 
-.arrow-left {
+.arrow{
     position: absolute;
     width: 0;
     height: 0;
-    margin-top: 50px;
-    //height: 0.9685rem;
-    //width: 0.59055rem;
-    margin-left: 90%;
-    border-top: 0.59055rem solid transparent;
-    border-bottom: 0.59055rem solid transparent;
-
-    border-right:0.59055rem solid $theme-color-four;
+    margin: 2rem;
+    cursor:pointer;
+    border: 0.59055rem solid transparent;
 }
-.arrow-right {
-    position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    margin: 50px;
-    border-top: 0.59055rem solid transparent;
-    border-bottom: 0.59055rem solid transparent;
 
+.arrow-left {
+    margin-left: 80%;
+
+    border-right:0.59055rem solid $theme-color-five;
+    background-color: $theme-color-four !important;
+}
+
+.arrow-right {
     border-left:0.59055rem solid $theme-color-four;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .sidenav {
@@ -455,52 +470,49 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    //margin-top: 50px;
-    background-color: $theme-color-five;
+    background-color: $theme-color-four;
     overflow-x: hidden;
     transition: 0.5s;
-    //padding-top: 60px;
 }
 
 .sidenav a {
-    //padding: 8px 8px 8px 50px;
     text-decoration: none;
-    //font-size: 25px;
-    color: $theme-color-four;
+    color: $theme-color-five;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: $theme-color-five;
+    color: $theme-color-four;
     background-color: $theme-color-one;
 }
 
-/*.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}*/
-
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
+    //.sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
 
 @media (max-width: 990px) {
     body {
+        /*.pin-left {
+            margin-left: -15rem;
+            margin-top: 11rem;
+        }*/
+    }
+}
+
+@media (max-width: 770px) {
+    body {
         .pin-left {
-            margin-left: 0px;
+            margin-left: -33vw;
+            margin-top: 12rem;
+            //left: 20vw;
         }
     }
 }
 
 @media only screen and (max-width: 540px)
 {
-
-
     .head-title.text-center h1
     {
         font-size: 45pt;

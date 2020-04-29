@@ -1,5 +1,5 @@
 <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="arrow-left" style="cursor:pointer" onclick="closeNav()"></a>
+    <a href="javascript:void(0)" class="arrow arrow-left" s onclick="closeNav()"></a>
     <li class="nav-item"></li>
     <li class="nav-item"></li>
     <li class="nav-item"></li>
@@ -20,14 +20,22 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
-                <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">Favorite artefacts</a>
+            <a class="dropdown-item text-headline" href="{{ url('/') }}">home</a>
 
-                <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">Favorite metadata</a>
+            <a class="dropdown-item text-headline" href="{{ url('/categories') }}">topics</a>
+
+            <a class="dropdown-item text-headline" href="{{ url('/artefact') }}">books</a>
+
+
+
+                <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">notes</a>
+
+                <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">charts</a>
 
                 <a class="dropdown-item text-headline" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('logout') }}
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -39,11 +47,18 @@
 
 </div>
 
-<span class="arrow-right" style="cursor:pointer" onclick="openNav()"></span>
+<span class="arrow arrow-right" onclick="openNav()"></span>
 
 <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "50vh";
+        var x = window.matchMedia("(max-width: 540px)")
+        if(x.matches){
+            document.getElementById("mySidenav").style.width = "50vw";
+        }
+        else{
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
     }
 
     function closeNav() {
