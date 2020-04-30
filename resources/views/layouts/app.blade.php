@@ -13,25 +13,19 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 </head>
 <body>
-    <div id="app">
+
         @if(!Request::is('/'))
             @include('inc/sidebar')
         @endif
 
-        <main class="py">
-            <div class="custom-container">
-                <div class="content-area">
+
                     @yield('content')
-                </div>
-            </div>
-        </main>
-    </div>
+
 </body>
 </html>

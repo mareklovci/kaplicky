@@ -1,4 +1,4 @@
-<div id="mySidenav" class="sidenav">
+<div id="sidebar" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" s onclick="closeNav()"></a>
     <li class="nav-item"> &#160;</li>
     <li class="nav-item"> &#160;</li>
@@ -15,11 +15,6 @@
         @endif
         @else
         <li class="nav-item dropdown">
-           {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
-
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
             <a class="dropdown-item text-headline" href="{{ url('/') }}">home</a>
 
             <a class="dropdown-item text-headline" href="{{ url('/categories') }}">topics</a>
@@ -34,6 +29,8 @@
 
             <a class="dropdown-item text-headline" href="{{ url('/charts') }}">charts</a>
 
+
+
                 <a class="dropdown-item text-headline" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -43,27 +40,30 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-            {{-- </div>--}}
         </li>
         @endguest
 
 </div>
 
 <span class="arrow arrow-right" onclick="openNav()"></span>
+{{--<label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>--}}
+{{--<a class="navbar-brand kaplicky" href="{{ url('/') }}">
+    {{  __('kaplicky') }}
+</a>--}}
 
 <script>
     function openNav() {
         var x = window.matchMedia("(max-width: 540px)")
         if(x.matches){
-            document.getElementById("mySidenav").style.width = "50vw";
+            document.getElementById("sidebar").style.width = "50vw";
         }
         else{
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("sidebar").style.width = "250px";
         }
 
     }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("sidebar").style.width = "0";
     }
 </script>

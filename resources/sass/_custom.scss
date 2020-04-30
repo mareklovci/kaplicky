@@ -59,11 +59,6 @@ body {
             bottom: auto;
             transform: translateY(-50%);
             background-color:  rgba(239, 218, 179, 0.5);
-
-            p {
-                font-size: 8pt;
-                color: $theme-color-five;
-            }
         }
     }
 
@@ -138,13 +133,13 @@ body {
 
         .col-form-label{
             text-align: left;
-            padding-top: 0px;
-            padding-bottom: 0px;
+            padding-top: 0;
+            padding-bottom: 0;
         }
         .form-control{
-            padding: 0px;
+            padding: 0;
             height: 17pt;
-            border-radius: 0%;
+            border-radius: 0;
         }
     }
 
@@ -152,7 +147,6 @@ body {
     	background-color: $theme-color-five;
     	font-weight: $font-weight-one;
     	color: $theme-color-four;
-
 	}
 
 	.form-control {
@@ -188,18 +182,6 @@ body {
         }
     }
 
-    /*.form-control:focus {
-        background-color: $theme-color-five;
-        margin-top: -1px;
-        border-top-color: $theme-color-five;
-        border-left-color: $theme-color-five;
-        border-right-color: $theme-color-five;
-        border-bottom-color: 0.5pt $theme-color-one;
-        color: $theme-color-one;
-        box-shadow: none;
-        font-size: 8pt;
-    }*/
-
     .button-square {
         font-size: 8pt;
         background-color: $theme-color-five;
@@ -227,48 +209,29 @@ body {
         display: inline-block;
         top: -0.35433rem;
         left: -0.2rem;
-
     }
 
     .pin-left {
         border-left: .5pt solid $theme-color-four;
         display: inline-block;
-        //margin: 50px;
-        //margin-bottom: 0pt;
         margin: 10rem 50px 0px -5rem;
-        //min-height: 75vh;
-        //height: auto;
         position: fixed;
         top: 0;
         bottom: 0;
         text-align: left;
         width: 100%;
         .text{
-            //padding-top: 5rem;//0.35433rem;
-            //margin-top: 5rem;
-            //top: 5rem;
             margin-left: 0.5rem;
         }
         p{
-            margin-top: 0pt;
-            margin-bottom: 0pt;
+            margin-top: 0;
+            margin-bottom: 0;
         }
     }
 
     li{
         list-style-type: none;
     }
-
-    /*footer {
-        background: $theme-color-four;
-        color: $theme-color-five;
-        display: block;
-        height: 50px;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }*/
 
     .button-image {
         background-color: transparent;
@@ -364,7 +327,7 @@ body {
         }
     }
 
-    .content {
+    /*.content {
         position: relative;
 
         //Circle style button
@@ -393,7 +356,7 @@ body {
                 color:$theme-color-five;
             }
         }
-    }
+    }*/
 
     //CATEGORIES - TILES
     .btn.btn-dark.cat-tile
@@ -436,7 +399,6 @@ body {
         right: 40%;
         display: none;
     }
-
 }
 
 .arrow{
@@ -466,7 +428,7 @@ body {
 
 .sidenav {
     height: 100%;
-    width: 0;
+    //width: 0;
     width: 250px;
     position: fixed;
     z-index: 1;
@@ -490,18 +452,10 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-    //.sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
 
-@media (max-width: 990px) {
-    body {
-        /*.pin-left {
-            margin-left: -15rem;
-            margin-top: 11rem;
-        }*/
-    }
-}
+@media (max-width: 990px) {}//Ponecháno pro případ, že se bude měnit login
 
 @media (max-width: 770px) {
     body {
@@ -527,7 +481,7 @@ body {
 
     }
 
-    .btn-circle.rounded-circle.btn-sm
+    /*.btn-circle.rounded-circle.btn-sm
     {
         width: 90px;
         height: 90px;
@@ -543,7 +497,7 @@ body {
     {
         width: 180px;
         height: 180px;
-    }
+    }*/
 
     body{
         .carousel {
