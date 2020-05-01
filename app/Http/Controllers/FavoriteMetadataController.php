@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class FavoriteMetadataController extends Controller
 {
+    const ORDER_COLUMN = 'page';
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -16,7 +18,11 @@ class FavoriteMetadataController extends Controller
 
     public function index()
     {
-        $metadata = User::find(Auth::id())->likesMetadata()->get();
+        $metadata = User::find(Auth::id())->likesMetadata()->orderBy(self::ORDER_COLUMN)->get();
+        foreach($metadata as $item)
+        {
+            $item['artefact'] = Metadata::find($item->id)->artefact()->first();
+        }
 
         return view('favmetadata.index', ['metadata' => $metadata]);
     }
