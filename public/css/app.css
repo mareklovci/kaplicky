@@ -6383,7 +6383,7 @@ a.close.disabled {
   text-align: left;
   text-align: start;
   text-decoration: none;
-  text-shadow: none;    
+  text-shadow: none;
   text-transform: none;
   letter-spacing: normal;
   word-break: normal;
@@ -11148,61 +11148,72 @@ body .button-image:before {
   background-repeat: no-repeat;
 }
 
-body .artefacts-area h5 {
+body .artefacts-area h5,
+body .artefact-area h5 {
   color: #ddd1b9;
   font-weight: 600;
   line-height: 20pt;
   font-size: 21pt;
 }
 
-body .artefacts-area h6 {
+body .artefacts-area h6,
+body .artefact-area h6 {
   color: #ddd1b9;
   font-size: 14pt;
   font-weight: 400;
 }
 
-body .artefacts-area img {
+body .artefacts-area img,
+body .artefact-area img {
   border: transparent;
   border-radius: 1px;
 }
 
-body .artefacts-area .card {
+body .artefacts-area .card,
+body .artefact-area .card {
   margin: 10px;
   border: none !important;
 }
 
-body .artefacts-area .left_panel_info {
+body .artefacts-area .left_panel_info,
+body .artefact-area .left_panel_info {
   margin-top: 15px;
   margin-left: -10px;
   max-width: 250px;
 }
 
-body .artefacts-area .right_panel_info {
+body .artefacts-area .right_panel_info,
+body .artefact-area .right_panel_info {
   margin-top: 15px;
   margin-right: -15px;
 }
 
-body .artefacts-area .card-cus-bottom {
+body .artefacts-area .card-cus-bottom,
+body .artefact-area .card-cus-bottom {
   background-color: #272727;
 }
 
-body .artefacts-area .inter_info:before {
+body .artefacts-area .inter_info:before,
+body .artefact-area .inter_info:before {
   background-image: url(/images/Button_Info_50.png?cf6e509b9294d4138459f1846c7effdf);
   width: 60px;
   height: 60px;
 }
 
-body .artefacts-area .inter_like {
+body .artefacts-area .inter_like,
+body .artefact-area .inter_like {
   display: none;
 }
 
-body .artefacts-area .inter_like:before {
+body .artefacts-area .inter_like:before,
+body .artefact-area .inter_like:before {
   background-image: url(/images/Hearth_Empty_50.png?d969cd4d381634ef975e503608b3ab48);
   width: 60px;
   height: 60px;
 }
 
-body .artefacts-area .inter_like_filled:before {
+body .artefacts-area .inter_like_filled:before,
+body .artefact-area .inter_like_filled:before {
   background-image: url(/images/Hearth_Filled_50.png?77bb26c3aba063c00aba1a2f07059d71);
   width: 60px;
   height: 60px;
@@ -11210,7 +11221,10 @@ body .artefacts-area .inter_like_filled:before {
 
 body .artefacts-area .inter_info,
 body .artefacts-area .inter_like,
-body .artefacts-area .inter_like_filled {
+body .artefacts-area .inter_like_filled,
+body .artefact-area .inter_info,
+body .artefact-area .inter_like,
+body .artefact-area .inter_like_filled {
   padding: 0;
 }
 
@@ -11222,11 +11236,67 @@ body .artefacts-area .inter_like:active,
 body .artefacts-area .inter_like:hover,
 body .artefacts-area .inter_like_filled:focus,
 body .artefacts-area .inter_like_filled:active,
-body .artefacts-area .inter_like_filled:hover {
+body .artefacts-area .inter_like_filled:hover,
+body .artefact-area .inter_info:focus,
+body .artefact-area .inter_info:active,
+body .artefact-area .inter_info:hover,
+body .artefact-area .inter_like:focus,
+body .artefact-area .inter_like:active,
+body .artefact-area .inter_like:hover,
+body .artefact-area .inter_like_filled:focus,
+body .artefact-area .inter_like_filled:active,
+body .artefact-area .inter_like_filled:hover {
   background-color: transparent !important;
   border-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+body .artefact-area .card-cus-bottom .left_panel_info,
+body .artefact-area .card-cus-bottom .right_panel_info {
+  margin: 0.9375rem 0 0 0;
+}
+
+body .artefact-area .card-cus-bottom .right_panel_info .float-right {
+  margin-right: -0.35rem;
+}
+
+body .artefact-area .artefact-name {
+  font-weight: 600;
+  font-size: 8pt;
+  line-height: 10pt;
+  margin-bottom: 0;
+}
+
+body .artefact-area .artefact-author {
+  font-size: 7pt;
+  line-height: 8pt;
+}
+
+body .artefact-area .inter_like {
+  display: block;
+}
+
+body .artefact-area .inter_like:before {
+  background-image: url(/images/Hearth_Empty_Small.png?252b4c7a69920aa18f2fc75a93aaa90a);
+  width: 25px;
+  height: 19px;
+}
+
+body .artefact-area .inter_info {
+  padding-right: 1rem;
+}
+
+body .artefact-area .inter_info:before {
+  background-image: url(/images/Button_Info_Small.png?9bc35ac07e9ec5a6b75d9af964e80512);
+  width: 29px;
+  height: 29px;
+}
+
+body .artefact-area .artefact-likes {
+  font-weight: 600;
+  font-size: 5pt;
+  padding-right: 0.25rem;
 }
 
 body .metadata-area h2 {
@@ -11368,6 +11438,10 @@ body .content .btn-categories:active {
   color: #272727;
 }
 
+body .cat-col-md-2 {
+  margin: 2%;
+}
+
 body .btn.btn-dark.cat-tile {
   border-color: #ead4b0;
   border-radius: 0;
@@ -11380,9 +11454,8 @@ body .btn.btn-dark.cat-tile {
   box-shadow: none !important;
   font-size: 8mm;
   word-wrap: break-word;
-  margin: 10pt 32pt;
   height: 40mm;
-  width: 86%;
+  width: 100%;
 }
 
 body .btn.btn-dark.cat-tile:active,
@@ -11394,11 +11467,8 @@ body .btn.btn-dark.cat-tile:focus {
   color: #272727;
 }
 
-body .btn.button-square.cat-enter-butt {
-  position: fixed;
-  bottom: 8%;
-  right: 40%;
-  display: none;
+body .category-h2 {
+  color: #ead4b0;
 }
 
 .arrow {
@@ -11479,7 +11549,6 @@ body .btn.button-square.cat-enter-butt {
   .head-title.text-center h1 {
     font-size: 23pt;
     padding-top: 50pt;
-    margin-left: 36pt;
     white-space: nowrap;
   }
 
