@@ -287,7 +287,7 @@ body {
         }
     }
 
-    .artefacts-area {
+    .artefacts-area, .artefact-area {
 
         h5 {
             color: $theme-color-two;
@@ -361,6 +361,59 @@ body {
                 outline: none !important;
                 box-shadow: none !important;
             };
+        }
+    }
+
+    .artefact-area {
+
+        .card-cus-bottom {
+            .left_panel_info, .right_panel_info {
+                margin: 0.9375rem 0 0 0;
+            }
+
+            .right_panel_info {
+                .float-right {
+                    margin-right: -0.35rem;
+                }
+            }
+        }
+
+        .artefact-name {
+            font-weight: $font-weight-two;
+            font-size: 8pt;
+            line-height: 10pt;
+            margin-bottom: 0;
+        }
+
+        .artefact-author {
+            font-size: 7pt;
+            line-height: 8pt;
+        }
+
+        .inter_like {
+            display: block;
+
+            &:before {
+                background-image: url(../images/interface/Hearth_Empty_Small.png);
+                width: 25px;
+                height: 19px;
+            }
+        }
+
+        .inter_info {
+
+            padding-right: 1rem;
+            &:before {
+                background-image: url(../images/interface/Button_Info_Small.png);
+                width: 29px;
+                height: 29px;
+            }
+        }
+
+        .artefact-likes {
+            font-weight: $font-weight-two;
+            font-size: 5pt;
+            padding-right: 0.25rem;
         }
     }
 

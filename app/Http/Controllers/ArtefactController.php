@@ -60,6 +60,7 @@ class ArtefactController extends Controller
     public function view($id)
     {
         $artefact = Artefact::find($id);
+        $artefact['likes'] = Artefact::find($id)->users()->count();
 
         return view('artefact.view', ['artefact' => $artefact]);
     }
