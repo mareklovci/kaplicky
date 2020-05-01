@@ -11229,26 +11229,28 @@ body .artefacts-area .inter_like_filled:hover {
   box-shadow: none !important;
 }
 
-body .metadata-area {
-  color: #ddd1b9;
-}
-
 body .metadata-area h2 {
   font-weight: 600;
   font-size: 12pt;
 }
 
-body .metadata-area .metadata {
-  position: relative;
-  display: flex;
-  align-items: baseline;
-  margin-left: 50vw;
+body .metadata-area .arrow-down {
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  margin: 2rem;
+  width: 0;
+  height: 0;
+  border-left: 0.59055rem solid transparent;
+  border-right: 0.59055rem solid transparent;
+  border-top: 0.59055rem solid #ddd1b9;
 }
 
 body .metadata-area .pin-horizontal {
-  border-bottom: 0.5pt solid #ddd1b9;
+  color: #ddd1b9;
+  border-bottom: 0.042rem solid #ddd1b9;
   display: inline-block;
-  margin: 50px 50px 0 0;
+  margin: 3.35rem 3.125rem 0 0;
 }
 
 body .metadata-area .pin-horizontal:before {
@@ -11263,16 +11265,44 @@ body .metadata-area .pin-horizontal:before {
   left: 50vw;
 }
 
-body .metadata-area .pin-horizontal .arrow-down {
+body .metadata-area .pin-horizontal .metadata {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+
+body .metadata-area .pin-horizontal .metadata span {
+  font-weight: 600;
+}
+
+body .metadata-area .pin-horizontal .metadata .arrow-down {
+  position: relative;
+  top: 0;
+  right: 0;
   width: 0;
   height: 0;
-  border-left: 0.2rem solid transparent;
-  border-right: 0.2rem solid transparent;
-  border-top: 0.2rem solid #ddd1b9;
-  margin-left: 0.5rem;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #ddd1b9;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+body .metadata-area .white-pin {
+  color: #ffffff;
+  border-bottom: 0.042rem solid #ffffff;
+}
+
+body .metadata-area .white-pin:before {
+  content: "";
+  background-color: #ffffff;
+}
+
+body .metadata-area .white-pin .metadata .arrow-down {
+  border-top: 0.25rem solid #ffffff;
 }
 
 body .metadata-area .metadata-text {
+  font-size: 8pt;
   color: #ffffff;
   padding-top: 10px;
   padding-left: 25px;
@@ -11285,13 +11315,28 @@ body .metadata-area .metadata-text .artefact-info {
 }
 
 body .metadata-area .metadata-text .artefact-info .artefact-name {
-  font-family: 600;
+  font-weight: 600;
   font-size: 8pt;
 }
 
 body .metadata-area .metadata-text .artefact-info .artefact-author {
-  font-family: 400;
+  font-weight: 400;
   font-size: 7pt;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:before {
+  background-image: url(/images/Hearth_Filled_50.png?77bb26c3aba063c00aba1a2f07059d71);
+  width: 50px;
+  height: 50px;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:hover,
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:focus,
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 body .content {

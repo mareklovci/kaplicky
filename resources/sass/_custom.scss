@@ -364,26 +364,32 @@ body {
         }
     }
 
+    // Metadata area
     .metadata-area {
-
-        color: $theme-color-two;
 
         h2 {
             font-weight: $font-weight-two;
             font-size: 12pt;
         }
 
-        .metadata {
-            position: relative;
-            display: flex;
-            align-items: baseline;
-            margin-left: 50vw;
+        .arrow-down {
+            position: absolute;
+            top: 0.25rem;
+            right: 0;
+            margin: 2rem;
+            width: 0;
+            height: 0;
+            border-left: 0.59055rem solid transparent;
+            border-right: 0.59055rem solid transparent;
+            border-top: 0.59055rem solid $theme-color-two;
         }
 
         .pin-horizontal {
-            border-bottom: .5pt solid $theme-color-two;
+            color: $theme-color-two;
+            border-bottom: .042rem solid $theme-color-two;
             display: inline-block;
-            margin: 50px 50px 0 0;
+            margin: 3.35rem 3.125rem 0 0;
+
             &:before {
                 content: '';
                 background-color: $theme-color-two;
@@ -396,19 +402,47 @@ body {
                 left: 50vw;
             }
 
-            .arrow-down {
-                width: 0;
-                height: 0;
-                border-left: 0.2rem solid transparent;
-                border-right: 0.2rem solid transparent;
-                border-top: 0.2rem solid $theme-color-two;
-                margin-left: 0.5rem;
+            .metadata {
+                position: relative;
+                display: flex;
+                align-items: baseline;
+
+                span {
+                    font-weight: $font-weight-two;
+                }
+
+                .arrow-down {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 0;
+                    border-left: 0.25rem solid transparent;
+                    border-right: 0.25rem solid transparent;
+                    border-top: 0.25rem solid $theme-color-two;
+                    margin: 0 0.5rem 0 0.5rem;
+                }
+            }
+        }
+
+        .white-pin {
+            color: $theme-color-one;
+            border-bottom: .042rem solid $theme-color-one;
+
+            &:before {
+                content: '';
+                background-color: $theme-color-one;
             }
 
-
+            .metadata {
+                .arrow-down {
+                    border-top: 0.25rem solid $theme-color-one;
+                }
+            }
         }
 
         .metadata-text {
+            font-size: 8pt;
             color: $theme-color-one;
             padding-top: 10px;
             padding-left: 25px;
@@ -419,13 +453,29 @@ body {
                 margin-top: 10px;
 
                 .artefact-name {
-                    font-family: $font-weight-two;
+                    font-weight: $font-weight-two;
                     font-size: 8pt;
                 }
 
                 .artefact-author {
-                    font-family: $font-weight-one;
+                    font-weight: $font-weight-one;
                     font-size: 7pt;
+                }
+
+                .inter_like_filled {
+
+                    &:before {
+                        background-image : url(../images/interface/Hearth_Filled_50.png);
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
                 }
             }
         }

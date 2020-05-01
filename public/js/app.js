@@ -37052,7 +37052,17 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Center metadata page text
+
+
+$(document).ready(function () {
+  var display_width = $(window).width();
+  $(".metadata").each(function () {
+    var metadata = $(this);
+    var width = metadata.width();
+    metadata.css("margin-left", display_width / 2 - width);
+  });
+});
 
 /***/ }),
 
