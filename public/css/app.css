@@ -6383,7 +6383,7 @@ a.close.disabled {
   text-align: left;
   text-align: start;
   text-decoration: none;
-  text-shadow: none;
+  text-shadow: none;    
   text-transform: none;
   letter-spacing: normal;
   word-break: normal;
@@ -11235,7 +11235,7 @@ body .metadata-area h2 {
 }
 
 body .metadata-area .arrow-down {
-  position: absolute;
+  position: fixed;
   top: 0.25rem;
   right: 0;
   margin: 2rem;
