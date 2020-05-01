@@ -7,43 +7,25 @@
         {{--<p><?php dd($categories); ?></p>--}}
         <div class="cat-main-div" onclick="resetEnter()">
             <div class="head-title text-center">
-                <h1>choose a few topics</h1>
+                <h1>choose a topic</h1>
             </div>
-            <div class="row">
-                {{--@for($k = 1; $k <= count($categories);$k++)--}}
-                @for($k = 0; $k < $count;$k++)
-                    <div class="col-md-2">
-                        <button class="btn btn-dark cat-tile" onclick="showEnterButton({{$categoryNames[$k]->id}})">
-                            {{$categoryNames[$k]->nameCZ}}
-                        </button>
+            {{--@for($k = 1; $k <= count($categories);$k++)--}}
+            @for($k = 0; $k < $count;$k++)
+                @if($k % 6 == 0)
+                    <div class="row">
+                @endif
+                    <div class="col-md-2 cat-col-md-2">
+                        <a href="{{ url('/category/' . $categoryNames[$k]->id) }}">
+                            <button class="btn btn-dark cat-tile">
+                                {{$categoryNames[$k]->nameCZ}}
+                            </button>
+                        </a>
                     </div>
-                @endfor
-            </div>
-            <div class="carousel-button">
-                <a class="btn button-square cat-enter-butt" role="button">enter</a>
-            </div>
+                @if($k % 6 == 5 || $k + 1 == $count)
+                    </div>
+                @endif
+            @endfor
         </div>
-        <script>
-            var catId = -1;
-            var show = 0;
-
-            function showEnterButton(id)
-            {
-                catId = id;
-                show = 1;
-                $(".cat-enter-butt").css('display', "inline");
-            }
-
-            function resetEnter()
-            {
-                if(show == 0)
-                {
-                    catId = -1;
-                    $(".cat-enter-butt").css('display', "none");
-                }
-                show = 0;
-            }
-        </script>
     @else
         <ul class="list-group">
             <li class="list-group-item">
