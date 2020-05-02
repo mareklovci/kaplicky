@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);@import url(https://db.onlinewebfonts.com/c/275de2221d9f0c4c9257d17f5a1e4006?family=Avenir+Black);@import url(https://db.onlinewebfonts.com/c/1a045963159927274c92b0444fb83c17?family=Avenir);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6376,7 +6376,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6501,7 +6501,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10882,33 +10882,36 @@ a.text-dark:focus {
   }
 }
 
-@font-face {
-  font-family: "Avenir Black LINK";
-  src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot");
-  src: url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.woff") format("woff"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/275de2221d9f0c4c9257d17f5a1e4006.svg#Avenir Black") format("svg");
-}
-
-@font-face {
-  font-family: "Avenir Roman LINK";
-  src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot");
-  src: url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.woff") format("woff"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1a045963159927274c92b0444fb83c17.svg#Avenir") format("svg");
-}
-
-@font-face {
-  font-family: "Avenir Medium LINK";
-  src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot");
-  src: url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0983e84d4a1963e075b5ae8ca12e2a4f.svg#Avenir Medium") format("svg");
-}
-
 body {
   background-color: #272727;
+  font-family: Nunito;
+  /*.form-control:focus {
+      background-color: $theme-color-five;
+      margin-top: -1px;
+      border-top-color: $theme-color-five;
+      border-left-color: $theme-color-five;
+      border-right-color: $theme-color-five;
+      border-bottom-color: 0.5pt $theme-color-one;
+      color: $theme-color-one;
+      box-shadow: none;
+      font-size: 8pt;
+  }*/
+  /*footer {
+      background: $theme-color-four;
+      color: $theme-color-five;
+      display: block;
+      height: 50px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+  }*/
 }
 
 body .head-title h1 {
   color: #ffffff;
-  font-family: Avenir;
+  font-weight: 400;
   font-size: 60pt;
-  font-weight: bold;
   letter-spacing: 3px;
 }
 
@@ -10952,13 +10955,6 @@ body .carousel .carousel-caption {
   bottom: auto;
   transform: translateY(-50%);
   background-color: rgba(239, 218, 179, 0.5);
-  /*h2 {
-      font-family: Avenir Black;
-      font-size: 11pt;
-      letter-spacing: 3pt;
-      color: $white;
-
-  }*/
 }
 
 body .carousel .carousel-caption p {
@@ -10967,44 +10963,56 @@ body .carousel .carousel-caption p {
 }
 
 body .text {
-  font-family: Avenir Roman;
+  font-weight: 400;
   font-size: 8pt;
   line-height: 9pt;
 }
 
 body .text2 {
-  font-family: Avenir Medium;
+  font-weight: 600;
   font-size: 8pt;
 }
 
 body .kaplicky {
   color: #ffffff;
   font-size: 11pt;
-  font-family: Avenir Black;
+  font-weight: 900;
   letter-spacing: 3pt;
 }
 
 body .text-author {
-  font-family: Avenir Roman;
+  font-weight: 400;
   font-size: 7pt;
   color: #ead4b0;
 }
 
 body .text-number {
-  font-family: Avenir Medium;
+  font-weight: 600;
   font-size: 5pt;
   color: #ead4b0;
 }
 
 body .text-headline {
-  font-family: Avenir Medium;
+  font-weight: 600;
   font-size: 12pt;
   color: #ead4b0;
 }
 
 body .text-page {
-  font-family: Avenir Medium;
+  font-weight: 600;
   font-size: 7pt;
+}
+
+body .black {
+  color: #272727;
+}
+
+body .white {
+  color: #ffffff;
+}
+
+body .colored {
+  color: #ead4b0;
 }
 
 body .auth .card {
@@ -11022,11 +11030,12 @@ body .auth .col-form-label {
 body .auth .form-control {
   padding: 0px;
   height: 17pt;
+  border-radius: 0%;
 }
 
 body .card-body {
   background-color: #272727;
-  font-family: Avenir Roman;
+  font-weight: 400;
   color: #ead4b0;
 }
 
@@ -11042,7 +11051,9 @@ body .form-control {
   font-size: 8pt;
 }
 
-body .form-control:focus {
+body .form-control:active,
+body .form-control:focus,
+body .form-control:visited {
   background-color: #272727;
   margin-top: -1px;
   border-top-color: #272727;
@@ -11051,7 +11062,19 @@ body .form-control:focus {
   border-bottom-color: 0.5pt #ffffff;
   color: #ffffff;
   box-shadow: none;
-  font-size: 8pt;
+}
+
+body .form-control.is-invalid {
+  box-shadow: none;
+  border-color: #ead4b0;
+  background-image: none;
+}
+
+body .form-control.is-invalid:active,
+body .form-control.is-invalid:focus,
+body .form-control.is-invalid:visited {
+  box-shadow: none;
+  border-color: #ead4b0;
 }
 
 body .button-square {
@@ -11062,7 +11085,7 @@ body .button-square {
   border-radius: 0;
   width: 6.5rem;
   height: 2rem;
-  font-family: Avenir Roman;
+  font-weight: 400;
 }
 
 body .button-square:active,
@@ -11070,6 +11093,42 @@ body .button-square:focus,
 body .button-square:visited {
   outline: none;
   box-shadow: none;
+}
+
+body .pin-left:before {
+  content: "";
+  position: relative;
+  height: 0.35433rem;
+  width: 0.35433rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  top: -0.35433rem;
+  left: -0.2rem;
+}
+
+body .pin-left {
+  border-left: 0.5pt solid #ead4b0;
+  display: inline-block;
+  margin: 10rem 50px 0px -5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  text-align: left;
+  width: 100%;
+}
+
+body .pin-left .text {
+  margin-left: 0.5rem;
+}
+
+body .pin-left p {
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+
+body li {
+  list-style-type: none;
 }
 
 body .button-image {
@@ -11089,62 +11148,72 @@ body .button-image:before {
   background-repeat: no-repeat;
 }
 
-body .artefacts-area h5 {
+body .artefacts-area h5,
+body .artefact-area h5 {
   color: #ddd1b9;
-  font-family: "Avenir Medium LINK";
+  font-weight: 600;
   line-height: 20pt;
   font-size: 21pt;
 }
 
-body .artefacts-area h6 {
+body .artefacts-area h6,
+body .artefact-area h6 {
   color: #ddd1b9;
   font-size: 14pt;
-  font-weight: lighter;
-  font-family: "Avenir Roman LINK";
+  font-weight: 400;
 }
 
-body .artefacts-area img {
+body .artefacts-area img,
+body .artefact-area img {
   border: transparent;
   border-radius: 1px;
 }
 
-body .artefacts-area .card {
+body .artefacts-area .card,
+body .artefact-area .card {
   margin: 10px;
   border: none !important;
 }
 
-body .artefacts-area .left_panel_info {
+body .artefacts-area .left_panel_info,
+body .artefact-area .left_panel_info {
   margin-top: 15px;
   margin-left: -10px;
   max-width: 250px;
 }
 
-body .artefacts-area .right_panel_info {
+body .artefacts-area .right_panel_info,
+body .artefact-area .right_panel_info {
   margin-top: 15px;
   margin-right: -15px;
 }
 
-body .artefacts-area .card-cus-bottom {
+body .artefacts-area .card-cus-bottom,
+body .artefact-area .card-cus-bottom {
   background-color: #272727;
 }
 
-body .artefacts-area .inter_info:before {
+body .artefacts-area .inter_info:before,
+body .artefact-area .inter_info:before {
   background-image: url(/images/Button_Info_50.png?cf6e509b9294d4138459f1846c7effdf);
   width: 60px;
   height: 60px;
 }
 
-body .artefacts-area .inter_like {
+body .artefacts-area .inter_like,
+body .artefact-area .inter_like {
   display: none;
 }
 
-body .artefacts-area .inter_like:before {
+body .artefacts-area .inter_like:before,
+body .artefact-area .inter_like:before {
   background-image: url(/images/Hearth_Empty_50.png?d969cd4d381634ef975e503608b3ab48);
   width: 60px;
   height: 60px;
 }
 
-body .artefacts-area .inter_like_filled:before {
+body .artefacts-area .inter_like_filled:before,
+body .artefact-area .inter_like_filled:before {
   background-image: url(/images/Hearth_Filled_50.png?77bb26c3aba063c00aba1a2f07059d71);
   width: 60px;
   height: 60px;
@@ -11152,7 +11221,10 @@ body .artefacts-area .inter_like_filled:before {
 
 body .artefacts-area .inter_info,
 body .artefacts-area .inter_like,
-body .artefacts-area .inter_like_filled {
+body .artefacts-area .inter_like_filled,
+body .artefact-area .inter_info,
+body .artefact-area .inter_like,
+body .artefact-area .inter_like_filled {
   padding: 0;
 }
 
@@ -11164,30 +11236,173 @@ body .artefacts-area .inter_like:active,
 body .artefacts-area .inter_like:hover,
 body .artefacts-area .inter_like_filled:focus,
 body .artefacts-area .inter_like_filled:active,
-body .artefacts-area .inter_like_filled:hover {
+body .artefacts-area .inter_like_filled:hover,
+body .artefact-area .inter_info:focus,
+body .artefact-area .inter_info:active,
+body .artefact-area .inter_info:hover,
+body .artefact-area .inter_like:focus,
+body .artefact-area .inter_like:active,
+body .artefact-area .inter_like:hover,
+body .artefact-area .inter_like_filled:focus,
+body .artefact-area .inter_like_filled:active,
+body .artefact-area .inter_like_filled:hover {
   background-color: transparent !important;
   border-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
-body .monButton:before {
-  background-image: url(/images/Button_Arrow_Small.png?a8cfe4b884bf46d3f59113e2a5fb1c4c);
+body .artefact-area .card-cus-bottom .left_panel_info,
+body .artefact-area .card-cus-bottom .right_panel_info {
+  margin: 0.9375rem 0 0 0;
 }
 
-body .monButton:hover {
-  background-color: transparent;
-  border-color: #ead4b0;
+body .artefact-area .card-cus-bottom .right_panel_info .float-right {
+  margin-right: -0.35rem;
 }
 
-body .monButton:focus {
-  background-color: transparent;
-  border-color: #ead4b0;
-  outline: none !important;
-  box-shadow: none !important;
+body .artefact-area .artefact-name {
+  font-weight: 600;
+  font-size: 8pt;
+  line-height: 10pt;
+  margin-bottom: 0;
 }
 
-body .monButton:active {
+body .artefact-area .artefact-author {
+  font-size: 7pt;
+  line-height: 8pt;
+}
+
+body .artefact-area .inter_like {
+  display: block;
+}
+
+body .artefact-area .inter_like:before {
+  background-image: url(/images/Hearth_Empty_Small.png?252b4c7a69920aa18f2fc75a93aaa90a);
+  width: 25px;
+  height: 19px;
+}
+
+body .artefact-area .inter_info {
+  padding-right: 1rem;
+}
+
+body .artefact-area .inter_info:before {
+  background-image: url(/images/Button_Info_Small.png?9bc35ac07e9ec5a6b75d9af964e80512);
+  width: 29px;
+  height: 29px;
+}
+
+body .artefact-area .artefact-likes {
+  font-weight: 600;
+  font-size: 5pt;
+  padding-right: 0.25rem;
+}
+
+body .metadata-area h2 {
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+body .metadata-area .arrow-down {
+  position: fixed;
+  top: 0.25rem;
+  right: 0;
+  margin: 2rem;
+  width: 0;
+  height: 0;
+  border-left: 0.59055rem solid transparent;
+  border-right: 0.59055rem solid transparent;
+  border-top: 0.59055rem solid #ddd1b9;
+}
+
+body .metadata-area .pin-horizontal {
+  color: #ddd1b9;
+  border-bottom: 0.042rem solid #ddd1b9;
+  display: inline-block;
+  margin: 3.35rem 3.125rem 0 0;
+}
+
+body .metadata-area .pin-horizontal:before {
+  content: "";
+  background-color: #ddd1b9;
+  position: relative;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  top: 1.5rem;
+  left: 50vw;
+}
+
+body .metadata-area .pin-horizontal .metadata {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+
+body .metadata-area .pin-horizontal .metadata span {
+  font-weight: 600;
+}
+
+body .metadata-area .pin-horizontal .metadata .arrow-down {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #ddd1b9;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+body .metadata-area .white-pin {
+  color: #ffffff;
+  border-bottom: 0.042rem solid #ffffff;
+}
+
+body .metadata-area .white-pin:before {
+  content: "";
+  background-color: #ffffff;
+}
+
+body .metadata-area .white-pin .metadata .arrow-down {
+  border-top: 0.25rem solid #ffffff;
+}
+
+body .metadata-area .metadata-text {
+  font-size: 8pt;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+body .metadata-area .metadata-text .artefact-info {
+  color: #ddd1b9;
+  margin-top: 10px;
+}
+
+body .metadata-area .metadata-text .artefact-info .artefact-name {
+  font-weight: 600;
+  font-size: 8pt;
+}
+
+body .metadata-area .metadata-text .artefact-info .artefact-author {
+  font-weight: 400;
+  font-size: 7pt;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:before {
+  background-image: url(/images/Hearth_Filled_50.png?77bb26c3aba063c00aba1a2f07059d71);
+  width: 50px;
+  height: 50px;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:hover,
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:focus,
+body .metadata-area .metadata-text .artefact-info .inter_like_filled:active {
   background-color: transparent !important;
   border-color: transparent !important;
   outline: none !important;
@@ -11212,7 +11427,7 @@ body .content .btn-categories {
   color: #ead4b0;
   outline: none !important;
   box-shadow: none !important;
-  font-family: Avenir Medium;
+  font-weight: 600;
 }
 
 body .content .btn-categories:active {
@@ -11223,25 +11438,118 @@ body .content .btn-categories:active {
   color: #272727;
 }
 
-body .content .btn-sm,
-body .content .btn-group-sm > .btn {
-  width: 120px;
-  height: 120px;
+body .cat-col-md-2 {
+  margin: 2%;
 }
 
-body .content .btn-dm {
-  width: 240px;
-  height: 240px;
+body .btn.btn-dark.cat-tile {
+  border-color: #ead4b0;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 2px;
+  color: #ead4b0;
+  background-color: #272727;
+  text-align: center;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 8mm;
+  word-wrap: break-word;
+  height: 40mm;
+  width: 100%;
 }
 
-body .content .btn-xl {
-  width: 360px;
-  height: 360px;
+body .btn.btn-dark.cat-tile:active,
+body .btn.btn-dark.cat-tile:focus {
+  background-color: #efdab3;
+  border-color: #ead4b0;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #272727;
+}
+
+body .category-h2 {
+  color: #ead4b0;
+}
+
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 2rem;
+  cursor: pointer;
+  border: 0.59055rem solid transparent;
+}
+
+.arrow-left {
+  margin-left: 80%;
+  border-right: 0.59055rem solid #272727;
+  background-color: #ead4b0 !important;
+}
+
+.arrow-right {
+  border-left: 0.59055rem solid #ead4b0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ead4b0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  text-decoration: none;
+  color: #272727;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ead4b0;
+  background-color: #ffffff;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 990px) {
+  body {
+    /*.pin-left {
+        margin-left: -15rem;
+        margin-top: 11rem;
+    }*/
+  }
+}
+
+@media (max-width: 770px) {
+  body .pin-left {
+    margin-left: -33vw;
+    margin-top: 12rem;
+  }
 }
 
 @media only screen and (max-width: 540px) {
+  .sidenav {
+    width: 0;
+  }
+
   .head-title.text-center h1 {
-    font-size: 45pt;
+    font-size: 23pt;
+    padding-top: 50pt;
+    white-space: nowrap;
   }
 
   .btn-circle.rounded-circle.btn-sm,

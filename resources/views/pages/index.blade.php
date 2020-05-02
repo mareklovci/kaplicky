@@ -39,7 +39,7 @@
         </div>
         <div class="carousel-caption d-md-block">
             <h2 class="text-center kaplicky">kaplicky</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer turpis purus, volutpat quis libero aliquet, pulvinar accumsan erat.
+            <p class="text black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer turpis purus, volutpat quis libero aliquet, pulvinar accumsan erat.
                 Praesent porttitor eleifend hendrerit. Vestibulum dictum nunc et leo finibus condimentum.
                 Proin id tempor enim, eu ornare nisi. Phasellus ornare metus ut mi dapibus, varius elementum leo malesuada.
             </p>
