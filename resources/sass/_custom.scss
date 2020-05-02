@@ -358,6 +358,12 @@ body {
         }
     }*/
 
+    //CATEGORIES - ROW BLOCK
+    .cat-col-md-2
+    {
+        margin: 2%;
+    }
+
     //CATEGORIES - TILES
     .btn.btn-dark.cat-tile
     {
@@ -377,9 +383,8 @@ body {
         word-wrap: break-word;
 
         //SPACING
-        margin: 10pt 32pt;
         height: 40mm;
-        width: 86%;
+        width: 100%;
 
         &:active, &:focus
         {
@@ -391,13 +396,10 @@ body {
         }
     }
 
-    //CATEGORIES - enter button
-    .btn.button-square.cat-enter-butt
+    //CATEGORY/{id} -h2 title NO ARTEFACTS
+    .category-h2
     {
-        position: fixed;
-        bottom: 8%;
-        right: 40%;
-        display: none;
+        color: $theme-color-four;
     }
 }
 
@@ -476,7 +478,6 @@ body {
     {
         font-size: 23pt;
         padding-top: 50pt;
-        margin-left: 36pt;
         white-space: nowrap;
 
     }
