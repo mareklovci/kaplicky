@@ -45,7 +45,9 @@
 
 </div>
 
+
 <span class="arrow arrow-right" onclick="openNav()"></span>
+{{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>
 {{--<label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>--}}
 {{--<a class="navbar-brand kaplicky" href="{{ url('/') }}">
     {{  __('kaplicky') }}

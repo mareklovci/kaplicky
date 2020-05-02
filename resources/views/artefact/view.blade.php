@@ -10,21 +10,7 @@
 
 
 @section('content')
-    <div class="container">
-        <div class="jumbotron mt-5">
-            <div class="text-center">
-                <h1>Artefact</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus.
-                    Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
-                    Morbi scelerisque luctus velit. Vivamus porttitor turpis ac leo.
-                    Morbi scelerisque luctus velit.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-            </div>
-        </div>
-
+    <div class="container py-4">
         @if (is_null($artefact))
             <div class="text-center">
                 <h2>Currently no artefacts available.</h2>
@@ -32,23 +18,23 @@
         @else
             <div class="artefact-area mb-5">
                 <div class="card">
-                    <div class="card-body">
-                        <h2 class="text-uppercase card-title">{{$artefact->name}}</h2>
-                        <h5>{{$artefact->author}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{$artefact->year}}, {{$artefact->pages}} pages</h6>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus.
-                            Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
-                            Morbi scelerisque luctus velit. Vivamus porttitor turpis ac leo.
-                            Morbi scelerisque luctus velit.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                        <p>
-                            @if (count($artefact->metadata) > 0)
-                                <a href="{{ url('/detail/' . $artefact->id) }}">Notes related to artefact</a>
-                            @endif
-                        </p>
+                    <a href="{{ url('/artefact/' . $artefact->id) }}">
+                        <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto alt="book_cover">
+                    </a>
+                    <div class="card-cus-bottom">
+                        <div class="col-xs-2 float-left left_panel_info">
+                            <h5 class="artefact-name">{{$artefact->name}}</h5>
+                            <h6 class="artefact-author">{{$artefact->author}}</h6>
+                        </div>
+                        <div class="col-xs-2 float-right right_panel_info">
+                            <div class="float-left">
+                                <button id="info_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_info"></button>
+                            </div>
+                            <div class="float-right text-center">
+                                <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like"></button>
+                                <h6 class="artefact-likes">{{$artefact->likes}}</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

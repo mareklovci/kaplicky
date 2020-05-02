@@ -1,4 +1,4 @@
-@extends('layouts.art')
+@extends('layouts.app')
 
 @section('title', 'Favorite artefacts')
 
