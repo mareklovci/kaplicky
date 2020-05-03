@@ -192,9 +192,13 @@ body {
         height: 2rem;
         font-weight: $font-weight-one;
 
-        &:active, &:focus, &:visited {
+        &:active, &:focus, &:visited, &:hover {
             outline: none;
             box-shadow: none;
+            color: $theme-color-one;
+        }
+        &:hover{
+            color: $theme-color-four;
         }
     }
 
