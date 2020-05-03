@@ -143,6 +143,19 @@ body {
         }
     }
 
+    /*input:-internal-autofill-selected{
+
+    }*/
+    //Oprava barev pro Chrom
+    input:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px $theme-color-five inset;
+        -webkit-text-fill-color: $theme-color-one;
+        &:active, &:focus, &:visited, &:hover{
+            -webkit-box-shadow:0 0 0 50px $theme-color-five inset;
+            -webkit-text-fill-color: $theme-color-one;
+        }
+    }
+
     .card-body {
     	background-color: $theme-color-five;
     	font-weight: $font-weight-one;
@@ -218,7 +231,7 @@ body {
     .pin-left {
         border-left: .5pt solid $theme-color-four;
         display: inline-block;
-        margin: 10rem 50px 0px -5rem;
+        margin: 12rem 50px 0px -5rem;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -230,6 +243,12 @@ body {
         p{
             margin-top: 0;
             margin-bottom: 0;
+        }
+    }
+
+    .register{
+        .pin-left{
+            margin-top: 17rem;
         }
     }
 
@@ -640,9 +659,15 @@ body {
     body {
         .pin-left {
             margin-left: -33vw;
-            margin-top: 12rem;
+            margin-top: 15rem;
             //left: 20vw;
         }
+        .register{
+            .pin-left{
+                margin-top: 20rem;
+            }
+        }
+
     }
 }
 
