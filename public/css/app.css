@@ -10885,26 +10885,38 @@ a.text-dark:focus {
 body {
   background-color: #272727;
   font-family: Nunito;
-  /*.form-control:focus {
-      background-color: $theme-color-five;
-      margin-top: -1px;
-      border-top-color: $theme-color-five;
-      border-left-color: $theme-color-five;
-      border-right-color: $theme-color-five;
-      border-bottom-color: 0.5pt $theme-color-one;
-      color: $theme-color-one;
-      box-shadow: none;
-      font-size: 8pt;
+  /*input:-internal-autofill-selected{
+
   }*/
-  /*footer {
-      background: $theme-color-four;
-      color: $theme-color-five;
-      display: block;
-      height: 50px;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
+  /*.content {
+      position: relative;
+
+      //Circle style button
+      .btn-circle.rounded-circle {
+          padding: 6px 0px;
+          font-size: 16px;
+          text-align: center;
+      }
+      .btn-categories
+      {
+          position: absolute;
+          border-width: 5px;
+          background-color: $theme-color-five;
+          border-color: $theme-color-four;
+          color:$theme-color-four;
+          outline: none !important;
+          box-shadow: none !important;
+          font-weight: $font-weight-two;
+
+          &:active
+          {
+              background-color: $theme-color-three;
+              border-color: $theme-color-four;
+              outline: none !important;
+              box-shadow: none !important;
+              color:$theme-color-five;
+          }
+      }
   }*/
 }
 
@@ -10955,11 +10967,6 @@ body .carousel .carousel-caption {
   bottom: auto;
   transform: translateY(-50%);
   background-color: rgba(239, 218, 179, 0.5);
-}
-
-body .carousel .carousel-caption p {
-  font-size: 8pt;
-  color: #272727;
 }
 
 body .text {
@@ -11023,14 +11030,27 @@ body .auth .card {
 
 body .auth .col-form-label {
   text-align: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 body .auth .form-control {
-  padding: 0px;
+  padding: 0;
   height: 17pt;
-  border-radius: 0%;
+  border-radius: 0;
+}
+
+body input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px #272727 inset;
+  -webkit-text-fill-color: #ffffff;
+}
+
+body input:-webkit-autofill:active,
+body input:-webkit-autofill:focus,
+body input:-webkit-autofill:visited,
+body input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 50px #272727 inset;
+  -webkit-text-fill-color: #ffffff;
 }
 
 body .card-body {
@@ -11090,9 +11110,15 @@ body .button-square {
 
 body .button-square:active,
 body .button-square:focus,
-body .button-square:visited {
+body .button-square:visited,
+body .button-square:hover {
   outline: none;
   box-shadow: none;
+  color: #ffffff;
+}
+
+body .button-square:hover {
+  color: #ead4b0;
 }
 
 body .pin-left:before {
@@ -11110,7 +11136,7 @@ body .pin-left:before {
 body .pin-left {
   border-left: 0.5pt solid #ead4b0;
   display: inline-block;
-  margin: 10rem 50px 0px -5rem;
+  margin: 12rem 50px 0px -5rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -11123,8 +11149,12 @@ body .pin-left .text {
 }
 
 body .pin-left p {
-  margin-top: 0pt;
-  margin-bottom: 0pt;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body .register .pin-left {
+  margin-top: 17rem;
 }
 
 body li {
@@ -11320,7 +11350,7 @@ body .metadata-area .pin-horizontal {
   color: #ddd1b9;
   border-bottom: 0.042rem solid #ddd1b9;
   display: inline-block;
-  margin: 3.35rem 3.125rem 0 0;
+  margin: 2.75rem 3.125rem 0 0;
 }
 
 body .metadata-area .pin-horizontal:before {
@@ -11395,9 +11425,10 @@ body .metadata-area .metadata-text .artefact-info .artefact-author {
 }
 
 body .metadata-area .metadata-text .artefact-info .inter_like_filled:before {
-  background-image: url(/images/Hearth_Filled_50.png?77bb26c3aba063c00aba1a2f07059d71);
-  width: 50px;
-  height: 50px;
+  background-image: url(/images/Heart_Filled.svg?e5b962dc0fd67a2042277b9826016c9c);
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 0;
 }
 
 body .metadata-area .metadata-text .artefact-info .inter_like_filled:hover,
@@ -11407,35 +11438,6 @@ body .metadata-area .metadata-text .artefact-info .inter_like_filled:active {
   border-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
-}
-
-body .content {
-  position: relative;
-}
-
-body .content .btn-circle.rounded-circle {
-  padding: 6px 0px;
-  font-size: 16px;
-  text-align: center;
-}
-
-body .content .btn-categories {
-  position: absolute;
-  border-width: 5px;
-  background-color: #272727;
-  border-color: #ead4b0;
-  color: #ead4b0;
-  outline: none !important;
-  box-shadow: none !important;
-  font-weight: 600;
-}
-
-body .content .btn-categories:active {
-  background-color: #efdab3;
-  border-color: #ead4b0;
-  outline: none !important;
-  box-shadow: none !important;
-  color: #272727;
 }
 
 body .cat-col-md-2 {
@@ -11496,7 +11498,6 @@ body .category-h2 {
 
 .sidenav {
   height: 100%;
-  width: 0;
   width: 250px;
   position: fixed;
   z-index: 1;
@@ -11525,19 +11526,14 @@ body .category-h2 {
   }
 }
 
-@media (max-width: 990px) {
-  body {
-    /*.pin-left {
-        margin-left: -15rem;
-        margin-top: 11rem;
-    }*/
-  }
-}
-
 @media (max-width: 770px) {
   body .pin-left {
     margin-left: -33vw;
-    margin-top: 12rem;
+    margin-top: 15rem;
+  }
+
+  body .register .pin-left {
+    margin-top: 20rem;
   }
 }
 
@@ -11552,21 +11548,23 @@ body .category-h2 {
     white-space: nowrap;
   }
 
-  .btn-circle.rounded-circle.btn-sm,
-  .btn-group-sm > .btn-circle.rounded-circle.btn {
-    width: 90px;
-    height: 90px;
+  /*.btn-circle.rounded-circle.btn-sm
+  {
+      width: 90px;
+      height: 90px;
   }
 
-  .btn-circle.rounded-circle.btn-dm {
-    width: 130px;
-    height: 130px;
+  .btn-circle.rounded-circle.btn-dm
+  {
+      width: 130px;
+      height: 130px;
   }
 
-  .btn-circle.rounded-circle.btn-xl {
-    width: 180px;
-    height: 180px;
-  }
+  .btn-circle.rounded-circle.btn-xl
+  {
+      width: 180px;
+      height: 180px;
+  }*/
 
   body .carousel .carousel-inner .social-logo {
     padding-left: 30px;

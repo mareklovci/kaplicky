@@ -22,6 +22,7 @@ Route::resource('/detail', 'DetailsController', array('only' => array('index', '
 Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
 Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => array('index', 'show', 'store')));
 Route::get('/favmetadata', 'FavoriteMetadataController@index');
+Route::get('/favmetadata/unlike/{id}', 'FavoriteMetadataController@unlike');
 
 
 Auth::routes();

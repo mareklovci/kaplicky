@@ -25,7 +25,9 @@
                             </div>
                         </div>
                         <div id="meta_{{$meta->id}}" class="metadata-text collapse">
-                            {{$meta->noteEN}}
+                            <p>
+                                {{$meta->noteEN}}
+                            </p>
                             <div class="artefact-info">
                                 <div class="artefact-name">
                                     {{$meta->artefact->name}}
@@ -34,7 +36,9 @@
                                     {{$meta->artefact->author}}
                                 </div>
                                 <div class="text-center">
-                                    <button id="like_butt_{{$meta->id}}" type="button" class="btn btn-primary button-image inter_like_filled"></button>
+                                    <a href="{{  action('FavoriteMetadataController@unlike', ['id' => $meta->id]) }}">
+                                        <button id="like_butt_{{$meta->id}}" type="button" class="btn btn-primary button-image inter_like_filled"></button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
