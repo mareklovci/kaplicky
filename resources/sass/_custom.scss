@@ -350,7 +350,7 @@ body {
         }
     }
 
-
+    // Artefact area
     .artefact-area {
 
         .card-cus-bottom {
@@ -381,9 +381,17 @@ body {
             display: block;
 
             &:before {
-                background-image: url(../images/interface/Hearth_Empty_Small.png);
-                width: 25px;
-                height: 19px;
+                background-image: url(../images/interface/Heart_Empty.svg);
+                width: 1.563rem;
+                height: 1.25rem;
+            }
+        }
+
+        .inter_like_filled {
+            &:before {
+                background-image : url(../images/interface/Heart_Filled.svg);
+                width: 1.563rem;
+                height: 1.25rem;
             }
         }
 
@@ -391,9 +399,9 @@ body {
 
             padding-right: 1rem;
             &:before {
-                background-image: url(../images/interface/Button_Info_Small.png);
-                width: 29px;
-                height: 29px;
+                background-image: url(../images/interface/Button_Info.svg);
+                width: 1.875rem;
+                height: 1.875rem;
             }
         }
 
@@ -522,6 +530,50 @@ body {
         }
     }
 
+    // Modal
+    .modal {
+        font-weight: $font-weight-one;
+        color: $theme-color-two;
+        font-size: 8pt;
+
+        .modal-header {
+            border-bottom: 1px solid $theme-color-two;
+
+            .close {
+                color: $theme-color-two;
+                text-shadow: none;
+            }
+        }
+
+        .modal-content {
+            background-color: $theme-color-five;
+        }
+
+        .modal-footer {
+            border-top: 1px solid $theme-color-two;
+
+            .btn {
+                background-color: $theme-color-two;
+                color: $theme-color-five;
+
+            }
+        }
+    }
+
+    .image-modal {
+        .close {
+            font-size: 24pt;
+            color: $theme-color-two;
+            text-shadow: none;
+            position: absolute;
+            top: 1rem;
+            right: 0.125rem;
+            opacity: 1;
+            cursor: pointer;
+            pointer-events: initial;
+        }
+    }
+
     /*.content {
         position: relative;
 
@@ -552,8 +604,6 @@ body {
             }
         }
     }*/
-
-
 
     //CATEGORIES - ROW BLOCK
     .cat-col-md-2

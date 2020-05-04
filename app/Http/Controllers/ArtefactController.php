@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Artefact;
 use App\ArtefactCategory;
 use App\Category;
+use App\Metadata;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ArtefactController extends Controller
@@ -61,7 +64,40 @@ class ArtefactController extends Controller
     {
         $artefact = Artefact::find($id);
         $artefact['likes'] = Artefact::find($id)->users()->count();
+        $artefact['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
 
         return view('artefact.view', ['artefact' => $artefact]);
+    }
+
+    /**
+     * Likes metadata given by its id.
+     *
+     * @param $id int id of metadata
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function like($id)
+    {
+        $user = User::find(Auth::id());
+        $artefact = Artefact::find($id);
+
+        $user->likesArtefacts()->attach($artefact);
+
+        return back()->withInput();
+    }
+
+    /**
+     * Unlikes metadata given by its id.
+     *
+     * @param $id int id of metadata
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unlike($id)
+    {
+        $user = User::find(Auth::id());
+        $artefact = Artefact::find($id);
+
+        $user->likesArtefacts()->detach($artefact);
+
+        return back()->withInput();
     }
 }

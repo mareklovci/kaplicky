@@ -11308,9 +11308,15 @@ body .artefact-area .inter_like {
 }
 
 body .artefact-area .inter_like:before {
-  background-image: url(/images/Hearth_Empty_Small.png?252b4c7a69920aa18f2fc75a93aaa90a);
-  width: 25px;
-  height: 19px;
+  background-image: url(/images/Heart_Empty.svg?974f069a126736e569df0f463d68c026);
+  width: 1.563rem;
+  height: 1.25rem;
+}
+
+body .artefact-area .inter_like_filled:before {
+  background-image: url(/images/Heart_Filled.svg?e5b962dc0fd67a2042277b9826016c9c);
+  width: 1.563rem;
+  height: 1.25rem;
 }
 
 body .artefact-area .inter_info {
@@ -11318,9 +11324,9 @@ body .artefact-area .inter_info {
 }
 
 body .artefact-area .inter_info:before {
-  background-image: url(/images/Button_Info_Small.png?9bc35ac07e9ec5a6b75d9af964e80512);
-  width: 29px;
-  height: 29px;
+  background-image: url(/images/Button_Info.svg?92f55a6c483b585543ec80f3fd3461de);
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 body .artefact-area .artefact-likes {
@@ -11438,6 +11444,46 @@ body .metadata-area .metadata-text .artefact-info .inter_like_filled:active {
   border-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+body .modal {
+  font-weight: 400;
+  color: #ddd1b9;
+  font-size: 8pt;
+}
+
+body .modal .modal-header {
+  border-bottom: 1px solid #ddd1b9;
+}
+
+body .modal .modal-header .close {
+  color: #ddd1b9;
+  text-shadow: none;
+}
+
+body .modal .modal-content {
+  background-color: #272727;
+}
+
+body .modal .modal-footer {
+  border-top: 1px solid #ddd1b9;
+}
+
+body .modal .modal-footer .btn {
+  background-color: #ddd1b9;
+  color: #272727;
+}
+
+body .image-modal .close {
+  font-size: 24pt;
+  color: #ddd1b9;
+  text-shadow: none;
+  position: absolute;
+  top: 1rem;
+  right: 0.125rem;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: initial;
 }
 
 body .cat-col-md-2 {

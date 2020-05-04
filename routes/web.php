@@ -17,6 +17,8 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/artefact', 'ArtefactController@default');
 Route::get('/artefact/{id}', 'ArtefactController@view');
+Route::get('/artefact/like/{id}', 'ArtefactController@like');
+Route::get('/artefact/unlike/{id}', 'ArtefactController@unlike');
 Route::get('/category/{id}', 'ArtefactController@showCategory');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
 Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
