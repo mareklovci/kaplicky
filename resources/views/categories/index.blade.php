@@ -3,6 +3,7 @@
 @section('title', 'Categories')
 
 @section('content')
+    <div class="container">
     @if(isset($user))
         {{--<p><?php dd($categories); ?></p>--}}
         <div class="cat-main-div" onclick="resetEnter()">
@@ -33,4 +34,5 @@
             </li>
         </ul>
     @endif
+    </div>
 @endsection
