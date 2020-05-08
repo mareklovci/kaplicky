@@ -10936,15 +10936,23 @@ body .carousel .carousel-inner .museum-logo {
   z-index: 1;
 }
 
+body .carousel .carousel-inner .museum-logo img {
+  width: 7.5rem;
+}
+
 body .carousel .carousel-inner .social-logo {
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: nowrap;
   position: absolute;
   top: 25%;
   padding-left: 25px;
   width: 100%;
   z-index: 1;
+}
+
+body .carousel .carousel-inner .social-logo img {
+  width: 2.0625rem;
 }
 
 body .carousel .carousel-inner .carousel-button {
@@ -11702,6 +11710,57 @@ body .category-h2 {
 @media (min-width: 330px) and (max-height: 900px) {
   body .carousel .carousel-inner .social-logo {
     top: 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .kaplicky {
+    text-align: left !important;
+    font-size: 24pt;
+    line-height: 24pt;
+  }
+
+  body .text {
+    text-align: left;
+    font-size: 18pt;
+    line-height: 26pt;
+  }
+
+  body .carousel .carousel-inner .social-logo {
+    justify-content: center;
+    top: 90%;
+  }
+
+  body .carousel .carousel-inner .social-logo .logo {
+    margin-left: 10rem;
+  }
+
+  body .carousel .carousel-inner .social-logo .logo img {
+    width: 3.125rem;
+  }
+
+  body .carousel .carousel-inner .social-logo .logo:first-child {
+    margin-left: 0;
+  }
+
+  body .carousel .carousel-inner .carousel-button {
+    transform: none;
+    left: 76%;
+    bottom: 20%;
+  }
+
+  body .carousel .carousel-caption {
+    padding: 3.75rem 6.25rem 10em;
+  }
+
+  body .carousel .carousel-caption h2 {
+    margin-bottom: 1rem;
+  }
+
+  body .button-square {
+    font-size: 18pt;
+    width: 10.875rem;
+    height: 2.938rem;
   }
 }
 
