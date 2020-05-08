@@ -55,7 +55,7 @@
     <span class="arrow arrow-right" onclick="openNav()"></span>
     @if(!Request::is('login')&&!Request::is('register'))
         <li class="nav-item dropdown col-md-4">
-            <a for="logo" class="col-md-4 logo-kaplicky kaplicky" href="{{ url('/') }}">{{ __('kaplicky') }}</a>
+            <a for="logo" class="logo-kaplicky kaplicky" href="{{ url('/') }}">{{ __('kaplicky') }}</a>
         </li>
     @endif
 </nav>
