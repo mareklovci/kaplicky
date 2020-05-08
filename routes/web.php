@@ -20,6 +20,8 @@ Route::get('/artefact/{id}', 'ArtefactController@view');
 Route::get('/artefact/like/{id}', 'ArtefactController@like');
 Route::get('/artefact/unlike/{id}', 'ArtefactController@unlike');
 Route::get('/category/{id}', 'ArtefactController@showCategory');
+Route::get('/detail/like/{id}', 'DetailsController@like');
+Route::get('/detail/unlike/{id}', 'DetailsController@unlike');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
 Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
 Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => array('index', 'show', 'store')));

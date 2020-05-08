@@ -70,7 +70,7 @@ class ArtefactController extends Controller
     }
 
     /**
-     * Likes metadata given by its id.
+     * Likes artefact given by its id.
      *
      * @param $id int id of metadata
      * @return \Illuminate\Http\RedirectResponse
@@ -86,7 +86,7 @@ class ArtefactController extends Controller
     }
 
     /**
-     * Unlikes metadata given by its id.
+     * Unlikes artefact given by its id.
      *
      * @param $id int id of metadata
      * @return \Illuminate\Http\RedirectResponse

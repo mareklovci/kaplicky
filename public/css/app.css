@@ -10969,6 +10969,10 @@ body .carousel .carousel-caption {
   background-color: rgba(239, 218, 179, 0.5);
 }
 
+body .container {
+  margin-top: 4.99055rem;
+}
+
 body .text {
   font-weight: 400;
   font-size: 8pt;
@@ -11040,17 +11044,29 @@ body .auth .form-control {
   border-radius: 0;
 }
 
+body .auth .form-control:focus {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+body .auth .card-body {
+  padding-bottom: 0px;
+  padding-top: calc(28vh - 4.99055rem);
+}
+
 body input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px #272727 inset;
+  -webkit-box-shadow: 0 0 0 50px #272727 inset !important;
   -webkit-text-fill-color: #ffffff;
+  background-color: #272727 !important;
 }
 
 body input:-webkit-autofill:active,
 body input:-webkit-autofill:focus,
 body input:-webkit-autofill:visited,
 body input:-webkit-autofill:hover {
-  -webkit-box-shadow: 0 0 0 50px #272727 inset;
+  -webkit-box-shadow: 0 0 0 50px #272727 inset !important;
   -webkit-text-fill-color: #ffffff;
+  background-color: #272727 !important;
 }
 
 body .card-body {
@@ -11069,11 +11085,14 @@ body .form-control {
   color: #ffffff;
   box-shadow: none;
   font-size: 8pt;
+  outline: none;
 }
 
 body .form-control:active,
 body .form-control:focus,
-body .form-control:visited {
+body .form-control:visited,
+body .form-control:hover {
+  outline: none;
   background-color: #272727;
   margin-top: -1px;
   border-top-color: #272727;
@@ -11138,7 +11157,7 @@ body .pin-left {
   display: inline-block;
   margin: 12rem 50px 0px -5rem;
   position: fixed;
-  top: 0;
+  top: 28vh;
   bottom: 0;
   text-align: left;
   width: 100%;
@@ -11336,6 +11355,7 @@ body .artefact-area .artefact-likes {
 }
 
 body .metadata-area h2 {
+  color: #ddd1b9;
   font-weight: 600;
   font-size: 12pt;
 }
@@ -11428,6 +11448,22 @@ body .metadata-area .metadata-text .artefact-info .artefact-name {
 body .metadata-area .metadata-text .artefact-info .artefact-author {
   font-weight: 400;
   font-size: 7pt;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like:before {
+  background-image: url(/images/Heart_Empty.svg?974f069a126736e569df0f463d68c026);
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 0;
+}
+
+body .metadata-area .metadata-text .artefact-info .inter_like:hover,
+body .metadata-area .metadata-text .artefact-info .inter_like:focus,
+body .metadata-area .metadata-text .artefact-info .inter_like:active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 body .metadata-area .metadata-text .artefact-info .inter_like_filled:before {
@@ -11528,6 +11564,14 @@ body .category-h2 {
   border: 0.59055rem solid transparent;
 }
 
+.top-bar {
+  padding-bottom: 4.59055rem;
+  background-color: #272727;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 .arrow-left {
   margin-left: 80%;
   border-right: 0.59055rem solid #272727;
@@ -11540,6 +11584,10 @@ body .category-h2 {
   z-index: 1;
   top: 0;
   left: 0;
+}
+
+.separator {
+  border-bottom: 1px solid #272727;
 }
 
 .sidenav {
@@ -11564,6 +11612,39 @@ body .category-h2 {
 .sidenav a:hover {
   color: #ead4b0;
   background-color: #ffffff;
+}
+
+.sidenav a:active,
+.sidenav a:focus,
+.sidenav a .active {
+  color: #ffffff;
+  background-color: #ead4b0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #272727;
+  background-color: #ffffff;
+}
+
+.logo-kaplicky {
+  position: fixed;
+  top: 0;
+  left: calc(50vw - 50pt);
+  margin-top: 2rem;
+}
+
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  color: #ffffff;
+  font-size: xx-large;
+  display: block;
+  text-align: center;
 }
 
 @media screen and (max-height: 450px) {

@@ -436,6 +436,7 @@ body {
     .metadata-area {
 
         h2 {
+            color: $theme-color-two;
             font-weight: $font-weight-two;
             font-size: 12pt;
         }
@@ -528,6 +529,23 @@ body {
                 .artefact-author {
                     font-weight: $font-weight-one;
                     font-size: 7pt;
+                }
+
+                .inter_like {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                        width: 3.125rem;
+                        height: 3.125rem;
+                        margin-right: 0;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
                 }
 
                 .inter_like_filled {

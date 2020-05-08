@@ -39,7 +39,6 @@
                                     <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
                                         <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like"></button>
                                     </a>
-
                                 @endif
                                 <h6 class="artefact-likes">{{$artefact->likes}}</h6>
                             </div>
