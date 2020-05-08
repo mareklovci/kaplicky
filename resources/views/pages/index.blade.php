@@ -10,24 +10,24 @@
                 <div class="museum-logo">
                     <div class="text-center">
                         <a href="https://www.upm.cz/">
-                            <img src="{{ asset('images/icons/upm-logo.png') }}" alt="upm">
+                            <img src="{{ asset('images/icons/upm-logo.svg') }}" alt="upm">
                         </a>
                     </div>
                 </div>
                 <div class="row social-logo">
-                    <div class="col-md-4">
+                    <div class="logo">
                         <a href="https://www.facebook.com/upmpraha/">
-                            <img src="{{ asset('images/icons/facebook.png') }}" alt="facebook">
+                            <img src="{{ asset('images/icons/facebook.svg') }}" alt="facebook">
                         </a>
                     </div>
-                    <div class="col-md-4">
+                    <div class="logo">
                         <a href="https://www.instagram.com/museumofdecorativeartsprague/">
-                            <img src="{{ asset('images/icons/instagram.png') }}" alt="instagram">
+                            <img src="{{ asset('images/icons/instagram.svg') }}" alt="instagram">
                         </a>
                     </div>
-                    <div class="col-md-4">
+                    <div class="logo">
                         <a href="https://cs.wikipedia.org/wiki/Um%C4%9Bleckopr%C5%AFmyslov%C3%A9_muzeum_v_Praze">
-                            <img src="{{ asset('images/icons/wikipedia.png') }}" alt="wikipedia">
+                            <img src="{{ asset('images/icons/wikipedia.svg') }}" alt="wikipedia">
                         </a>
                     </div>
                 </div>
