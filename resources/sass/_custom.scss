@@ -140,6 +140,16 @@ body {
             padding: 0;
             height: 17pt;
             border-radius: 0;
+            &:focus{
+                border-color: $theme-color-one;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+
+        .card-body{
+            padding-bottom: 0px;
+            padding-top: 28vh
         }
     }
 
@@ -148,11 +158,15 @@ body {
     }*/
     //Oprava barev pro Chrom
     input:-webkit-autofill {
-        -webkit-box-shadow:0 0 0 50px $theme-color-five inset;
+        -webkit-box-shadow:0 0 0 50px $theme-color-five inset !important;
         -webkit-text-fill-color: $theme-color-one;
+        background-color: $theme-color-five !important;
+        //outline: none !important;
         &:active, &:focus, &:visited, &:hover{
-            -webkit-box-shadow:0 0 0 50px $theme-color-five inset;
+            -webkit-box-shadow:0 0 0 50px $theme-color-five inset !important;
             -webkit-text-fill-color: $theme-color-one;
+            background-color: $theme-color-five !important;
+            //outline: none !important;
         }
     }
 
@@ -172,8 +186,10 @@ body {
     	color: $theme-color-one;
         box-shadow: none;
         font-size: 8pt;
+        outline: none;
 
-        &:active, &:focus, &:visited{
+        &:active, &:focus, &:visited, &:hover{
+            outline: none;
             background-color: $theme-color-five;
             margin-top: -1px;
             border-top-color: $theme-color-five;
@@ -233,7 +249,7 @@ body {
         display: inline-block;
         margin: 12rem 50px 0px -5rem;
         position: fixed;
-        top: 0;
+        top: 28vh;
         bottom: 0;
         text-align: left;
         width: 100%;
