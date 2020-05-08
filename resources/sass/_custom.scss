@@ -651,11 +651,6 @@ body {
         }
     }*/
 
-    //CATEGORIES - ROW BLOCK
-    .cat-col-md-2 {
-        margin: 2%;
-    }
-
     //CATEGORIES - TILES
     .btn.btn-dark.cat-tile {
         //STYLING
@@ -669,13 +664,15 @@ body {
         outline: none !important;
         box-shadow: none !important;
 
+        //TEXT OVERFLOW
+        overflow: hidden;
+        text-overflow: ellipsis;
+
         //FONT
-        font-size: 8mm;
-        word-wrap: break-word;
+        font-size: 22pt;
 
         //SPACING
-        height: 40mm;
-        width: 100%;
+        padding: 4rem 0.5rem;
 
         &:active, &:focus {
             background-color: $theme-color-three;
@@ -768,6 +765,7 @@ body {
 .logo-kaplicky {
     display: block;
     text-align: center;
+    width: 100%;
 }
 
 .vertical-center {
