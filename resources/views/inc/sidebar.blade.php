@@ -6,36 +6,56 @@
     <li class="nav-item"> &#160;</li>
     @guest
         <li class="nav-item">
-            <a class="dropdown-item text-headline" href="{{ url('/') }}">{{ __('Home') }}</a>
-            <a class="dropdown-item text-headline" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="dropdown-item text-headline" href="{{ url('/') }}">
+                {{ __('general.home') }}
+            </a>
+            <a class="dropdown-item text-headline" href="{{ route('login') }}">
+                {{ __('general.login') }}
+            </a>
         </li>
         @if (Route::has('register'))
             <li class="nav-item">
-                <a class="dropdown-item text-headline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <a class="dropdown-item text-headline" href="{{ route('register') }}">
+                    {{ __('general.register') }}
+                </a>
             </li>
         @endif
     @else
         <li class="nav-item dropdown">
-            <a class="dropdown-item text-headline" href="{{ url('/') }}">home</a>
+            <a class="dropdown-item text-headline" href="{{ url('/') }}">
+                {{ __('general.home') }}
+            </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/categories') }}">topics</a>
+            <a class="dropdown-item text-headline" href="{{ url('/categories') }}">
+                {{ __('general.topics') }}
+            </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/artefact') }}">books</a>
+            <a class="dropdown-item text-headline" href="{{ url('/artefact') }}">
+                {{ __('general.artefacts') }}
+            </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">my books</a>
+            <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">
+                {{ __('general.favourite_artefacts') }}
+            </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">my notes</a>
+            <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">
+                {{ __('general.favourite_metadata') }}
+            </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/charts') }}">charts</a>
+            <a class="dropdown-item text-headline" href="{{ url('/charts') }}">
+                {{ __('general.charts') }}
+            </a>
 
         </li>
         <li class="nav-item dropdown separator">
-            <a class="dropdown-item text-headline" href="{{ url('/czech') }}">česky</a>
+            <a class="dropdown-item text-headline" href="{{ url('/czech') }}">
+                {{ __('general.cs') }}
+            </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="dropdown-item text-headline" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+            <a class="dropdown-item text-headline" href="{{ route('logout') }}" onclick="
+            event.preventDefault();
+            document.getElementById('logout-form').submit();">
                 {{ __('logout') }}
             </a>
 
@@ -50,7 +70,9 @@
 <nav class="navbar navbar-expand-md navbar-light black shadow-sm top-bar">
     <span class="arrow arrow-right" onclick="openNav()"></span>
     @if(!Request::is('login')&&!Request::is('register'))
-        <a for="logo" class="logo-kaplicky kaplicky" href="{{ url('/') }}">{{ __('kaplicky') }}</a>
+        <a for="logo" class="logo-kaplicky kaplicky" href="{{ url('/') }}">
+            {{ __('general.kaplicky') }}
+        </a>
     @endif
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>
@@ -67,13 +89,13 @@
         } else {
             document.getElementById("sidebar").style.width = "250px";
         }
-
     }
 
     function closeNav() {
         document.getElementById("sidebar").style.width = "0";
     }
 </script>
+
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
     $(function () {

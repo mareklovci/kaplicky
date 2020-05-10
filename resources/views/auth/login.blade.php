@@ -22,8 +22,9 @@
                                     <label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>
 
                                     <div class="form-group row">
-                                        <label for="email"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('e-mail') }}</label>
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">
+                                            {{ __('general.email') }}
+                                        </label>
 
                                         <div class="col-md-6">
                                             <input id="email" type="email"
@@ -34,8 +35,9 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
+                                        <label for="password" class="col-md-4 col-form-label text-md-right">
+                                            {{ __('general.password') }}
+                                        </label>
 
                                         <div class="col-md-6">
                                             <input id="password" type="password"
@@ -45,8 +47,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn button-square ">
-                                                {{ __('join') }}
+                                            <button type="submit" class="btn button-square">
+                                                {{ __('general.join') }}
                                             </button>
                                             {{-- @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -70,6 +72,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     @endif
 
                                 </form>

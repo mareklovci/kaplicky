@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="error">404 | Not Found</span>
+                    <span class="error">404 | {{ __('general.not_found') }}</span>
                 </div>
             </div>
         </div>

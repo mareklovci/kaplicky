@@ -38,6 +38,12 @@ Případně `php artisan migrate:refresh --seed`.
 
 Migrace dat z Mockaroo je tímto okamžikem obsolete.
 
+### Výchozí uživatel
+
+Je nadefinován výchozí (testovací) uživatel.
+
+**Login** admin@kaplicky.com **heslo** admin
+
 ## Jak zprovoznit bootstrap a kompilaci SASS souborů
 
 1. Ujistěte se, že v sekci **Run/Edit Configurations** máte nastavený **Document root** na složku `public` v kořenovém adresáři (jinak aplikace **nenajde** vygenerované css soubory).

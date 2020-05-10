@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Artefact;
 use App\ArtefactCategory;
-use App\Category;
-use App\Metadata;
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class ArtefactController extends Controller
 {
@@ -21,7 +20,7 @@ class ArtefactController extends Controller
     /**
      * Returns view of all artefacts.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function default()
     {
@@ -33,16 +32,16 @@ class ArtefactController extends Controller
     /**
      * Returns view of artefacts related to the chosen category
      *
-     * @param $id       id of the category
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id id of the category
+     * @return Factory|View
      */
     public function showCategory($id)
     {
-        $cateogryArtefacts = ArtefactCategory::where('category_id', $id)->get();
-        if(count($cateogryArtefacts) > 0)
+        $categoryArtefacts = ArtefactCategory::where('category_id', $id)->get();
+        if(count($categoryArtefacts) > 0)
         {
             $artefacts = array();
-            foreach($cateogryArtefacts as $ar)
+            foreach($categoryArtefacts as $ar)
             {
                 array_push($artefacts, Artefact::where('id', $ar->artefact_id)->get());
             }
@@ -58,7 +57,7 @@ class ArtefactController extends Controller
      * Returns view of single artefact given by its id.
      *
      * @param $id int id of the artefact
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function view($id)
     {
@@ -73,7 +72,7 @@ class ArtefactController extends Controller
      * Likes artefact given by its id.
      *
      * @param $id int id of metadata
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function like($id)
     {
@@ -89,7 +88,7 @@ class ArtefactController extends Controller
      * Unlikes artefact given by its id.
      *
      * @param $id int id of metadata
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function unlike($id)
     {

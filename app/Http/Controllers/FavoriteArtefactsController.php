@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\ArtefactUser;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Artefact;
 use App\Http\Controllers\Image;
+use Illuminate\View\View;
 
 class FavoriteArtefactsController extends Controller
 {
@@ -18,7 +20,7 @@ class FavoriteArtefactsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -52,7 +54,7 @@ class FavoriteArtefactsController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function show($id)
     {
@@ -61,7 +63,6 @@ class FavoriteArtefactsController extends Controller
         {
             $item['likes'] = Artefact::find($item->id)->users()->count();
         }
-
 
         $data = array(
             'title' => 'Favorite artefacts',

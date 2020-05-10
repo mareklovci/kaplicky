@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="error">500 | Internal Server Error</span>
+                    <span class="error">500 | {{ __('general.server_error') }}</span>
                 </div>
             </div>
         </div>
