@@ -717,6 +717,14 @@ body {
     .category-h2 {
         color: $theme-color-four;
     }
+
+    //CATEGORIES - Choose a topic TITLE
+    .head-title.text-center.cat-main-topic{
+
+        h1{
+            font-size: 1.9rem;
+        }
+    }
 }
 
 .arrow {
