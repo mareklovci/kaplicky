@@ -17,8 +17,8 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/artefact', 'ArtefactController@default');
 Route::get('/artefact/{id}', 'ArtefactController@view');
-Route::get('/artefact/like/{id}', 'ArtefactController@like');
-Route::get('/artefact/unlike/{id}', 'ArtefactController@unlike');
+Route::post('/artefact/like/{id}', 'ArtefactController@like');
+Route::post('/artefact/unlike/{id}', 'ArtefactController@unlike');
 Route::get('/category/{id}', 'ArtefactController@showCategory');
 Route::get('/detail/like/{id}', 'DetailsController@like');
 Route::get('/detail/unlike/{id}', 'DetailsController@unlike');

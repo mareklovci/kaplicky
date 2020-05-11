@@ -297,18 +297,34 @@ body {
         }
     }
 
+    .fav-cat-mybooks{
+        color:$theme-color-two;
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    .fav-cat-nofav{
+        text-align: center;
+        color:$theme-color-three;
+        background-color: $theme-color-five;
+        border-color: $theme-color-three;
+    }
+
     .artefacts-area, .artefact-area {
 
         h5 {
             color: $theme-color-two;
-            font-weight: $font-weight-two;
-            line-height: 20pt;
-            font-size: 21pt;
+            //font-weight: $font-weight-two;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 0.9rem;
+            font-size: 1.1rem;
         }
 
         h6 {
             color: $theme-color-two;
-            font-size: 14pt;
+            font-size: 0.9rem;
             //font-weight: lighter;
             font-weight: $font-weight-one;
         }
@@ -325,24 +341,31 @@ body {
 
         .left_panel_info {
             margin-top: 15px;
-            margin-left: -10px;
-            max-width: 250px;
+            max-width: 70%;//250px
         }
 
         .right_panel_info {
             margin-top: 15px;
-            margin-right: -15px;
+        }
+
+        .likes_text{
+            text-align: center;
         }
 
         .card-cus-bottom {
             background-color: $theme-color-five;
+            padding-right: 0;
+            padding-left: 0;
         }
 
         .inter_info {
             &:before {
-                background-image: url(../images/interface/Button_Info_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Button_Info_50.png);
+                background-image: url(../images/interface/Button_Info.svg);
+                //width: 60px;
+                //height: 60px;
+                width:8vw;
+                height:8vw;
             }
         }
 
@@ -350,17 +373,23 @@ body {
             display: none;
 
             &:before {
-                background-image: url(../images/interface/Hearth_Empty_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Hearth_Empty_50.png);
+                background-image: url(../images/interface/Heart_Empty.svg);
+                //width: 60px;
+                //height: 60px;
+                width:8vw;
+                height:8vw;
             }
         }
 
         .inter_like_filled {
             &:before {
-                background-image: url(../images/interface/Hearth_Filled_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Hearth_Filled_50.png);
+                background-image: url(../images/interface/Heart_Filled.svg);
+                //width: 60px;
+                //height: 60px;
+                width:8vw;
+                height:8vw;
             }
         }
 
@@ -411,6 +440,7 @@ body {
                 background-image: url(../images/interface/Heart_Empty.svg);
                 width: 1.563rem;
                 height: 1.25rem;
+
             }
         }
 
