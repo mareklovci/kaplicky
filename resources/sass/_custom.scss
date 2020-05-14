@@ -116,6 +116,13 @@ body {
         color: $theme-color-four;
     }
 
+    //notes u metadat, about v about, text levého menu
+    .text-headline-desktop {
+        font-weight: $font-weight-two;
+        font-size: 24pt;
+        color: $theme-color-four;
+    }
+
     //název metadata, text pravého menu
     .text-page {
         font-weight: $font-weight-two;
@@ -727,15 +734,6 @@ body {
     }
 }
 
-.arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    margin: 2rem;
-    cursor: pointer;
-    border: 0.59055rem solid transparent;
-}
-
 .top-bar {
     background-color: $theme-color-five;
     height: 5rem;
@@ -743,32 +741,29 @@ body {
     width: 100%;
     top: 0;
     z-index: 2;
-}
-
-.arrow-left {
-    margin-left: 80%;
-
-    border-right: 0.59055rem solid $theme-color-five;
-    background-color: $theme-color-four !important;
-}
-
-.arrow-right {
-    border-left: 0.59055rem solid $theme-color-four;
-
-    position: fixed;
-    z-index: 3;
-    top: 0;
-    left: 0;
+    .shadow {
+        box-shadow: none;
+    }
 }
 
 .separator {
-    border-bottom: 1px solid $theme-color-five;
+    position: relative;
+    z-index : 5;
+    &:before{
+        width: 50%;
+        content : "";
+        position: absolute;
+        left    : 0;
+        bottom  : 0;
+        height  : 1px;
+        border-bottom:1px solid $theme-color-five;
+    }
 }
 
 .sidenav {
     height: 100%;
-    //width: 0;
-    width: 250px;
+    width: 0;
+    //width: 250px;
     position: fixed;
     z-index: 4;
     top: 0;
@@ -795,15 +790,44 @@ body {
     }
 }
 
-.dropdown-item.active, .dropdown-item:active {
-    color: $theme-color-five;
-    background-color: $theme-color-one;
+.bar-desktop{
+    display: flex;
+    align-items: center;
+    min-width: 84vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 2rem;
+}
+
+.down {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.menu-item{
+    padding: 0.25rem 1.5rem;
+    width: 100%;
+    border: 0;
+    &:active, &.active, &:focus{
+        color: $theme-color-one;
+        //background-color: $theme-color-five;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 .logo-kaplicky {
-    display: block;
     text-align: center;
-    width: 100%;
+    display: none;
+    &:active, &.active, &:focus{
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 .vertical-center {
@@ -829,6 +853,10 @@ body {
     .sidenav a {
         font-size: 18px;
     }
+    .down {
+        bottom: unset;
+        margin-bottom: unset;
+    }
 }
 
 @media (max-width: 990px) {
@@ -845,8 +873,45 @@ body {
         font-size: 23pt;
         padding-top: 50pt;
         white-space: nowrap;
-
     }
+    .logo-kaplicky{
+        width: 100%;
+        display: block;
+    }
+    .arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin: 2rem;
+        cursor: pointer;
+        border: 0.59055rem solid transparent;
+        &:active, &.active, &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .arrow-left {
+        margin-left: 80%;
+
+        border-right: 0.59055rem solid $theme-color-five;
+        background-color: $theme-color-four !important;
+    }
+    .arrow-right {
+        border-left: 0.59055rem solid $theme-color-four;
+
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+    }
+    .bar-desktop{
+        display: none;
+    }
+    .menu-item:active, .menu-item.active{
+        color: $theme-color-five;
+        background-color: $theme-color-one;
+    }
+
 
     /*.btn-circle.rounded-circle.btn-sm
     {

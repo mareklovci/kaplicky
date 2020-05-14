@@ -30,8 +30,8 @@ return [
     'register' => 'register',
     'topics' => 'topics',
     'artefacts' => 'books',
-    'favourite_artefacts' => 'my books',
-    'favourite_metadata' => 'my notes',
+    'favourite_artefacts' => 'likes',
+    'favourite_metadata' => 'notes',
     'charts' => 'charts',
 
     /*
