@@ -47,9 +47,6 @@
             </a>
 
         </li>
-        <li class="nav-item">
-
-        </li>
         <li class="nav-item down">
             <a class="menu-item text-headline" href="{{ url('/czech') }}">
                 {{ __('general.cs') }}
@@ -75,6 +72,44 @@
             {{ __('general.kaplicky') }}
         </a>
     @endif
+    <div class="bar-desktop">
+        <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
+            {{ __('general.home') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/categories') }}">
+            {{ __('general.topics') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/artefact') }}">
+            {{ __('general.artefacts') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/favartefacts') }}">
+            {{ __('general.favourite_artefacts') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/favmetadata') }}">
+            {{ __('general.favourite_metadata') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/charts') }}">
+            {{ __('general.charts') }}
+        </a>
+
+        <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">
+            {{ __('general.cs') }}
+        </a>
+        <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
+            event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+    </div>
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>
 {{--<label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>--}}
