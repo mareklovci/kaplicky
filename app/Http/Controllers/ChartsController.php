@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Auth;
@@ -26,9 +27,12 @@ class ChartsController extends Controller
         if(Auth::check())
         {
             $artefacts = Artefact::all();
+            //$user_likes = User::find(Auth::id())->likesArtefacts();
             foreach($artefacts as $item)
             {
-                $item['likes'] = Artefact::find($item->id)->users()->count();
+                $id = $item->id;
+                $item['likes'] = Artefact::find($id)->users()->count();
+                $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
             }
             $artefacts=$artefacts->sortByDesc('likes');
 
@@ -36,7 +40,7 @@ class ChartsController extends Controller
                 'title' => 'Charts',
                 'artefacts' => $artefacts
             );
-            return view('favartefacts.index') -> with($data);
+            return view('charts.index') -> with($data);
         }
         else
         {
@@ -56,9 +60,12 @@ class ChartsController extends Controller
     public function show()
     {
         $artefacts = Artefact::all();
+        //$user_likes = User::find(Auth::id())->likesArtefacts();
         foreach($artefacts as $item)
         {
-            $item['likes'] = Artefact::find($item->id)->users()->count();
+            $id = $item->id;
+            $item['likes'] = Artefact::find($id)->users()->count();
+            $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
         }
         $artefacts=$artefacts->sortByDesc('likes');
 
