@@ -776,7 +776,7 @@ body {
     border: 0;
     &:active, &.active, &:focus{
         color: $theme-color-one;
-        background-color: $theme-color-five;
+        //background-color: $theme-color-five;
         border: none;
         outline: none;
         box-shadow: none;

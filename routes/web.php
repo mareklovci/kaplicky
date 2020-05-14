@@ -25,6 +25,7 @@ Route::get('/detail/unlike/{id}', 'DetailsController@unlike');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
 Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
 Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => array('index', 'show', 'store')));
+Route::resource('/charts', 'ChartsController', array('only' => array('index', 'show', 'store')));
 Route::get('/favmetadata', 'FavoriteMetadataController@index');
 Route::get('/favmetadata/unlike/{id}', 'FavoriteMetadataController@unlike');
 
