@@ -705,6 +705,9 @@ body {
     width: 100%;
     top: 0;
     z-index: 2;
+    .shadow {
+        box-shadow: none;
+    }
 }
 
 .arrow-left {
@@ -724,7 +727,17 @@ body {
 }
 
 .separator {
-    border-bottom: 1px solid $theme-color-five;
+    position: relative;
+    z-index : 5;
+    &:before{
+        width: 50%;
+        content : "";
+        position: absolute;
+        left    : 0;
+        bottom  : 0;
+        height  : 1px;
+        border-bottom:1px solid $theme-color-five;
+    }
 }
 
 .sidenav {
@@ -757,7 +770,22 @@ body {
     }
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.down {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.menu-item{
+    padding: 0.25rem 1.5rem;
+    width: 100%;
+    border: 0;
+}
+
+.menu-item.active, .menu-item:active {
     color: $theme-color-five;
     background-color: $theme-color-one;
 }
@@ -790,6 +818,10 @@ body {
 @media screen and (max-height: 450px) {
     .sidenav a {
         font-size: 18px;
+    }
+    .down {
+        bottom: unset;
+        margin-bottom: unset;
     }
 }
 

@@ -6,54 +6,55 @@
     <li class="nav-item"> &#160;</li>
     @guest
         <li class="nav-item">
-            <a class="dropdown-item text-headline" href="{{ url('/') }}">
+            <a class="menu-item text-headline" href="{{ url('/') }}">
                 {{ __('general.home') }}
             </a>
-            <a class="dropdown-item text-headline" href="{{ route('login') }}">
+            <a class="menu-item text-headline" href="{{ route('login') }}">
                 {{ __('general.login') }}
             </a>
         </li>
         @if (Route::has('register'))
             <li class="nav-item">
-                <a class="dropdown-item text-headline" href="{{ route('register') }}">
+                <a class="menu-item text-headline" href="{{ route('register') }}">
                     {{ __('general.register') }}
                 </a>
             </li>
         @endif
     @else
-        <li class="nav-item dropdown">
-            <a class="dropdown-item text-headline" href="{{ url('/') }}">
+        <li class="nav-item separator">
+            <a class="menu-item text-headline" href="{{ url('/') }}">
                 {{ __('general.home') }}
             </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/categories') }}">
+            <a class="menu-item text-headline" href="{{ url('/categories') }}">
                 {{ __('general.topics') }}
             </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/artefact') }}">
+            <a class="menu-item text-headline" href="{{ url('/artefact') }}">
                 {{ __('general.artefacts') }}
             </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/favartefacts') }}">
+            <a class="menu-item text-headline" href="{{ url('/favartefacts') }}">
                 {{ __('general.favourite_artefacts') }}
             </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/favmetadata') }}">
+            <a class="menu-item text-headline" href="{{ url('/favmetadata') }}">
                 {{ __('general.favourite_metadata') }}
             </a>
 
-            <a class="dropdown-item text-headline" href="{{ url('/charts') }}">
+            <a class="menu-item text-headline" href="{{ url('/charts') }}">
                 {{ __('general.charts') }}
             </a>
 
         </li>
-        <li class="nav-item dropdown separator">
-            <a class="dropdown-item text-headline" href="{{ url('/czech') }}">
+        <li class="nav-item">
+
+        </li>
+        <li class="nav-item down">
+            <a class="menu-item text-headline" href="{{ url('/czech') }}">
                 {{ __('general.cs') }}
             </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="dropdown-item text-headline" href="{{ route('logout') }}" onclick="
+            <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
                 {{ __('logout') }}
@@ -67,7 +68,7 @@
 
 </div>
 
-<nav class="navbar navbar-expand-md navbar-light black shadow-sm top-bar">
+<nav class="navbar navbar-expand-md navbar-light top-bar">
     <span class="arrow arrow-right" onclick="openNav()"></span>
     @if(!Request::is('login')&&!Request::is('register'))
         <a for="logo" class="logo-kaplicky kaplicky" href="{{ url('/') }}">
