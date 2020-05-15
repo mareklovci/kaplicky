@@ -73,6 +73,19 @@
         </a>
     @endif
     <div class="bar-desktop">
+        @guest
+                <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
+                    {{ __('general.home') }}
+                </a>
+                <a class="menu-item text-headline-desktop" href="{{ route('login') }}">
+                    {{ __('general.login') }}
+                </a>
+            @if (Route::has('register'))
+                    <a class="menu-item text-headline-desktop" href="{{ route('register') }}">
+                        {{ __('general.register') }}
+                    </a>
+            @endif
+        @else
         <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
             {{ __('general.home') }}
         </a>
@@ -109,6 +122,7 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
+        @endguest
     </div>
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>
