@@ -31,12 +31,12 @@
                                                 @if (!$artefact->favourite)
                                                 <form method="POST" action="{{ url('/artefact/like/' . $artefact->id) }}">
                                                     @csrf
-                                                    <button id="like_butt_{{$artefact->id}}" type="submit" class="btn btn-primary button-image inter_like"></button>
+                                                    <button id="like_butt_{{$artefact->id}}" style="display: inline" type="submit" class="btn btn-primary button-image inter_like"></button>
                                                 </form>
                                                 @else
                                                 <form method="POST" action="{{ url('/artefact/unlike/' . $artefact->id) }}">
                                                     @csrf
-                                                    <button id="like_butt_{{$artefact->id}}" type="submit" class="btn btn-primary button-image inter_like_filled"></button>
+                                                    <button id="like_butt_{{$artefact->id}}" style="display: inline" type="submit" class="btn btn-primary button-image inter_like_filled"></button>
                                                 </form>
                                                 @endif
                                                 <span class="likes_text">
