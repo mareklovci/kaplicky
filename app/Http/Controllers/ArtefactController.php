@@ -12,6 +12,8 @@ use Illuminate\View\View;
 
 class ArtefactController extends Controller
 {
+    const ORDER_COLUMN = 'page';
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,7 +26,20 @@ class ArtefactController extends Controller
      */
     public function default()
     {
-        $artefacts = Artefact::all();
+        $artefacts = Artefact::simplePaginate(1);
+        foreach($artefacts as $artefact)
+        {
+            $artefact['likes'] = Artefact::find($artefact->id)->users()->count();
+            $artefact['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($artefact->id)) ? false : true;
+            $metadata = Artefact::find($artefact->id)->metadata()->orderBy(self::ORDER_COLUMN)->get();
+
+            foreach ($metadata as $item)
+            {
+                $item['favourite'] = is_null(User::find(Auth::id())->likesMetadata()->find($item->id)) ? false : true;
+            }
+
+            $artefact['metadata'] = $metadata;
+        }
 
         return view('artefact.default', ['artefacts' => $artefacts]);
     }
