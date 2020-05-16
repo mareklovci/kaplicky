@@ -11704,6 +11704,197 @@ body .head-title.text-center.cat-main-topic h1 {
   margin-bottom: 3rem;
 }
 
+.books-component .book-area .card-cus-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.books-component .book-area .card-cus-bottom .book-arrow:after {
+  content: "";
+  bottom: 3rem;
+  position: absolute;
+  border-top: 1.25rem solid transparent;
+  border-bottom: 1.25rem solid transparent;
+}
+
+.books-component .book-area .card-cus-bottom .book-arrow-left:after {
+  left: 25%;
+  border-right: 1.25rem solid #ddd1b9;
+}
+
+.books-component .book-area .card-cus-bottom .book-arrow-right:after {
+  right: 25%;
+  border-left: 1.25rem solid #ddd1b9;
+}
+
+.books-component .book-area .card-cus-bottom .likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books-component .book-area .card-cus-bottom .likes .inter_like,
+.books-component .book-area .card-cus-bottom .likes .inter_like_filled {
+  margin: 0 auto;
+}
+
+.books-component .book-area .card-cus-bottom .likes .inter_like:before,
+.books-component .book-area .card-cus-bottom .likes .inter_like_filled:before {
+  margin-right: 0;
+  height: 5rem;
+  width: 5rem;
+}
+
+.books-component .book-area .card-cus-bottom .likes .artefact-likes {
+  font-size: 12pt;
+  padding: 0;
+}
+
+.books-component .info-area {
+  color: #ddd1b9;
+  margin-top: 0.625rem;
+  padding-left: 5rem;
+  /* could be use to hide overflowing notes
+  max-height: 80vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+      width: 0 !important
+  } */
+}
+
+.books-component .info-area h3 {
+  font-weight: 600;
+}
+
+.books-component .info-area .switch-view {
+  float: right;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.books-component .info-area .artefact-notes {
+  display: none;
+  color: #ddd1b9;
+}
+
+.books-component .info-area .artefact-notes .pin-horizontal {
+  border-bottom: 0.042rem solid #ddd1b9;
+  display: inline-block;
+  margin: 2.75rem 2rem 0 0;
+}
+
+.books-component .info-area .artefact-notes .pin-horizontal:after {
+  content: "";
+  background-color: #ddd1b9;
+  position: relative;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  top: 0.25rem;
+}
+
+.books-component .info-area .artefact-notes .pin-horizontal .metadata {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+
+.books-component .info-area .artefact-notes .pin-horizontal .metadata span {
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.books-component .info-area .artefact-notes .pin-horizontal .metadata .arrow-down {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #ddd1b9;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.books-component .info-area .artefact-notes .white-pin {
+  color: #ffffff;
+  border-bottom: 0.042rem solid #ffffff;
+}
+
+.books-component .info-area .artefact-notes .white-pin:before {
+  content: "";
+  background-color: #ffffff;
+}
+
+.books-component .info-area .artefact-notes .white-pin .metadata .arrow-down {
+  border-top: 0.25rem solid #ffffff;
+}
+
+.books-component .info-area .artefact-notes .metadata-text {
+  font-size: 12pt;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.books-component .info-area .artefact-notes .metadata-text .inter_like:before {
+  background-image: url(/images/Heart_Empty.svg?974f069a126736e569df0f463d68c026);
+  width: 5rem;
+  height: 5rem;
+}
+
+.books-component .info-area .artefact-notes .metadata-text .inter_like:hover,
+.books-component .info-area .artefact-notes .metadata-text .inter_like:focus,
+.books-component .info-area .artefact-notes .metadata-text .inter_like:active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.books-component .info-area .artefact-notes .metadata-text .inter_like_filled:before {
+  background-image: url(/images/Heart_Filled.svg?e5b962dc0fd67a2042277b9826016c9c);
+  width: 5rem;
+  height: 5rem;
+}
+
+.books-component .info-area .artefact-notes .metadata-text .inter_like_filled:hover,
+.books-component .info-area .artefact-notes .metadata-text .inter_like_filled:focus,
+.books-component .info-area .artefact-notes .metadata-text .inter_like_filled:active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.books-component .info-area .inter_info {
+  float: right;
+  color: #ffffff;
+  padding-right: 1rem;
+}
+
+.books-component .info-area .inter_info:before {
+  background-image: url(/images/Button_Info_White.svg?eeeba6da4f02d7b457f5ed048a356fc6);
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.books-component .info-area .inter_info:hover,
+.books-component .info-area .inter_info:focus,
+.books-component .info-area .inter_info:active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav a {
     font-size: 18px;
@@ -11767,6 +11958,10 @@ body .head-title.text-center.cat-main-topic h1 {
   .menu-item.active {
     color: #272727;
     background-color: #ffffff;
+  }
+
+  .books-component .info-area {
+    padding-left: 1.5625rem;
   }
 }
 
