@@ -853,6 +853,211 @@ body {
     margin-bottom: 3rem;
 }
 
+// books component
+.books-component {
+
+    .book-area {
+        .card-cus-bottom {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            .book-arrow {
+                &:after {
+                    content: '';
+                    bottom: 3rem;
+                    position: absolute;
+                    border-top: 1.25rem solid transparent;
+                    border-bottom: 1.25rem solid transparent;
+                }
+            }
+
+            .book-arrow-left {
+                &:after {
+                    left: 25%;
+                    border-right: 1.25rem solid $theme-color-two;
+                }
+            }
+
+            .book-arrow-right {
+               &:after {
+                   right: 25%;
+                   border-left: 1.25rem solid $theme-color-two;
+               }
+            }
+
+            .likes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .inter_like, .inter_like_filled {
+                    margin: 0 auto;
+                    &:before {
+                        margin-right: 0;
+                        height: 5rem;
+                        width: 5rem;
+                    }
+                }
+
+                .artefact-likes {
+                    font-size: 12pt;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .info-area {
+        color: $theme-color-two;
+        margin-top: 0.625rem;
+        padding-left: 5rem;
+
+        /* could be use to hide overflowing notes
+        max-height: 80vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            width: 0 !important
+        } */
+
+        h3 {
+            font-weight: $font-weight-two;
+        }
+
+        .switch-view {
+            float: right;
+            color: $theme-color-one;
+            cursor: pointer;
+        }
+
+        .artefact-notes {
+            display: none;
+            color: $theme-color-two;
+
+            .pin-horizontal {
+                border-bottom: .042rem solid $theme-color-two;
+                display: inline-block;
+                margin: 2.75rem 2rem 0 0;
+
+                &:after {
+                    content: '';
+                    background-color: #ddd1b9;
+                    position: relative;
+                    height: .5rem;
+                    width: .5rem;
+                    border-radius: 50%;
+                    display: block;
+                    margin-left: auto;
+                    top: .25rem;
+                }
+
+                .metadata {
+                    position: relative;
+                    display: flex;
+                    align-items: baseline;
+
+                    span {
+                        font-size: 12pt;
+                        font-weight: $font-weight-two;
+                    }
+
+                    .arrow-down {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 0.25rem solid transparent;
+                        border-right: 0.25rem solid transparent;
+                        border-top: 0.25rem solid $theme-color-two;
+                        margin: 0 0.5rem 0 0.5rem;
+                    }
+                }
+            }
+
+            .white-pin {
+                color: $theme-color-one;
+                border-bottom: .042rem solid $theme-color-one;
+
+                &:before {
+                    content: '';
+                    background-color: $theme-color-one;
+                }
+
+                .metadata {
+                    .arrow-down {
+                        border-top: 0.25rem solid $theme-color-one;
+                    }
+                }
+            }
+
+            .metadata-text {
+                font-size: 12pt;
+                color: $theme-color-one;
+                padding-top: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+
+                .inter_like {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .inter_like_filled {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+
+        .inter_info {
+
+            float: right;
+            color: $theme-color-one;
+            padding-right: 1rem;
+
+            &:before {
+                background-image: url(../images/interface/Button_Info_White.svg);
+                width: 1.875rem;
+                height: 1.875rem;
+            }
+
+            &:hover, &:focus, &:active {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-height: 450px) {
     .sidenav a {
         font-size: 18px;
@@ -911,6 +1116,11 @@ body {
     .menu-item:active, .menu-item.active{
         color: $theme-color-five;
         background-color: $theme-color-one;
+    }
+    .books-component {
+        .info-area{
+            padding-left: 1.5625rem;
+        }
     }
 }
 
