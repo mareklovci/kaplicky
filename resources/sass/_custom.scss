@@ -1002,14 +1002,12 @@ body {
                     }
                 }
                 .carousel-button {
-                    transform: none;
-                    left: 76%;
-                    bottom: 20%;
+                    bottom: 15%;
                 }
             }
 
             .carousel-caption{
-                padding: 3.75rem 6.25rem 10em;
+                padding: 3.75rem 6.25rem 5em;
 
                 h2 {
                     margin-bottom: 1rem;
@@ -1021,6 +1019,33 @@ body {
             font-size: 18pt;
             width: 10.875rem;
             height: 2.938rem;
+        }
+    }
+}
+
+@media (min-width: 1575px) {
+    body {
+        .carousel {
+            .carousel-inner {
+                .carousel-button {
+                    bottom: 20%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1900px) {
+
+    body {
+        .carousel {
+            .carousel-inner {
+                .carousel-button {
+                    transform: none;
+                    left: 76%;
+                    bottom: 25%;
+                }
+            }
         }
     }
 }
