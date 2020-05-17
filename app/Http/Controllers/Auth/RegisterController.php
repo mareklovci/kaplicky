@@ -66,12 +66,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Mail::to($data['email'])->send(new RegisterMail());
+        $stringH = Hash::make($data['email'] . $data['name']);
+        $vowels = array("/", "\\");
+        $stringHModified = str_replace($vowels, "", $stringH);
+
+        Mail::to($data['email'])->send(new RegisterMail("http://localhost/verify/". $stringHModified));
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'register_hash' => $stringHModified,
         ]);
     }
 }

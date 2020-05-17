@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
 
+Route::get('/verify/{id}', 'VerifyRegisterController@verifyUser');
 Route::get('/artefact', 'ArtefactController@default');
 Route::get('/artefact/{id}', 'ArtefactController@view');
 Route::post('/artefact/like/{id}', 'ArtefactController@like');

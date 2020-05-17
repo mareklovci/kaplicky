@@ -725,6 +725,17 @@ body {
             font-size: 1.9rem;
         }
     }
+
+    //VERIFY - main text
+    .ver-text{
+
+        margin-top: 20pt    ;
+
+        h2{
+            text-align: center;
+            color:$theme-color-two;
+        }
+    }
 }
 
 .arrow {
