@@ -21,6 +21,7 @@ Route::get('/artefact/{id}', 'ArtefactController@view');
 Route::post('/artefact/like/{id}', 'ArtefactController@like');
 Route::post('/artefact/unlike/{id}', 'ArtefactController@unlike');
 Route::get('/category/{id}', 'ArtefactController@showCategory');
+Route::get('/category/multi/{id}', 'ArtefactController@showCategories');
 Route::get('/detail/like/{id}', 'DetailsController@like');
 Route::get('/detail/unlike/{id}', 'DetailsController@unlike');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
