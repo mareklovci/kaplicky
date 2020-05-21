@@ -1,9 +1,6 @@
 <div id="sidebar" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" onclick="closeNav()"></a>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
+    <ul style="padding-left: 0; margin-top: 5rem;">
     @guest
         <li class="nav-item">
             <a class="menu-item text-headline" href="{{ url('/') }}">
@@ -21,7 +18,7 @@
             </li>
         @endif
     @else
-        <li class="nav-item separator">
+        <li class="nav-item">
             <a class="menu-item text-headline" href="{{ url('/') }}">
                 {{ __('general.home') }}
             </a>
@@ -54,7 +51,7 @@
             <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-                {{ __('logout') }}
+                {{ __('general.logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -62,7 +59,7 @@
             </form>
         </li>
     @endguest
-
+    </ul>
 </div>
 
 <nav class="navbar navbar-expand-md navbar-light top-bar">
@@ -116,7 +113,7 @@
         <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-            {{ __('logout') }}
+            {{ __('general.logout') }}
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

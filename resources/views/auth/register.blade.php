@@ -71,7 +71,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <button type="submit" class="btn button-square">
-                                                {{ __('Register') }}
+                                                {{ __('general.register') }}
                                             </button>
                                         </div>
                                     </div>
@@ -81,13 +81,13 @@
                                             <div class="col-sm-12">
                                                 <div class="text white pin-left" role="alert">
                                                     <div class="al">
+                                                        @error('name')
+                                                        <p class="text">{{ $message }}</p>
+                                                        @enderror
                                                         @error('email')
                                                         <p class="text">{{ $message }}</p>
                                                         @enderror
                                                         @error('password')
-                                                        <p class="text">{{ $message }}</p>
-                                                        @enderror
-                                                        @error('name')
                                                         <p class="text">{{ $message }}</p>
                                                         @enderror
                                                     </div>
