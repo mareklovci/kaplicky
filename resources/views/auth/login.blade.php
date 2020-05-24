@@ -19,10 +19,19 @@
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
 
-                                    <label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>
+                                    <label for="logo" class="col-md-12 row kaplicky justify-content-center" >{{ __('kaplicky') }}</label>
 
-                                    <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">
+                                    {{--<label for="email" class="col-md-8 col-form-label text-md-left row justify-content-center">
+                                        {{ __('general.email') }}
+                                    </label>
+                                    <div class="col-md-4 offset-md-12 row justify-content-center">
+                                        <input id="email" type="email"
+                                               class="form-control text2 @error('email') is-invalid @enderror"
+                                               name="email"
+                                               value="{{ old('email') }}" --}}{{--required autocomplete="email" autofocus--}}{{-->
+                                    </div>--}}
+                                    <div class="form-group row ">
+                                        <label for="email" class="col-md-4 col-form-label text-md-right text">
                                             {{ __('general.email') }}
                                         </label>
 
@@ -35,7 +44,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password" class="col-md-4 col-form-label text-md-right">
+                                        <label for="password" class="col-md-4 col-form-label text-md-right text">
                                             {{ __('general.password') }}
                                         </label>
 

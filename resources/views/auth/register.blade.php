@@ -22,7 +22,7 @@
                                     <label for="logo" class="col-md-4 kaplicky">{{ __('kaplicky') }}</label>
                                     <div class="form-group row">
                                         <label for="name"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
+                                               class="col-md-4 col-form-label text text-md-right">{{ __('name') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="name" type="text"
@@ -35,7 +35,7 @@
 
                                     <div class="form-group row">
                                         <label for="email"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('e-mail') }}</label>
+                                               class="col-md-4 col-form-label text text-md-right">{{ __('e-mail') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="email" type="email @error('email') is-invalid @enderror"
@@ -48,11 +48,11 @@
 
                                     <div class="form-group row">
                                         <label for="password"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('password') }}</label>
+                                               class="col-md-4 col-form-label text text-md-right">{{ __('password') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="password" type="password"
-                                                   class="form-control @error('password') is-invalid @enderror"
+                                                   class="form-control text2 @error('password') is-invalid @enderror"
                                                    name="password" {{--required autocomplete="new-password"--}}>
 
                                         </div>
@@ -60,10 +60,10 @@
 
                                     <div class="form-group row">
                                         <label for="password-confirm"
-                                               class="col-md-4 col-form-label text-md-right">{{ __('confirm password') }}</label>
+                                               class="col-md-4 col-form-label text text-md-right">{{ __('confirm password') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="password-confirm" type="password" class="form-control"
+                                            <input id="password-confirm" type="password" class="form-control text2"
                                                    name="password_confirmation" {{--required autocomplete="new-password"--}}>
                                         </div>
                                     </div>
