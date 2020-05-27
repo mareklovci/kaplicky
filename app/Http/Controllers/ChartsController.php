@@ -34,7 +34,15 @@ class ChartsController extends Controller
                 $item['likes'] = Artefact::find($id)->users()->count();
                 $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
             }
-            $artefacts=$artefacts->sortByDesc('likes');
+            //$artefacts->keyBy('id');
+            /*$selected = [];
+            for($i=0;$i<10;$i++){
+                $max = $artefacts->where('likes', $artefacts->max('likes'));
+                $selected[$i] = $max->first();
+                $artefacts->forget($max->keys()->first());
+            }
+            $artefacts=$selected;*/
+            $artefacts=$artefacts->sortByDesc('likes')->take(10);
 
             $data = array(
                 'title' => 'Charts',
@@ -57,7 +65,7 @@ class ChartsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function show()
+    /*public function show()
     {
         $artefacts = Artefact::all();
         //$user_likes = User::find(Auth::id())->likesArtefacts();
@@ -74,6 +82,6 @@ class ChartsController extends Controller
             'artefacts' => $artefacts
         );
         return view('charts.index') -> with($data);
-    }
+    }*/
 
 }
