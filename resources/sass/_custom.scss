@@ -1379,6 +1379,65 @@ body {
             font-size: 18pt;
             padding: 0.28125rem 3.7rem;
         }
+
+        .metadata-area {
+            .pin-horizontal {
+                margin: 5rem 3.125rem 0 0;
+
+                .metadata {
+
+                    margin-right: 0.5rem;
+
+                    .arrow-down {
+                        border-left: 0.5rem solid transparent;
+                        border-right: 0.5rem solid transparent;
+                        border-top: 0.5rem solid $theme-color-two;
+                    }
+
+                    a {
+                        span {
+                            font-size: 16pt;
+                        }
+                    }
+                }
+
+                &:after {
+                    height: 0.75rem;
+                    width: 0.75rem;
+                    top: 0.375rem;
+                }
+            }
+
+            .white-pin {
+                .metadata {
+                    .arrow-down {
+                        border-top: 0.5rem solid $theme-color-one;
+                    }
+                }
+            }
+
+            .metadata-text {
+                font-size: 19pt;
+                max-width: 50%;
+
+                .artefact-info {
+                    .artefact-name {
+                        font-size: 16pt;
+                    }
+
+                    .artefact-author {
+                        font-size: 12pt;
+                    }
+
+                    .inter_like_filled {
+                        &:before{
+                            width: 5rem;
+                            height: 5rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
