@@ -239,8 +239,7 @@ body {
         color: $theme-color-one;
         border: 0.5pt solid $theme-color-one;
         border-radius: 0;
-        width: 6.5rem;
-        height: 2rem;
+        padding: 0.4675rem 2.475rem;
         font-weight: $font-weight-one;
 
         &:active, &:focus, &:visited, &:hover {
@@ -1301,8 +1300,7 @@ body {
 
         .button-square {
             font-size: 18pt;
-            width: 10.875rem;
-            height: 2.938rem;
+            padding: 0.28125rem 3.7rem;
         }
     }
 }
