@@ -84,7 +84,7 @@
 
                     @endforeach
                 @else
-                    <h2>No favourite metadata yet!</h2>
+                    <h2>No metadata yet!</h2>
                 @endif
             </div>
         </div>
