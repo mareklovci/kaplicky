@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use App\Artefact;
 use App\Http\Controllers\Image;
 use Illuminate\View\View;
+use App\Artefact;
 
 class ChartsController extends Controller
 {
@@ -50,28 +51,5 @@ class ChartsController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return Application|Factory|View
-     */
-    /*public function show()
-    {
-        $artefacts = Artefact::all();
-        //$user_likes = User::find(Auth::id())->likesArtefacts();
-        foreach($artefacts as $item)
-        {
-            $id = $item->id;
-            $item['likes'] = Artefact::find($id)->users()->count();
-            $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
-        }
-        $artefacts=$artefacts->sortByDesc('likes');
-
-        $data = array(
-            'title' => 'Charts',
-            'artefacts' => $artefacts
-        );
-        return view('charts.index') -> with($data);
-    }*/
 
 }
