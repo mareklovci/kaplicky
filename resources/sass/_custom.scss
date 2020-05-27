@@ -526,8 +526,13 @@ body {
                 display: flex;
                 align-items: baseline;
 
-                span {
-                    font-weight: $font-weight-two;
+                a {
+                    color: $theme-color-two;
+                    text-decoration: none;
+
+                    span {
+                        font-weight: $font-weight-two;
+                    }
                 }
 
                 .arrow-down {
@@ -548,12 +553,16 @@ body {
             color: $theme-color-one;
             border-bottom: .042rem solid $theme-color-one;
 
-            &:before {
+            &:after {
                 content: '';
                 background-color: $theme-color-one;
             }
 
             .metadata {
+                a {
+                    color: $theme-color-one;
+                }
+
                 .arrow-down {
                     border-top: 0.25rem solid $theme-color-one;
                 }
@@ -1082,7 +1091,7 @@ body {
                 color: $theme-color-one;
                 border-bottom: .042rem solid $theme-color-one;
 
-                &:before {
+                &:after {
                     content: '';
                     background-color: $theme-color-one;
                 }
