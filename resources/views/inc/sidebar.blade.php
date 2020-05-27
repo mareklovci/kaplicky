@@ -1,9 +1,6 @@
 <div id="sidebar" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" onclick="closeNav()"></a>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
-    <li class="nav-item"> &#160;</li>
+    <ul style="padding-left: 0; margin-top: 5rem;">
     @guest
         <li class="nav-item">
             <a class="menu-item text-headline" href="{{ url('/') }}">
@@ -21,7 +18,7 @@
             </li>
         @endif
     @else
-        <li class="nav-item separator">
+        <li class="nav-item">
             <a class="menu-item text-headline" href="{{ url('/') }}">
                 {{ __('general.home') }}
             </a>
@@ -54,7 +51,7 @@
             <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-                {{ __('logout') }}
+                {{ __('general.logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -62,7 +59,7 @@
             </form>
         </li>
     @endguest
-
+    </ul>
 </div>
 
 <nav class="navbar navbar-expand-md navbar-light top-bar">
@@ -73,6 +70,19 @@
         </a>
     @endif
     <div class="bar-desktop">
+        @guest
+                <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
+                    {{ __('general.home') }}
+                </a>
+                <a class="menu-item text-headline-desktop" href="{{ route('login') }}">
+                    {{ __('general.login') }}
+                </a>
+            @if (Route::has('register'))
+                    <a class="menu-item text-headline-desktop" href="{{ route('register') }}">
+                        {{ __('general.register') }}
+                    </a>
+            @endif
+        @else
         <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
             {{ __('general.home') }}
         </a>
@@ -103,12 +113,13 @@
         <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-            {{ __('logout') }}
+            {{ __('general.logout') }}
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
+        @endguest
     </div>
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>

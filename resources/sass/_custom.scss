@@ -68,6 +68,8 @@ body {
         .carousel-caption {
             top: 50%;
             bottom: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
             transform: translateY(-50%);
             background-color: rgba(239, 218, 179, 0.5);
         }
@@ -163,7 +165,11 @@ body {
             border-radius: 0;
 
             &:focus {
-                border-color: $theme-color-one;
+                //border-color: $theme-color-one;
+                border-top-color: $theme-color-five;
+                border-left-color: $theme-color-five;
+                border-right-color: $theme-color-five;
+                border-bottom-color: 0.5pt $theme-color-one;
                 -webkit-box-shadow: none;
                 box-shadow: none;
             }
@@ -304,15 +310,15 @@ body {
         }
     }
 
-    .fav-cat-mybooks{
-        color:$theme-color-two;
+    .fav-cat-mybooks {
+        color: $theme-color-two;
         text-align: center;
         font-size: 1.9rem;
     }
 
-    .fav-cat-nofav{
+    .fav-cat-nofav {
         text-align: center;
-        color:$theme-color-three;
+        color: $theme-color-three;
         background-color: $theme-color-five;
         border-color: $theme-color-three;
     }
@@ -348,14 +354,14 @@ body {
 
         .left_panel_info {
             margin-top: 15px;
-            max-width: 70%;//250px
+            max-width: 70%; //250px
         }
 
         .right_panel_info {
             margin-top: 15px;
         }
 
-        .likes_text{
+        .likes_text {
             text-align: center;
         }
 
@@ -371,8 +377,8 @@ body {
                 background-image: url(../images/interface/Button_Info.svg);
                 //width: 60px;
                 //height: 60px;
-                width:8vw;
-                height:8vw;
+                width: 8vw;
+                height: 8vw;
             }
         }
 
@@ -384,8 +390,8 @@ body {
                 background-image: url(../images/interface/Heart_Empty.svg);
                 //width: 60px;
                 //height: 60px;
-                width:8vw;
-                height:8vw;
+                width: 8vw;
+                height: 8vw;
             }
         }
 
@@ -395,8 +401,8 @@ body {
                 background-image: url(../images/interface/Heart_Filled.svg);
                 //width: 60px;
                 //height: 60px;
-                width:8vw;
-                height:8vw;
+                width: 8vw;
+                height: 8vw;
             }
         }
 
@@ -709,7 +715,7 @@ body {
         font-size: 22pt;
 
         //SPACING
-        padding: 4rem 0.5rem;
+        padding: 4rem 1rem;
 
         &:active, &:focus {
             background-color: $theme-color-three;
@@ -732,9 +738,9 @@ body {
     }
 
     //CATEGORIES - Choose a topic TITLE
-    .head-title.text-center.cat-main-topic{
+    .head-title.text-center.cat-main-topic {
 
-        h1{
+        h1 {
             font-size: 1.9rem;
         }
     }
@@ -805,27 +811,14 @@ body {
 
 .top-bar {
     background-color: $theme-color-five;
-    height: 5rem;
+    min-height: 5rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 2;
+
     .shadow {
         box-shadow: none;
-    }
-}
-
-.separator {
-    position: relative;
-    z-index : 5;
-    &:before{
-        width: 50%;
-        content : "";
-        position: absolute;
-        left    : 0;
-        bottom  : 0;
-        height  : 1px;
-        border-bottom:1px solid $theme-color-five;
     }
 }
 
@@ -859,13 +852,13 @@ body {
     }
 }
 
-.bar-desktop{
+.bar-desktop {
     display: flex;
     align-items: center;
-    min-width: 84vw;
-    margin-left: 8vw;
-    margin-right: 8vw;
-    margin-top: 2rem;
+    text-align: center;
+    min-width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .down {
@@ -877,11 +870,12 @@ body {
     margin-bottom: 3rem;
 }
 
-.menu-item{
-    padding: 0.25rem 1.5rem;
+.menu-item {
+    padding: 0.25rem 1rem;
     width: 100%;
     border: 0;
-    &:active, &.active, &:focus{
+
+    &:active, &.active, &:focus {
         color: $theme-color-one;
         //background-color: $theme-color-five;
         border: none;
@@ -893,10 +887,15 @@ body {
 .logo-kaplicky {
     text-align: center;
     display: none;
-    &:active, &.active, &:focus{
+
+    &:active, &.active, &:focus {
         outline: none;
         box-shadow: none;
     }
+}
+
+.navbar {
+    padding: unset;
 }
 
 .vertical-center {
@@ -918,6 +917,212 @@ body {
     margin-bottom: 3rem;
 }
 
+// books component
+.books-component {
+
+    .book-area {
+        .card-cus-bottom {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            .book-arrow {
+                &:after {
+                    content: '';
+                    bottom: 3rem;
+                    position: absolute;
+                    border-top: 1.25rem solid transparent;
+                    border-bottom: 1.25rem solid transparent;
+                }
+            }
+
+            .book-arrow-left {
+                &:after {
+                    left: 25%;
+                    border-right: 1.25rem solid $theme-color-two;
+                }
+            }
+
+            .book-arrow-right {
+                &:after {
+                    right: 25%;
+                    border-left: 1.25rem solid $theme-color-two;
+                }
+            }
+
+            .likes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .inter_like, .inter_like_filled {
+                    margin: 0 auto;
+
+                    &:before {
+                        margin-right: 0;
+                        height: 5rem;
+                        width: 5rem;
+                    }
+                }
+
+                .artefact-likes {
+                    font-size: 12pt;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .info-area {
+        color: $theme-color-two;
+        margin-top: 0.625rem;
+        padding-left: 5rem;
+
+        /* could be use to hide overflowing notes
+        max-height: 80vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            width: 0 !important
+        } */
+
+        h3 {
+            font-weight: $font-weight-two;
+        }
+
+        .switch-view {
+            float: right;
+            color: $theme-color-one;
+            cursor: pointer;
+        }
+
+        .artefact-notes {
+            display: none;
+            color: $theme-color-two;
+
+            .pin-horizontal {
+                border-bottom: .042rem solid $theme-color-two;
+                display: inline-block;
+                margin: 2.75rem 2rem 0 0;
+
+                &:after {
+                    content: '';
+                    background-color: #ddd1b9;
+                    position: relative;
+                    height: .5rem;
+                    width: .5rem;
+                    border-radius: 50%;
+                    display: block;
+                    margin-left: auto;
+                    top: .25rem;
+                }
+
+                .metadata {
+                    position: relative;
+                    display: flex;
+                    align-items: baseline;
+
+                    span {
+                        font-size: 12pt;
+                        font-weight: $font-weight-two;
+                    }
+
+                    .arrow-down {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 0.25rem solid transparent;
+                        border-right: 0.25rem solid transparent;
+                        border-top: 0.25rem solid $theme-color-two;
+                        margin: 0 0.5rem 0 0.5rem;
+                    }
+                }
+            }
+
+            .white-pin {
+                color: $theme-color-one;
+                border-bottom: .042rem solid $theme-color-one;
+
+                &:before {
+                    content: '';
+                    background-color: $theme-color-one;
+                }
+
+                .metadata {
+                    .arrow-down {
+                        border-top: 0.25rem solid $theme-color-one;
+                    }
+                }
+            }
+
+            .metadata-text {
+                font-size: 12pt;
+                color: $theme-color-one;
+                padding-top: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+
+                .inter_like {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .inter_like_filled {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+
+        .inter_info {
+
+            float: right;
+            color: $theme-color-one;
+            padding-right: 1rem;
+
+            &:before {
+                background-image: url(../images/interface/Button_Info_White.svg);
+                width: 1.875rem;
+                height: 1.875rem;
+            }
+
+            &:hover, &:focus, &:active {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-height: 450px) {
     .sidenav a {
         font-size: 18px;
@@ -928,23 +1133,20 @@ body {
     }
 }
 
+@media (min-width: 1300px) {
+    .bar-desktop {
+        margin-left: 8vw;
+        margin-right: 8vw;
+        min-width: 84vw;
+    }
+}
+
 @media (max-width: 990px) {
 }
 
 @media (max-width: 770px) {
-}
-
-@media only screen and (max-width: 540px) {
-    .sidenav {
-        width: 0;
-    }
-    .head-title.text-center h1 {
-        font-size: 23pt;
-        padding-top: 50pt;
-        white-space: nowrap;
-    }
-    .logo-kaplicky{
-        width: 100%;
+    .logo-kaplicky {
+        margin: 0 auto;
         display: block;
     }
     .arrow {
@@ -954,7 +1156,8 @@ body {
         margin: 2rem;
         cursor: pointer;
         border: 0.59055rem solid transparent;
-        &:active, &.active, &:focus{
+
+        &:active, &.active, &:focus {
             outline: none;
             box-shadow: none;
         }
@@ -973,12 +1176,28 @@ body {
         top: 0;
         left: 0;
     }
-    .bar-desktop{
+    .bar-desktop {
         display: none;
     }
-    .menu-item:active, .menu-item.active{
+    .menu-item:active, .menu-item.active {
         color: $theme-color-five;
         background-color: $theme-color-one;
+    }
+    .books-component {
+        .info-area {
+            padding-left: 1.5625rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .sidenav {
+        width: 0;
+    }
+    .head-title.text-center h1 {
+        font-size: 23pt;
+        padding-top: 50pt;
+        white-space: nowrap;
     }
 
 
@@ -1027,13 +1246,21 @@ body {
 @media (min-width: 1024px) {
 
     body {
-        .kaplicky{
+        .kaplicky {
             text-align: left !important;
-            font-size: 24pt;
+            //font-size: 24pt;
+            font-size: 30pt;
             line-height: 24pt;
+            margin-bottom: 3rem;
+            //margin-left: 1rem;
         }
 
         .text {
+            text-align: left;
+            font-size: 18pt;
+            line-height: 26pt;
+        }
+        .text2 {
             text-align: left;
             font-size: 18pt;
             line-height: 26pt;
@@ -1057,15 +1284,14 @@ body {
                         }
                     }
                 }
+
                 .carousel-button {
-                    transform: none;
-                    left: 76%;
-                    bottom: 20%;
+                    bottom: 15%;
                 }
             }
 
-            .carousel-caption{
-                padding: 3.75rem 6.25rem 10em;
+            .carousel-caption {
+                padding: 3.75rem 6.25rem 5em;
 
                 h2 {
                     margin-bottom: 1rem;
@@ -1077,6 +1303,18 @@ body {
             font-size: 18pt;
             width: 10.875rem;
             height: 2.938rem;
+        }
+    }
+}
+
+@media (min-width: 1575px) {
+    body {
+        .carousel {
+            .carousel-inner {
+                .carousel-button {
+                    bottom: 20%;
+                }
+            }
         }
     }
 }
