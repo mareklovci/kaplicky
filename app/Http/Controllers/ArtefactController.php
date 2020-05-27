@@ -54,6 +54,44 @@ class ArtefactController extends Controller
     }
 
     /**
+     * Returns view of artefacts related to the chosen category
+     *
+     * @param $id string with categories ids
+     * @return Factory|View
+     */
+    public function showCategories($id)
+    {
+        $textWithIds  = $id;
+        $pieces = explode(",", $textWithIds);
+        $artefacts = array();
+        for($i = 0;$i < count($pieces); $i++)
+        {
+            if($pieces[$i] == null || !strcmp($pieces[$i], ""))
+            {
+                continue;
+            }
+
+            $categoryArtefacts = ArtefactCategory::where('category_id', $pieces[$i])->get();
+            if(count($categoryArtefacts) > 0)
+            {
+                foreach($categoryArtefacts as $ar)
+                {
+                    array_push($artefacts, Artefact::where('id', $ar->artefact_id)->get());
+                }
+            }
+        }
+
+        if(count($artefacts) > 0)
+        {
+            return view('artefact.category', ['artefacts' => $artefacts]);
+        }
+        else
+        {
+            return view('artefact.category', ['artefacts' => array()]);
+        }
+    }
+
+    /**
      * Returns view of single artefact given by its id.
      *
      * @param $id int id of the artefact

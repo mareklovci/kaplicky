@@ -5,17 +5,52 @@
 @section('content')
     <div class="container">
         @if(isset($user))
-            {{--<p><?php dd($categories); ?></p>--}}
-            <div class="cat-main-div" onclick="resetEnter()">
+            <div class="row">
+                <div class="col cat-main-menu">
+                    <a  href="{{ url('/') }}">
+                        {{ __('general.home') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/categories') }}">
+                        {{ __('general.topics') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/artefact') }}">
+                        {{ __('general.artefacts') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/favartefacts') }}">
+                        {{ __('general.favourite_artefacts') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/favmetadata') }}">
+                        {{ __('general.favourite_metadata') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/charts') }}">
+                        {{ __('general.charts') }}
+                    </a>
+                </div>
+                <div class="col cat-main-menu">
+                    <a href="{{ url('/czech') }}">
+                        {{ __('general.cs') }}
+                    </a>
+                </div>
+            </div>
+            <div class="cat-main-div" {{--onclick="resetEnter()"--}}>
                 <div class="head-title text-center cat-main-topic">
                     <h1>choose a topic</h1>
                 </div>
-                <div class="d-flex flex-wrap justify-content-around">
+                <div class="d-flex flex-wrap justify-content-around btn-group" data-toggle="buttons">
                     @for($k = 0; $k < $count;$k++)
-                        {{--                        <div class="d-flex cat-col-md-2">--}}
                         <div class="d-flex col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                            <a href="{{ url('/category/' . $categoryNames[$k]->id) }}"
-                               class="btn btn-dark cat-tile w-100 mt-4">
+                            <a id="cat-but-id{{$categoryNames[$k]->id}}"{{--href="{{ url('/category/' . $categoryNames[$k]->id) }}"--}}
+                                class="btn btn-dark cat-tile w-100 mt-4">
                                 {{$categoryNames[$k]->nameCZ}}
                             </a>
                         </div>
@@ -30,4 +65,31 @@
             </ul>
         @endif
     </div>
+    <div class="cat-wrapper">
+        <a class="btn button-square cat-enter-butt" onclick="test()" role="button">enter</a>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+{{--
+            <a class="btn button-square cat-enter-butt" onclick="test()" role="button">enter</a>
+--}}
+        </div>
+    </div>
+    <script>
+        function test()
+        {
+            var btns = $(".btn-dark:not(:disabled):not(.disabled).active");
+            if(btns.length > 0)
+            {
+                var text = "";
+                for(var i = 0; i < btns.length;i++)
+                {
+                    var idE =  btns[i].id;
+                    var num = idE.substring(10, idE.length);
+                    text += num + ",";
+                }
+                window.location.href = "{{url('/category/multi/')}}/" + text;
+            }
+        }
+    </script>
 @endsection
