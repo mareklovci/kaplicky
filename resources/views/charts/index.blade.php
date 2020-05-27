@@ -12,16 +12,14 @@
                 @foreach($artefacts as $artefact)
                     <div class="artefacts-area mb-5">
                         <div class="card">
-                            <a href="{{ url('/artefact/' . $artefact->id) }}">
-
-                            </a>
                             <div class="container card-cus-bottom">
                                 <div class="d-flex flex-row row-list">
                                     <div class="p-1 flex-fill bd-highlight left_panel_info">
                                         <a href="{{ url('/artefact/' . $artefact->id) }}">
-                                            <h5 class="card-title ">{{$artefact->name}}</h5>
-                                            <h6 class="card-title">{{$artefact->author}}</h6>
+                                            <h5 class="card-title highlight-white">{{$artefact->name}}</h5>
                                         </a>
+                                        <h6 class="card-title ">{{$artefact->author}}</h6>
+
                                     </div>
                                     <div class="p-1 flex-fill bd-highlight float-center">
                                         <div class="text-center right_panel_info">

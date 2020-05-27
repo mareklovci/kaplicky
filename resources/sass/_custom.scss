@@ -144,6 +144,12 @@ body {
         color: $theme-color-four;
     }
 
+    .highlight-white, .highlight-white{
+        &:hover, &:focus, &:active{
+            color: $theme-color-one;
+        }
+    }
+
 
     ////login
     .auth {
