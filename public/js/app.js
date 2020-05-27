@@ -37064,6 +37064,13 @@ $(document).ready(function () {
       var width = metadata.width();
       metadata.css("margin-left", display_width / 2 - width);
     });
+  } else {
+    display_width = $(".metadata-area").width();
+    $(".metadata").each(function () {
+      var metadata = $(this);
+      var width = metadata.width();
+      metadata.css("margin-left", display_width / 2 - width);
+    });
   }
 });
 

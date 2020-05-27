@@ -13,4 +13,15 @@ $(document).ready(function () {
             metadata.css("margin-left", (display_width / 2)  - width);
         });
     }
+    else
+    {
+        display_width = $(".metadata-area").width();
+
+        $(".metadata").each(function() {
+            let metadata = $(this);
+            let width = metadata.width();
+
+            metadata.css("margin-left", (display_width / 2)  - width);
+        });
+    }
 });

@@ -1,64 +1,67 @@
 <div id="sidebar" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" onclick="closeNav()"></a>
     <ul style="padding-left: 0; margin-top: 5rem;">
-    @guest
-        <li class="nav-item">
-            <a class="menu-item text-headline" href="{{ url('/') }}">
-                {{ __('general.home') }}
-            </a>
-            <a class="menu-item text-headline" href="{{ route('login') }}">
-                {{ __('general.login') }}
-            </a>
-        </li>
-        @if (Route::has('register'))
+        @if(Request::is('login')||Request::is('register'))
             <li class="nav-item">
-                <a class="menu-item text-headline" href="{{ route('register') }}">
-                    {{ __('general.register') }}
+                <a class="menu-item text-headline" href="{{ url('/') }}">
+                    {{ __('general.home') }}
+                </a>
+                <a class="menu-item text-headline" href="{{ route('login') }}">
+                    {{ __('general.login') }}
                 </a>
             </li>
-        @endif
-    @else
-        <li class="nav-item">
-            <a class="menu-item text-headline" href="{{ url('/') }}">
-                {{ __('general.home') }}
-            </a>
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="menu-item text-headline" href="{{ route('register') }}">
+                        {{ __('general.register') }}
+                    </a>
+                </li>
+            @endif
+        @else
+            <li class="nav-item">
+                <a class="menu-item text-headline" href="{{ url('/') }}">
+                    {{ __('general.home') }}
+                </a>
 
-            <a class="menu-item text-headline" href="{{ url('/categories') }}">
-                {{ __('general.topics') }}
-            </a>
+                <a class="menu-item text-headline" href="{{ url('/categories') }}">
+                    {{ __('general.topics') }}
+                </a>
 
-            <a class="menu-item text-headline" href="{{ url('/artefact') }}">
-                {{ __('general.artefacts') }}
-            </a>
+                <a class="menu-item text-headline" href="{{ url('/artefact') }}">
+                    {{ __('general.artefacts') }}
+                </a>
 
-            <a class="menu-item text-headline" href="{{ url('/favartefacts') }}">
-                {{ __('general.favourite_artefacts') }}
-            </a>
+                <a class="menu-item text-headline" href="{{ url('/favartefacts') }}">
+                    {{ __('general.favourite_artefacts') }}
+                </a>
 
-            <a class="menu-item text-headline" href="{{ url('/favmetadata') }}">
-                {{ __('general.favourite_metadata') }}
-            </a>
+                <a class="menu-item text-headline" href="{{ url('/favmetadata') }}">
+                    {{ __('general.favourite_metadata') }}
+                </a>
 
-            <a class="menu-item text-headline" href="{{ url('/charts') }}">
-                {{ __('general.charts') }}
-            </a>
+                <a class="menu-item text-headline" href="{{ url('/charts') }}">
+                    {{ __('general.charts') }}
+                </a>
 
-        </li>
-        <li class="nav-item down">
-            <a class="menu-item text-headline" href="{{ url('/czech') }}">
-                {{ __('general.cs') }}
-            </a>
-            <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
+            </li>
+            <li class="nav-item down">
+                <a class="menu-item text-headline" href="{{ url('/czech') }}">
+                    {{ __('general.cs') }}
+                </a>
+                @guest
+                @else
+                    <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-                {{ __('general.logout') }}
-            </a>
+                        {{ __('general.logout') }}
+                    </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </li>
-    @endguest
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                @endguest
+            </li>
+        @endif
     </ul>
 </div>
 
@@ -70,56 +73,59 @@
         </a>
     @endif
     <div class="bar-desktop">
-        @guest
-                <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
-                    {{ __('general.home') }}
-                </a>
-                <a class="menu-item text-headline-desktop" href="{{ route('login') }}">
-                    {{ __('general.login') }}
-                </a>
+        @if(Request::is('login')||Request::is('register'))
+            <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
+                {{ __('general.home') }}
+            </a>
+            <a class="menu-item text-headline-desktop" href="{{ route('login') }}">
+                {{ __('general.login') }}
+            </a>
             @if (Route::has('register'))
-                    <a class="menu-item text-headline-desktop" href="{{ route('register') }}">
-                        {{ __('general.register') }}
-                    </a>
+                <a class="menu-item text-headline-desktop" href="{{ route('register') }}">
+                    {{ __('general.register') }}
+                </a>
             @endif
         @else
-        <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
-            {{ __('general.home') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
+                {{ __('general.home') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/categories') }}">
-            {{ __('general.topics') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/categories') }}">
+                {{ __('general.topics') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/artefact') }}">
-            {{ __('general.artefacts') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/artefact') }}">
+                {{ __('general.artefacts') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/favartefacts') }}">
-            {{ __('general.favourite_artefacts') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/favartefacts') }}">
+                {{ __('general.favourite_artefacts') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/favmetadata') }}">
-            {{ __('general.favourite_metadata') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/favmetadata') }}">
+                {{ __('general.favourite_metadata') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/charts') }}">
-            {{ __('general.charts') }}
-        </a>
+            <a class="menu-item text-headline-desktop" href="{{ url('/charts') }}">
+                {{ __('general.charts') }}
+            </a>
 
-        <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">
-            {{ __('general.cs') }}
-        </a>
-        <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
+            <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">
+                {{ __('general.cs') }}
+            </a>
+            @guest
+            @else
+                <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-            {{ __('general.logout') }}
-        </a>
+                    {{ __('general.logout') }}
+                </a>
 
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-        @endguest
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endguest
+        @endif
     </div>
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>

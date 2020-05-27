@@ -2,9 +2,9 @@
 
 @section('title', 'Login')
 
-@section('breadcrumb')
+{{--@section('breadcrumb')
     <li class="breadcrumb-item active" aria-current="page">Login</li>
-@endsection
+@endsection--}}
 
 @section('content')
     <div class="vertical-center">
@@ -36,7 +36,7 @@
                                         </label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email"
+                                            <input id="email" type="email @error('email') is-invalid @enderror"
                                                    class="form-control text2 @error('email') is-invalid @enderror"
                                                    name="email"
                                                    value="{{ old('email') }}" {{--required autocomplete="email" autofocus--}}>
@@ -69,7 +69,7 @@
 
                                     @if($errors->any())
                                         <div class="row">
-                                            <div class="col-sm-12">
+                                            <div class="col-md-12">
                                                 <div class="text white pin-left" role="alert">
                                                     <div class="al">
                                                         @error('email')

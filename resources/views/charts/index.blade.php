@@ -12,36 +12,33 @@
                 @foreach($artefacts as $artefact)
                     <div class="artefacts-area mb-5">
                         <div class="card">
-                        {{--<svg class="bd-placeholder-img card-img-top" width="100%" height="180" src="{{asset('images/artefacts/book_cover_01.jpg')}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>{{$artefact[0]->name}}</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="45%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>--}}
-                        <a href="{{ url('/artefact/' . $artefact->id) }}">
-                            <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto>
-                        </a>
+                            <a href="{{ url('/artefact/' . $artefact->id) }}">
+
+                            </a>
                             <div class="container card-cus-bottom">
-                                <div class="d-flex flex-row row-list">{{--<div class="flex-row row-list">--}}
-                                    <div class="p-1 flex-fill bd-highlight left_panel_info">{{--<div class="col-xs-2 float-left left_panel_info">--}}
-                                        <h5 class="card-title ">{{$artefact->name}}</h5>
-                                        <h6 class="card-title">{{$artefact->author}}</h6>
+                                <div class="d-flex flex-row row-list">
+                                    <div class="p-1 flex-fill bd-highlight left_panel_info">
+                                        <a href="{{ url('/artefact/' . $artefact->id) }}">
+                                            <h5 class="card-title ">{{$artefact->name}}</h5>
+                                            <h6 class="card-title">{{$artefact->author}}</h6>
+                                        </a>
                                     </div>
-                                    <div class="p-1 flex-fill bd-highlight float-right">{{--<div class="col-xs-2 float-right right_panel_info">--}}
-                                        <div class="text-right right_panel_info">{{--<div class="float-right text-center">--}}
-                                            <div class="float-left">
-                                                <button id="info_butt_{{$artefact->id}}" type="button" class="btn btn-primary float-left button-image inter_info"></button>
-                                            </div>
-                                            <div class="fav-cat-likes-t float-right">
+                                    <div class="p-1 flex-fill bd-highlight float-center">
+                                        <div class="text-center right_panel_info">
+
+                                            <div class="charts float-center">
                                                 @if (!$artefact->favourite)
-                                                <form method="POST" action="{{ url('/artefact/like/' . $artefact->id) }}">
-                                                    @csrf
-                                                    <button id="like_butt_{{$artefact->id}}" style="display: inline" type="submit" class="btn btn-primary button-image inter_like"></button>
-                                                </form>
+                                                    <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
+                                                        <button id="like_butt_{{$artefact->id}}" type="button"
+                                                                class="btn btn-primary button-image inter_like"></button>
+                                                    </a>
                                                 @else
-                                                <form method="POST" action="{{ url('/artefact/unlike/' . $artefact->id) }}">
-                                                    @csrf
-                                                    <button id="like_butt_{{$artefact->id}}" style="display: inline" type="submit" class="btn btn-primary button-image inter_like_filled"></button>
-                                                </form>
+                                                    <a href="{{  action('ArtefactController@unlike', ['id' => $artefact->id]) }}">
+                                                        <button id="like_butt_{{$artefact->id}}" type="button"
+                                                                class="btn btn-primary button-image inter_like_filled"></button>
+                                                    </a>
                                                 @endif
-                                                <span class="likes_text">
-                                                <h6>{{$artefact->likes}}</h6>
-                                            </span>
+                                                <h6 class="artefact-likes">{{$artefact->likes}}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -64,20 +61,5 @@
                 </li>
             </ul>
         @endif
-	</div>
-    <script>
-        /*function myFunction(id, type)
-        {
-            if(type === 1)
-            {
-                $('#like_butt_' + id).css('display', "none");
-                $('#like_butt2_' + id).css('display', "inline");
-            }
-            else
-            {
-                $('#like_butt_' + id).css('display', "inline");
-                $('#like_butt2_' + id).css('display', "none");
-            }
-        }*/
-    </script>
+    </div>
 @endsection

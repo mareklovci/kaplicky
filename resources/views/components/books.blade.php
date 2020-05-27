@@ -10,7 +10,7 @@
                             <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto alt="book_cover">
                         </a>
                         <div class="card-cus-bottom">
-                            <a class="book-arrow book-arrow-left artefact-link previous-artefact" href="{{$artefacts->previousPageUrl()}}"></a>
+                            <a class="book-arrow book-arrow-left artefact-link previous-artefact {{$artefacts->onFirstPage() ? "invisible" : "visible"}}" href="{{$artefacts->previousPageUrl()}}"></a>
                             <div class="likes">
                                 @if ($artefact->favourite)
                                     <a href="{{  action('ArtefactController@unlike', ['id' => $artefact->id]) }}">
@@ -23,7 +23,7 @@
                                 @endif
                                 <h6 class="artefact-likes">{{$artefact->likes}}</h6>
                             </div>
-                            <a class="book-arrow book-arrow-right artefact-link next-artefact" href="{{$artefacts->nextPageUrl()}}"></a>
+                            <a class="book-arrow book-arrow-right artefact-link next-artefact {{$artefacts->hasMorePages() ? "visible" : "invisible"}}" href="{{$artefacts->nextPageUrl()}}"></a>
                         </div>
                     </div>
                 </div>

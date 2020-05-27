@@ -5,43 +5,7 @@
 @section('content')
     <div class="container">
         @if(isset($user))
-            <div class="row">
-                <div class="col cat-main-menu">
-                    <a  href="{{ url('/') }}">
-                        {{ __('general.home') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/categories') }}">
-                        {{ __('general.topics') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/artefact') }}">
-                        {{ __('general.artefacts') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/favartefacts') }}">
-                        {{ __('general.favourite_artefacts') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/favmetadata') }}">
-                        {{ __('general.favourite_metadata') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/charts') }}">
-                        {{ __('general.charts') }}
-                    </a>
-                </div>
-                <div class="col cat-main-menu">
-                    <a href="{{ url('/czech') }}">
-                        {{ __('general.cs') }}
-                    </a>
-                </div>
-            </div>
+
             <div class="cat-main-div" {{--onclick="resetEnter()"--}}>
                 <div class="head-title text-center cat-main-topic">
                     <h1>choose a topic</h1>
