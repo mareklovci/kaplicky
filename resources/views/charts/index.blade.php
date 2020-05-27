@@ -28,25 +28,17 @@
 
                                             <div class="charts float-center">
                                                 @if (!$artefact->favourite)
-                                                    <form method="POST"
-                                                          action="{{ url('/artefact/like/' . $artefact->id) }}">
-                                                        @csrf
-                                                        <button id="like_butt_{{$artefact->id}}" style="display: inline"
-                                                                type="submit"
-                                                                class="btn btn-primary button-image inter_like" ></button>
-                                                    </form>
+                                                    <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
+                                                        <button id="like_butt_{{$artefact->id}}" type="button"
+                                                                class="btn btn-primary button-image inter_like"></button>
+                                                    </a>
                                                 @else
-                                                    <form method="POST"
-                                                          action="{{ url('/artefact/unlike/' . $artefact->id) }}">
-                                                        @csrf
-                                                        <button id="like_butt_{{$artefact->id}}" style="display: inline"
-                                                                type="submit"
+                                                    <a href="{{  action('ArtefactController@unlike', ['id' => $artefact->id]) }}">
+                                                        <button id="like_butt_{{$artefact->id}}" type="button"
                                                                 class="btn btn-primary button-image inter_like_filled"></button>
-                                                    </form>
+                                                    </a>
                                                 @endif
-                                                <span class="likes_text">
-                                                <h6>{{$artefact->likes}}</h6>
-                                            </span>
+                                                <h6 class="artefact-likes">{{$artefact->likes}}</h6>
                                             </div>
                                         </div>
                                     </div>
