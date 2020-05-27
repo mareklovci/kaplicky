@@ -10,9 +10,6 @@
 @section('content')
     <div class="container">
         <div class="metadata-area">
-            <div class="text-center mt-5">
-                <h2>notes</h2>
-            </div>
             <span class="arrow-down"></span>
 
             @if(count($metadata) > 0)
@@ -20,7 +17,9 @@
                     <div  id="row_{{$meta->id}}" class="row text-page">
                         <div class="pin-horizontal">
                             <div class="metadata">
-                                <span>page {{$meta->page}}</span>
+                                <a href="#meta_{{$meta->id}}" data-toggle="collapse" data-target="#meta_{{$meta->id}}" onclick="openNote('#row_{{$meta->id}}')">
+                                    <span>page {{$meta->page}}</span>
+                                </a>
                                 <a href="#meta_{{$meta->id}}" class="arrow-down" data-toggle="collapse" data-target="#meta_{{$meta->id}}" onclick="openNote('#row_{{$meta->id}}')"></a>
                             </div>
                         </div>
@@ -63,7 +62,6 @@
             {
                 metadata.find('.pin-horizontal').removeClass("white-pin");
             }
-
         }
     </script>
 @endsection
