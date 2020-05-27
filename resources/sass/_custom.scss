@@ -1190,9 +1190,6 @@ body {
     .bar-desktop {
         display: none;
     }
-}
-
-@media (max-width: 770px) {
     .logo-kaplicky {
         margin: 0 auto;
         display: block;
@@ -1228,6 +1225,9 @@ body {
         color: $theme-color-five;
         background-color: $theme-color-one;
     }
+}
+
+@media (max-width: 770px) {
     .books-component {
         .info-area {
             padding-left: 1.5625rem;
