@@ -405,6 +405,16 @@ body {
             }
         }
 
+        .charts{
+            .inter_info, .inter_like, .inter_like_filled{
+                &:before {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+
+        }
+
         .inter_info, .inter_like, .inter_like_filled {
             padding: 0;
 
