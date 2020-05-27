@@ -1062,9 +1062,14 @@ body {
                     display: flex;
                     align-items: baseline;
 
-                    span {
-                        font-size: 12pt;
-                        font-weight: $font-weight-two;
+                    a {
+                        color: $theme-color-two;
+                        text-decoration: none;
+
+                        span {
+                            font-size: 12pt;
+                            font-weight: $font-weight-two;
+                        }
                     }
 
                     .arrow-down {
@@ -1091,6 +1096,11 @@ body {
                 }
 
                 .metadata {
+
+                    a {
+                        color: $theme-color-one;
+                    }
+
                     .arrow-down {
                         border-top: 0.25rem solid $theme-color-one;
                     }
