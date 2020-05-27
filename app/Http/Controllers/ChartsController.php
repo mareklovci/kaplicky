@@ -26,23 +26,13 @@ class ChartsController extends Controller
     {
         if(Auth::check())
         {
-            $artefacts = Artefact::all();
-            //$user_likes = User::find(Auth::id())->likesArtefacts();
+            $artefacts = Artefact::withCount('users')->orderByDesc('users_count')->get()->take(10);
             foreach($artefacts as $item)
             {
                 $id = $item->id;
                 $item['likes'] = Artefact::find($id)->users()->count();
                 $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
             }
-            //$artefacts->keyBy('id');
-            /*$selected = [];
-            for($i=0;$i<10;$i++){
-                $max = $artefacts->where('likes', $artefacts->max('likes'));
-                $selected[$i] = $max->first();
-                $artefacts->forget($max->keys()->first());
-            }
-            $artefacts=$selected;*/
-            $artefacts=$artefacts->sortByDesc('likes')->take(10);
 
             $data = array(
                 'title' => 'Charts',

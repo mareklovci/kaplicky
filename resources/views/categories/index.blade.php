@@ -7,9 +7,6 @@
         @if(isset($user))
 
             <div class="cat-main-div" {{--onclick="resetEnter()"--}}>
-                <div class="head-title text-center cat-main-topic">
-                    <h1>choose a topic</h1>
-                </div>
                 <div class="d-flex flex-wrap justify-content-around btn-group" data-toggle="buttons">
                     @for($k = 0; $k < $count;$k++)
                         <div class="d-flex col-sm-12 col-md-6 col-lg-4 col-xl-3">
