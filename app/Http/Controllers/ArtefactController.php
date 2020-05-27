@@ -117,13 +117,13 @@ class ArtefactController extends Controller
      * @param $id int id of the artefact
      * @return Factory|View
      */
-    public function view($id)
+    /*public function view($id)
     {
         $artefact = Artefact::find($id)->simplePaginate(1);
         $artefact = $this->prepData($artefact);
         //return view('artefact.view', ['artefact' => $artefact]);
         return view('artefact.default', ['artefacts' => $artefact]);
-    }
+    }*/
 
     /**
      * Likes artefact given by its id.
@@ -155,5 +155,45 @@ class ArtefactController extends Controller
         $user->likesArtefacts()->detach($artefact);
 
         return back()->withInput();
+    }
+
+    /**
+     * Returns artefact given by its id.
+     *
+     * @param $id int id of artefact
+     * @return RedirectResponse
+     */
+    public function view($id)
+    {
+        //$user = User::find(Auth::id());
+        //$artefact = Artefact::find($id);
+
+        $artefacts = Artefact::withCount('users')->orderByDesc('users_count')->get()->take(10);
+
+        $currentPage = -1; // You can set this to any page you want to paginate to
+
+        for($i=0;$i<10;$i++){
+            if($artefacts[$i]->id==$id) $currentPage = $i+1;
+        }
+
+        // Make sure that you call the static method currentPageResolver()
+        // before querying users
+        \Illuminate\Pagination\Paginator::currentPageResolver(function () use ($currentPage) {
+            return $currentPage;
+        });
+
+        $artefacts = Artefact::withCount('users')->orderByDesc('users_count')->limit(10)->paginate(1);
+
+        $artefacts = ArtefactController::prepData($artefacts);
+        return view('artefact.default', ['artefacts' => $artefacts]);
+        /*foreach($artefacts as $item)
+        {
+            $id = $item->id;
+            $item['likes'] = Artefact::find($id)->users()->count();
+            $item['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
+        }*/
+
+
+        //return back()->withInput();
     }
 }

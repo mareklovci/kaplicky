@@ -30,6 +30,7 @@ Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => 
 Route::resource('/charts', 'ChartsController', array('only' => array('index', 'show', 'store')));
 Route::get('/favmetadata', 'FavoriteMetadataController@index');
 Route::get('/favmetadata/unlike/{id}', 'FavoriteMetadataController@unlike');
+Route::get('/artefact/{id}', 'ArtefactController@view');
 
 
 Auth::routes();

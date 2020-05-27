@@ -45,9 +45,9 @@
 
             </li>
             <li class="nav-item down">
-                <a class="menu-item text-headline" href="{{ url('/czech') }}">
-                    {{ __('general.cs') }}
-                </a>
+{{--                <a class="menu-item text-headline" href="{{ url('/czech') }}">--}}
+{{--                    {{ __('general.cs') }}--}}
+{{--                </a>--}}
                 @guest
                 @else
                     <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
@@ -110,9 +110,9 @@
                 {{ __('general.charts') }}
             </a>
 
-            <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">
-                {{ __('general.cs') }}
-            </a>
+{{--            <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">--}}
+{{--                {{ __('general.cs') }}--}}
+{{--            </a>--}}
             @guest
             @else
                 <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
