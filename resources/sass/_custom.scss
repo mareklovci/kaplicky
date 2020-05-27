@@ -772,18 +772,18 @@ body {
 
     //CATEGORIES - Enter button
     .btn.button-square.cat-enter-butt {
-        font-size: 8pt;
-        background-color: grey;
-        color: $theme-color-one;
-        border: 0.5pt solid $theme-color-one;
+        //font-size: 8pt;
+        //background-color: grey;
+        //color: $theme-color-one;
+       // border: 0.5pt solid $theme-color-one;
         border-radius: 0;
         bottom: 5%;
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
-        width: 6.5rem;
-        height: 2rem;
-        font-weight: $font-weight-one;
+        //width: 6.5rem;
+        //height: 2rem;
+        //font-weight: $font-weight-one;
 
         &:active, &:focus, &:visited, &:hover {
             outline: none;
