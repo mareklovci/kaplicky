@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Artefact;
 use App\ArtefactCategory;
+use App\Category;
 use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -20,13 +21,16 @@ class ArtefactController extends Controller
     }
 
     /**
-     * Returns view of all artefacts.
+     * Prepare all necessary data for shown Artefact.
+     * These are current count of likes, if it set to
+     * a favorites by a logged user and all metadata
+     * connected to the artefact.
      *
-     * @return Factory|View
+     * @param       $artefacts  all artefacts
+     * @return      mixed       modified artefacts
      */
-    public function default()
+    public function prepData($artefacts)
     {
-        $artefacts = Artefact::simplePaginate(1);
         foreach($artefacts as $artefact)
         {
             $artefact['likes'] = Artefact::find($artefact->id)->users()->count();
@@ -41,6 +45,18 @@ class ArtefactController extends Controller
             $artefact['metadata'] = $metadata;
         }
 
+        return $artefacts;
+    }
+
+    /**
+     * Returns view of all artefacts.
+     *
+     * @return Factory|View
+     */
+    public function default()
+    {
+        $artefacts = Artefact::simplePaginate(1);
+        $artefacts = $this->prepData($artefacts);
         return view('artefact.default', ['artefacts' => $artefacts]);
     }
 
@@ -52,33 +68,23 @@ class ArtefactController extends Controller
      */
     public function showCategory($id)
     {
-        $categoryArtefacts = ArtefactCategory::where('category_id', $id)->get();
-        if(count($categoryArtefacts) > 0)
-        {
-            $artefacts = array();
-            foreach($categoryArtefacts as $ar)
-            {
-                array_push($artefacts, Artefact::where('id', $ar->artefact_id)->get());
-            }
-            return view('artefact.category', ['artefacts' => $artefacts]);
-        }
-        else
-        {
-            return view('artefact.category', ['artefacts' => array()]);
-        }
+        $artefacts = Category::find($id)->artefacts()->simplePaginate(1);
+        $artefacts = $this->prepData($artefacts);
+        return view('artefact.default', ['artefacts' => $artefacts]);
     }
 
     /**
-     * Returns view of artefacts related to the chosen category
+     * Returns view of artefacts related to the chosen categories
      *
      * @param $id string with categories ids
      * @return Factory|View
      */
     public function showCategories($id)
     {
+        //Parsing text for individual ids of categories
         $textWithIds  = $id;
         $pieces = explode(",", $textWithIds);
-        $artefacts = array();
+        $arrStrToInt = array();
         for($i = 0;$i < count($pieces); $i++)
         {
             if($pieces[$i] == null || !strcmp($pieces[$i], ""))
@@ -86,24 +92,23 @@ class ArtefactController extends Controller
                 continue;
             }
 
-            $categoryArtefacts = ArtefactCategory::where('category_id', $pieces[$i])->get();
-            if(count($categoryArtefacts) > 0)
+            array_push($arrStrToInt, (int)$pieces[$i]);
+        }
+
+        //Creating array of all artefacts ids
+        $arrArtIds = array();
+        foreach($arrStrToInt as $cat)
+        {
+            $tmpArtefacts = Category::find($cat)->artefacts()->get();
+            foreach($tmpArtefacts as $art)
             {
-                foreach($categoryArtefacts as $ar)
-                {
-                    array_push($artefacts, Artefact::where('id', $ar->artefact_id)->get());
-                }
+                array_push($arrArtIds, $art->id);
             }
         }
 
-        if(count($artefacts) > 0)
-        {
-            return view('artefact.category', ['artefacts' => $artefacts]);
-        }
-        else
-        {
-            return view('artefact.category', ['artefacts' => array()]);
-        }
+        $artefacts = Artefact::whereIn('id', $arrArtIds)->simplePaginate(1);
+        $artefacts = $this->prepData($artefacts);
+        return view('artefact.default', ['artefacts' => $artefacts]);
     }
 
     /**
@@ -114,11 +119,10 @@ class ArtefactController extends Controller
      */
     public function view($id)
     {
-        $artefact = Artefact::find($id);
-        $artefact['likes'] = Artefact::find($id)->users()->count();
-        $artefact['favourite'] = is_null(User::find(Auth::id())->likesArtefacts()->find($id)) ? false : true;
-
-        return view('artefact.view', ['artefact' => $artefact]);
+        $artefact = Artefact::find($id)->simplePaginate(1);
+        $artefact = $this->prepData($artefact);
+        //return view('artefact.view', ['artefact' => $artefact]);
+        return view('artefact.default', ['artefacts' => $artefact]);
     }
 
     /**

@@ -245,7 +245,8 @@ body {
         color: $theme-color-one;
         border: 0.5pt solid $theme-color-one;
         border-radius: 0;
-        padding: 0.4675rem 2.475rem;
+        width: 6.5rem;
+        height: 2rem;
         font-weight: $font-weight-one;
 
         &:active, &:focus, &:visited, &:hover {
@@ -411,18 +412,6 @@ body {
             }
         }
 
-        .charts {
-            .inter_info, .inter_like, .inter_like_filled {
-                display: inline;
-
-                &:before {
-                    width: 3rem;
-                    height: 3rem;
-                }
-            }
-
-        }
-
         .inter_info, .inter_like, .inter_like_filled {
             padding: 0;
 
@@ -544,13 +533,8 @@ body {
                 display: flex;
                 align-items: baseline;
 
-                a {
-                    color: $theme-color-two;
-                    text-decoration: none;
-
-                    span {
-                        font-weight: $font-weight-two;
-                    }
+                span {
+                    font-weight: $font-weight-two;
                 }
 
                 .arrow-down {
@@ -571,16 +555,12 @@ body {
             color: $theme-color-one;
             border-bottom: .042rem solid $theme-color-one;
 
-            &:after {
+            &:before {
                 content: '';
                 background-color: $theme-color-one;
             }
 
             .metadata {
-                a {
-                    color: $theme-color-one;
-                }
-
                 .arrow-down {
                     border-top: 0.25rem solid $theme-color-one;
                 }
@@ -752,9 +732,9 @@ body {
         }
     }
 
-    .btn-dark:not(:disabled):not(.disabled).active {
+    .btn-dark:not(:disabled):not(.disabled).active{
         background-color: $theme-color-four;
-        color: white;
+        color:white;
         border-color: $theme-color-five;
     }
 
@@ -772,26 +752,26 @@ body {
     }
 
     //CATEGORIES - Main menu
-    .cat-main-menu {
+    .cat-main-menu{
         font-size: 1.75rem;
         text-align: center;
         margin-bottom: 30pt;
 
-        a, a:visited {
+        a,a:visited{
             color: $theme-color-two;
             text-decoration: none;
         }
 
-        a:hover {
+        a:hover{
             color: $theme-color-four;
         }
 
     }
 
     //CATEGORIES - Wrapper around Enter button
-    .cat-wrapper {
-        margin: auto;
-        display: block;
+    .cat-wrapper{
+        margin:auto;
+        display:block;
         //align-content: center;
         //margin:auto;
         //display:block;
@@ -799,18 +779,18 @@ body {
 
     //CATEGORIES - Enter button
     .btn.button-square.cat-enter-butt {
-        //font-size: 8pt;
-        //background-color: grey;
-        //color: $theme-color-one;
-        // border: 0.5pt solid $theme-color-one;
+        font-size: 8pt;
+        background-color: grey;
+        color: $theme-color-one;
+        border: 0.5pt solid $theme-color-one;
         border-radius: 0;
         bottom: 5%;
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
-        //width: 6.5rem;
-        //height: 2rem;
-        //font-weight: $font-weight-one;
+        width: 6.5rem;
+        height: 2rem;
+        font-weight: $font-weight-one;
 
         &:active, &:focus, &:visited, &:hover {
             outline: none;
@@ -824,13 +804,13 @@ body {
     }
 
     //VERIFY - main text
-    .ver-text {
+    .ver-text{
 
-        margin-top: 20pt;
+        margin-top: 50pt;
 
-        h2 {
+        h2{
             text-align: center;
-            color: $theme-color-two;
+            color:$theme-color-two;
         }
     }
 }
@@ -941,41 +921,6 @@ body {
 // login and registration alert bottom margin
 .al {
     margin-bottom: 3rem;
-}
-
-.js-cookie-consent {
-    position: fixed;
-    z-index: 9999;
-    text-align: center;
-    width: 100%;
-    bottom: 0px;
-    padding: 10px;
-    background: $theme-color-four;
-}
-
-.js-cookie-consent-agree {
-    font-size: 8pt;
-    background-color: $theme-color-five;
-    color: $theme-color-one;
-    border: 0.5pt solid $theme-color-one;
-    border-radius: 0;
-    padding: 0.5rem 2rem;
-    font-weight: $font-weight-one;
-
-    &:active, &:focus, &:visited, &:hover {
-        outline: none;
-        box-shadow: none;
-        color: $theme-color-one;
-    }
-
-    &:hover {
-        color: $theme-color-four;
-    }
-}
-
-.cookie-consent__message {
-    padding: 1rem;
-    display: inline-block;
 }
 
 // books component
@@ -1109,7 +1054,7 @@ body {
                 color: $theme-color-one;
                 border-bottom: .042rem solid $theme-color-one;
 
-                &:after {
+                &:before {
                     content: '';
                     background-color: $theme-color-one;
                 }
@@ -1181,12 +1126,6 @@ body {
                 box-shadow: none !important;
             }
         }
-    }
-}
-
-@media (max-width: 610px) {
-    .js-cookie-consent-agree {
-        margin-bottom: 1rem;
     }
 }
 
@@ -1322,26 +1261,11 @@ body {
             //margin-left: 1rem;
         }
 
-        .pin-left:before {
-            height: 1.125rem;
-            width: 1.125rem;
-            top: -1.125rem;
-            left: -0.56rem;
-        }
-
-        .pin-left {
-            // center fixed div
-            left: 75%;
-            transform: translateX(-50%);
-            width: 70%;
-        }
-
         .text {
             text-align: left;
             font-size: 18pt;
             line-height: 26pt;
         }
-
         .text2 {
             text-align: left;
             font-size: 18pt;
@@ -1383,66 +1307,8 @@ body {
 
         .button-square {
             font-size: 18pt;
-            padding: 0.28125rem 3.7rem;
-        }
-
-        .metadata-area {
-            .pin-horizontal {
-                margin: 5rem 3.125rem 0 0;
-
-                .metadata {
-
-                    margin-right: 0.5rem;
-
-                    .arrow-down {
-                        border-left: 0.5rem solid transparent;
-                        border-right: 0.5rem solid transparent;
-                        border-top: 0.5rem solid $theme-color-two;
-                    }
-
-                    a {
-                        span {
-                            font-size: 16pt;
-                        }
-                    }
-                }
-
-                &:after {
-                    height: 0.75rem;
-                    width: 0.75rem;
-                    top: 0.375rem;
-                }
-            }
-
-            .white-pin {
-                .metadata {
-                    .arrow-down {
-                        border-top: 0.5rem solid $theme-color-one;
-                    }
-                }
-            }
-
-            .metadata-text {
-                font-size: 19pt;
-                max-width: 50%;
-
-                .artefact-info {
-                    .artefact-name {
-                        font-size: 16pt;
-                    }
-
-                    .artefact-author {
-                        font-size: 12pt;
-                    }
-
-                    .inter_like_filled {
-                        &:before{
-                            width: 5rem;
-                            height: 5rem;
-                        }
-                    }
-                }
-            }
+            width: 10.875rem;
+            height: 2.938rem;
         }
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\RegisterMail;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -70,7 +71,8 @@ class RegisterController extends Controller
         $vowels = array("/", "\\");
         $stringHModified = str_replace($vowels, "", $stringH);
 
-        Mail::to($data['email'])->send(new RegisterMail("http://localhost/verify/". $stringHModified));
+        //Mail::to($data['email'])->send(new RegisterMail("http://localhost/verify/". $stringHModified));
+        Mail::to($data['email'])->send(new RegisterMail(url("/verify/") . "/" . $stringHModified));//http://localhost/register/verify/..
 
         return User::create([
             'name' => $data['name'],
