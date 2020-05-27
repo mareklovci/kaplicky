@@ -26,5 +26,9 @@
 
 @yield('content')
 
+@if(!Request::is('/'))
+    @include('cookieConsent::index')
+@endif
+
 </body>
 </html>
