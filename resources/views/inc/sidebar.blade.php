@@ -1,7 +1,7 @@
 <div id="sidebar" class="sidenav">
     <a href="javascript:void(0)" class="arrow arrow-left" onclick="closeNav()"></a>
     <ul style="padding-left: 0; margin-top: 5rem;">
-    @guest
+        @if(Request::is('login')||Request::is('register'))
         <li class="nav-item">
             <a class="menu-item text-headline" href="{{ url('/') }}">
                 {{ __('general.home') }}
@@ -48,6 +48,8 @@
             <a class="menu-item text-headline" href="{{ url('/czech') }}">
                 {{ __('general.cs') }}
             </a>
+            @guest
+                @else
             <a class="menu-item text-headline" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
@@ -57,8 +59,9 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
+                @endguest
         </li>
-    @endguest
+    @endif
     </ul>
 </div>
 
@@ -70,7 +73,7 @@
         </a>
     @endif
     <div class="bar-desktop">
-        @guest
+        @if(Request::is('login')||Request::is('register'))
                 <a class="menu-item text-headline-desktop" href="{{ url('/') }}">
                     {{ __('general.home') }}
                 </a>
@@ -110,6 +113,8 @@
         <a class="menu-item text-headline-desktop" href="{{ url('/czech') }}">
             {{ __('general.cs') }}
         </a>
+        @guest
+            @else
         <a class="menu-item text-headline-desktop" href="{{ route('logout') }}" onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
@@ -119,7 +124,8 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-        @endguest
+            @endguest
+        @endif
     </div>
 </nav>
 {{--<label for="logo" class="col-md-12 kaplicky" style="display: inline-block; text-align: center; padding: 1.25rem; padding-bottom: 0">{{ __('kaplicky') }}</label>

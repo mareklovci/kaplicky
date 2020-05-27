@@ -2,9 +2,9 @@
 
 @section('title', 'Login')
 
-@section('breadcrumb')
+{{--@section('breadcrumb')
     <li class="breadcrumb-item active" aria-current="page">Login</li>
-@endsection
+@endsection--}}
 
 @section('content')
     <div class="vertical-center">
