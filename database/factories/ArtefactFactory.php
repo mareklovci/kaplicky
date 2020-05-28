@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Artefact::class, function ($faker) {
     return [
-        'name' => $faker->opera,
+        'name' => $faker->words($nb = 3, $asText = true),
         'author' => $faker->name,
         'made_in' => $faker->countryCode,
         'publisher' => $faker->company,

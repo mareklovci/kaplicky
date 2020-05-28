@@ -33,7 +33,7 @@ return [
     'artefacts' => 'books',
     'favourite_artefacts' => 'likes',
     'favourite_metadata' => 'notes',
-    'charts' => 'charts',
+    'charts' => 'best of',
 
     /*
     |--------------------------------------------------------------------------
