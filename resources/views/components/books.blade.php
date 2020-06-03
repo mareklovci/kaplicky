@@ -9,22 +9,6 @@
                         <a href="#imageModal" data-toggle="modal">
                             <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto alt="book_cover">
                         </a>
-                        <div class="card-cus-bottom">
-                            <a class="book-arrow book-arrow-left artefact-link previous-artefact {{$artefacts->onFirstPage() ? "invisible" : "visible"}}" href="{{$artefacts->previousPageUrl()}}"></a>
-                            <div class="likes">
-                                @if ($artefact->favourite)
-                                    <a href="{{  action('ArtefactController@unlike', ['id' => $artefact->id]) }}">
-                                        <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like_filled"></button>
-                                    </a>
-                                @else
-                                    <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
-                                        <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like"></button>
-                                    </a>
-                                @endif
-                                <h6 class="artefact-likes">{{$artefact->likes}}</h6>
-                            </div>
-                            <a class="book-arrow book-arrow-right artefact-link next-artefact {{$artefacts->hasMorePages() ? "visible" : "invisible"}}" href="{{$artefacts->nextPageUrl()}}"></a>
-                        </div>
                     </div>
                 </div>
             @endif
@@ -45,8 +29,6 @@
                     Morbi sit amet dictum metus, sit amet sollicitudin nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis leo convallis aliquam scelerisque.
                     Praesent vulputate porttitor quam at egestas. Proin eget orci ligula. Aenean malesuada, eros vitae convallis sagittis, neque leo ullamcorper ante, eu ultricies justo justo in lacus.
                 </p>
-
-
             </div>
 
             <div class="artefact-notes">
@@ -86,6 +68,25 @@
                 @else
                     <h2>No metadata yet!</h2>
                 @endif
+            </div>
+        </div>
+
+        <div class="book-area col-md-12">
+            <div class="card-cus-bottom">
+                <a class="book-arrow book-arrow-left artefact-link previous-artefact {{$artefacts->onFirstPage() ? "invisible" : "visible"}}" href="{{$artefacts->previousPageUrl()}}"></a>
+                <div class="likes offset-7">
+                    @if ($artefact->favourite)
+                        <a href="{{  action('ArtefactController@unlike', ['id' => $artefact->id]) }}">
+                            <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like_filled"></button>
+                        </a>
+                    @else
+                        <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
+                            <button id="like_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_like"></button>
+                        </a>
+                    @endif
+                    <h6 class="artefact-likes">{{$artefact->likes}}</h6>
+                </div>
+                <a class="book-arrow book-arrow-right artefact-link next-artefact {{$artefacts->hasMorePages() ? "visible" : "invisible"}}" href="{{$artefacts->nextPageUrl()}}"></a>
             </div>
         </div>
     </div>

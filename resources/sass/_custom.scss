@@ -976,14 +976,13 @@ body {
 
             .book-arrow-left {
                 &:after {
-                    left: 25%;
+                    left: 1.5625rem;
                     border-right: 1.25rem solid $theme-color-two;
                 }
             }
 
             .book-arrow-right {
                 &:after {
-                    right: 25%;
                     border-left: 1.25rem solid $theme-color-two;
                 }
             }
@@ -1001,9 +1000,29 @@ body {
                         height: 5rem;
                         width: 5rem;
                     }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .inter_like {
+                    &:before{
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                    }
+                }
+
+                .inter_like_filled {
+                    &:before{
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                    }
                 }
 
                 .artefact-likes {
+                    color: $theme-color-two;
                     font-size: 12pt;
                     padding: 0;
                 }
