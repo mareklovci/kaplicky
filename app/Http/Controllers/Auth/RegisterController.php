@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\RegisterMail;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -64,12 +67,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //dd($data);
+        $stringH = Hash::make($data['email'] . $data['name']);
+        $vowels = array("/", "\\");
+        $stringHModified = str_replace($vowels, "", $stringH);
+
+        //Mail::to($data['email'])->send(new RegisterMail("http://localhost/verify/". $stringHModified));
+        Mail::to($data['email'])->send(new RegisterMail(url("/verify/") . "/" . $stringHModified));//http://localhost/register/verify/..
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'register_hash' => $stringHModified,
         ]);
     }
 }

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
+            'register_hash' => Str::random(10),
         ]);
 
         // Populate users

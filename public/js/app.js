@@ -37057,11 +37057,21 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Center
 
 $(document).ready(function () {
   var display_width = $(window).width();
-  $(".metadata").each(function () {
-    var metadata = $(this);
-    var width = metadata.width();
-    metadata.css("margin-left", display_width / 2 - width);
-  });
+
+  if (display_width < 720) {
+    $(".metadata").each(function () {
+      var metadata = $(this);
+      var width = metadata.width();
+      metadata.css("margin-left", display_width / 2 - width);
+    });
+  } else {
+    display_width = $(".metadata-area").width();
+    $(".metadata").each(function () {
+      var metadata = $(this);
+      var width = metadata.width();
+      metadata.css("margin-left", display_width / 2 - width);
+    });
+  }
 });
 
 /***/ }),

@@ -16,16 +16,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
 </head>
 <body>
 
-        @if(!Request::is('/'))
-            @include('inc/sidebar')
-        @endif
+@if(!Request::is('/'))
+    @include('inc/sidebar')
+@endif
 
+@yield('content')
 
-                    @yield('content')
+@if(!Request::is('/'))
+    @include('cookieConsent::index')
+@endif
 
 </body>
 </html>

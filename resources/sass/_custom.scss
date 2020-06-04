@@ -4,6 +4,7 @@
 body {
     background-color: $theme-color-five;
     font-family: $font-family-one;
+    padding-top: 5.1rem;
 
     .head-title h1 {
         color: $theme-color-one;
@@ -14,6 +15,8 @@ body {
     }
 
     .carousel {
+        margin-top: - 5.1rem;
+
         .carousel-inner {
             .museum-logo {
                 display: flex;
@@ -22,17 +25,25 @@ body {
                 top: 5%;
                 width: 100%;
                 z-index: 1;
+
+                img {
+                    width: 7.5rem;
+                }
             }
 
             .social-logo {
                 text-align: center;
-                justify-content: space-between;
+                justify-content: space-around;
                 flex-wrap: nowrap;
                 position: absolute;
                 top: 25%;
                 padding-left: 25px;
                 width: 100%;
                 z-index: 1;
+
+                img {
+                    width: 2.0625rem;
+                }
             }
 
             .carousel-button {
@@ -57,8 +68,10 @@ body {
         .carousel-caption {
             top: 50%;
             bottom: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
             transform: translateY(-50%);
-            background-color:  rgba(239, 218, 179, 0.5);
+            background-color: rgba(239, 218, 179, 0.5);
         }
     }
 
@@ -71,96 +84,137 @@ body {
     }
 
     //text inputu a název artefaktů
-    .text2{
+    .text2 {
         font-weight: $font-weight-two;
         font-size: 8pt;
     }
 
     //název "kaplicky" a "choose a few" v categories (tam má jinou barvu)
-    .kaplicky{
+    .kaplicky {
         color: $theme-color-one;
         font-size: 11pt;
-        font-weight: $font-weight-three;
+        font-weight: $font-weight-two;
         letter-spacing: 3pt;
     }
 
     //autor artefaktu
-    .text-author{
+    .text-author {
         font-weight: $font-weight-one;
         font-size: 7pt;
         color: $theme-color-four;
     }
 
     //počet lajků
-    .text-number{
+    .text-number {
         font-weight: $font-weight-two;
         font-size: 5pt;
         color: $theme-color-four;
     }
 
     //notes u metadat, about v about, text levého menu
-    .text-headline{
+    .text-headline {
         font-weight: $font-weight-two;
         font-size: 12pt;
         color: $theme-color-four;
     }
 
+    //notes u metadat, about v about, text levého menu
+    .text-headline-desktop {
+        font-size: 24pt;
+        color: $theme-color-four;
+    }
+
     //název metadata, text pravého menu
-    .text-page{
+    .text-page {
         font-weight: $font-weight-two;
         font-size: 7pt;
     }
 
     ////color pro změnu jen barvy
-    .black{
+    .black {
         color: $theme-color-five;
     }
-    .white{
+
+    .white {
         color: $theme-color-one;
     }
-    .colored{
+
+    .colored {
         color: $theme-color-four;
+    }
+
+    .highlight-white, .highlight-white {
+        &:hover, &:focus, &:active {
+            color: $theme-color-one;
+        }
     }
 
 
     ////login
-    .auth{
-        .card{
+    .auth {
+        .card {
             border: none;
             text-align: center;
             font-size: 8pt;
         }
 
-        .col-form-label{
+        .col-form-label {
             text-align: left;
             padding-top: 0;
             padding-bottom: 0;
         }
-        .form-control{
+
+        .form-control {
             padding: 0;
             height: 17pt;
             border-radius: 0;
+
+            &:focus {
+                //border-color: $theme-color-one;
+                border-top-color: $theme-color-five;
+                border-left-color: $theme-color-five;
+                border-right-color: $theme-color-five;
+                border-bottom-color: 0.5pt $theme-color-one;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    //Oprava barev pro Chrom
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50px $theme-color-five inset !important;
+        -webkit-text-fill-color: $theme-color-one;
+        background-color: $theme-color-five !important;
+        //outline: none !important;
+        &:active, &:focus, &:visited, &:hover {
+            -webkit-box-shadow: 0 0 0 50px $theme-color-five inset !important;
+            -webkit-text-fill-color: $theme-color-one;
+            background-color: $theme-color-five !important;
+            //outline: none !important;
         }
     }
 
     .card-body {
-    	background-color: $theme-color-five;
-    	font-weight: $font-weight-one;
-    	color: $theme-color-four;
-	}
+        background-color: $theme-color-five;
+        font-weight: $font-weight-one;
+        color: $theme-color-four;
+    }
 
-	.form-control {
-    	background-color: $theme-color-five;
-    	margin-top: -1px;
-    	border-top-color: $theme-color-five;
-    	border-left-color: $theme-color-five;
-    	border-right-color: $theme-color-five;
-    	border-bottom-color: 0.5pt $theme-color-one;
-    	color: $theme-color-one;
+    .form-control {
+        background-color: $theme-color-five;
+        margin-top: -1px;
+        border-top-color: $theme-color-five;
+        border-left-color: $theme-color-five;
+        border-right-color: $theme-color-five;
+        border-bottom-color: 0.5pt $theme-color-one;
+        color: $theme-color-one;
         box-shadow: none;
         font-size: 8pt;
+        outline: none;
 
-        &:active, &:focus, &:visited{
+        &:active, &:focus, &:visited, &:hover {
+            outline: none;
             background-color: $theme-color-five;
             margin-top: -1px;
             border-top-color: $theme-color-five;
@@ -171,12 +225,14 @@ body {
             box-shadow: none;
         }
 
-	}
-    .form-control.is-invalid{
+    }
+
+    .form-control.is-invalid {
         box-shadow: none;
         border-color: $theme-color-four;
         background-image: none;
-        &:active, &:focus, &:visited{
+
+        &:active, &:focus, &:visited {
             box-shadow: none;
             border-color: $theme-color-four;
         }
@@ -188,13 +244,17 @@ body {
         color: $theme-color-one;
         border: 0.5pt solid $theme-color-one;
         border-radius: 0;
-        width: 6.5rem;
-        height: 2rem;
+        padding: 0.4675rem 2.475rem;
         font-weight: $font-weight-one;
 
-        &:active, &:focus, &:visited {
+        &:active, &:focus, &:visited, &:hover {
             outline: none;
             box-shadow: none;
+            color: $theme-color-one;
+        }
+
+        &:hover {
+            color: $theme-color-four;
         }
     }
 
@@ -213,23 +273,27 @@ body {
 
     .pin-left {
         border-left: .5pt solid $theme-color-four;
-        display: inline-block;
-        margin: 10rem 50px 0px -5rem;
         position: fixed;
-        top: 0;
         bottom: 0;
         text-align: left;
-        width: 100%;
-        .text{
+
+        // center fixed div
+        left: 50%;
+        transform: translateX(-50%);
+        width: 350px;
+
+        .text {
             margin-left: 0.5rem;
+            margin-bottom: 0.2rem; // looks fugly without margin
         }
-        p{
+
+        p {
             margin-top: 0;
             margin-bottom: 0;
         }
     }
 
-    li{
+    li {
         list-style-type: none;
     }
 
@@ -245,23 +309,39 @@ body {
             margin-right: 5px;
             vertical-align: text-top;
             background-color: transparent;
-            background-position : center center;
-            background-repeat:no-repeat;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
+    }
+
+    .fav-cat-mybooks {
+        color: $theme-color-two;
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    .fav-cat-nofav {
+        text-align: center;
+        color: $theme-color-three;
+        background-color: $theme-color-five;
+        border-color: $theme-color-three;
     }
 
     .artefacts-area, .artefact-area {
 
         h5 {
             color: $theme-color-two;
-            font-weight: $font-weight-two;
-            line-height: 20pt;
-            font-size: 21pt;
+            //font-weight: $font-weight-two;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 0.9rem;
+            font-size: 1.1rem;
         }
 
         h6 {
             color: $theme-color-two;
-            font-size: 14pt;
+            font-size: 0.9rem;
             //font-weight: lighter;
             font-weight: $font-weight-one;
         }
@@ -278,56 +358,84 @@ body {
 
         .left_panel_info {
             margin-top: 15px;
-            margin-left: -10px;
-            max-width: 250px;
+            max-width: 70%; //250px
         }
 
         .right_panel_info {
             margin-top: 15px;
-            margin-right: -15px;
+        }
+
+        .likes_text {
+            text-align: center;
         }
 
         .card-cus-bottom {
             background-color: $theme-color-five;
+            padding-right: 0;
+            padding-left: 0;
         }
 
         .inter_info {
             &:before {
-                background-image: url(../images/interface/Button_Info_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Button_Info_50.png);
+                background-image: url(../images/interface/Button_Info.svg);
+                //width: 60px;
+                //height: 60px;
+                width: 8vw;
+                height: 8vw;
             }
         }
 
         .inter_like {
             display: none;
+
             &:before {
-                background-image : url(../images/interface/Hearth_Empty_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Hearth_Empty_50.png);
+                background-image: url(../images/interface/Heart_Empty.svg);
+                //width: 60px;
+                //height: 60px;
+                width: 8vw;
+                height: 8vw;
             }
         }
 
         .inter_like_filled {
             &:before {
-                background-image : url(../images/interface/Hearth_Filled_50.png);
-                width: 60px;
-                height: 60px;
+                //background-image: url(../images/interface/Hearth_Filled_50.png);
+                background-image: url(../images/interface/Heart_Filled.svg);
+                //width: 60px;
+                //height: 60px;
+                width: 8vw;
+                height: 8vw;
             }
+        }
+
+        .charts {
+            .inter_info, .inter_like, .inter_like_filled {
+                display: inline;
+
+                &:before {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+
         }
 
         .inter_info, .inter_like, .inter_like_filled {
             padding: 0;
+
             &:focus, &:active, &:hover {
                 background-color: transparent !important;
                 border-color: transparent !important;
                 outline: none !important;
                 box-shadow: none !important;
-            };
+            }
+        ;
         }
     }
 
-
+    // Artefact area
     .artefact-area {
 
         .card-cus-bottom {
@@ -358,19 +466,29 @@ body {
             display: block;
 
             &:before {
-                background-image: url(../images/interface/Hearth_Empty_Small.png);
-                width: 25px;
-                height: 19px;
+                background-image: url(../images/interface/Heart_Empty.svg);
+                width: 1.563rem;
+                height: 1.25rem;
+
+            }
+        }
+
+        .inter_like_filled {
+            &:before {
+                background-image: url(../images/interface/Heart_Filled.svg);
+                width: 1.563rem;
+                height: 1.25rem;
             }
         }
 
         .inter_info {
 
             padding-right: 1rem;
+
             &:before {
-                background-image: url(../images/interface/Button_Info_Small.png);
-                width: 29px;
-                height: 29px;
+                background-image: url(../images/interface/Button_Info.svg);
+                width: 1.875rem;
+                height: 1.875rem;
             }
         }
 
@@ -385,6 +503,7 @@ body {
     .metadata-area {
 
         h2 {
+            color: $theme-color-two;
             font-weight: $font-weight-two;
             font-size: 12pt;
         }
@@ -405,18 +524,18 @@ body {
             color: $theme-color-two;
             border-bottom: .042rem solid $theme-color-two;
             display: inline-block;
-            margin: 3.35rem 3.125rem 0 0;
+            margin: 2.75rem 3.125rem 0 0;
 
-            &:before {
+            &:after {
                 content: '';
-                background-color: $theme-color-two;
+                background-color: #ddd1b9;
                 position: relative;
                 height: .5rem;
                 width: .5rem;
                 border-radius: 50%;
-                display: inline-block;
-                top: 1.5rem;
-                left: 50vw;
+                display: block;
+                margin-left: auto;
+                top: .25rem;
             }
 
             .metadata {
@@ -424,8 +543,13 @@ body {
                 display: flex;
                 align-items: baseline;
 
-                span {
-                    font-weight: $font-weight-two;
+                a {
+                    color: $theme-color-two;
+                    text-decoration: none;
+
+                    span {
+                        font-weight: $font-weight-two;
+                    }
                 }
 
                 .arrow-down {
@@ -446,12 +570,16 @@ body {
             color: $theme-color-one;
             border-bottom: .042rem solid $theme-color-one;
 
-            &:before {
+            &:after {
                 content: '';
                 background-color: $theme-color-one;
             }
 
             .metadata {
+                a {
+                    color: $theme-color-one;
+                }
+
                 .arrow-down {
                     border-top: 0.25rem solid $theme-color-one;
                 }
@@ -479,12 +607,30 @@ body {
                     font-size: 7pt;
                 }
 
+                .inter_like {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                        width: 3.125rem;
+                        height: 3.125rem;
+                        margin-right: 0;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
                 .inter_like_filled {
 
                     &:before {
-                        background-image : url(../images/interface/Hearth_Filled_50.png);
-                        width: 50px;
-                        height: 50px;
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                        width: 3.125rem;
+                        height: 3.125rem;
+                        margin-right: 0;
                     }
 
                     &:hover, &:focus, &:active {
@@ -495,6 +641,50 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    // Modal
+    .modal {
+        font-weight: $font-weight-one;
+        color: $theme-color-two;
+        font-size: 8pt;
+
+        .modal-header {
+            border-bottom: 1px solid $theme-color-two;
+
+            .close {
+                color: $theme-color-two;
+                text-shadow: none;
+            }
+        }
+
+        .modal-content {
+            background-color: $theme-color-five;
+        }
+
+        .modal-footer {
+            border-top: 1px solid $theme-color-two;
+
+            .btn {
+                background-color: $theme-color-two;
+                color: $theme-color-five;
+
+            }
+        }
+    }
+
+    .image-modal {
+        .close {
+            font-size: 24pt;
+            color: $theme-color-two;
+            text-shadow: none;
+            position: absolute;
+            top: 1rem;
+            right: 0.125rem;
+            opacity: 1;
+            cursor: pointer;
+            pointer-events: initial;
         }
     }
 
@@ -529,17 +719,8 @@ body {
         }
     }*/
 
-
-
-    //CATEGORIES - ROW BLOCK
-    .cat-col-md-2
-    {
-        margin: 2%;
-    }
-
     //CATEGORIES - TILES
-    .btn.btn-dark.cat-tile
-    {
+    .btn.btn-dark.cat-tile {
         //STYLING
         border-color: $theme-color-four;
         border-radius: 0;
@@ -551,16 +732,17 @@ body {
         outline: none !important;
         box-shadow: none !important;
 
+        //TEXT OVERFLOW
+        overflow: hidden;
+        text-overflow: ellipsis;
+
         //FONT
-        font-size: 8mm;
-        word-wrap: break-word;
+        font-size: 22pt;
 
         //SPACING
-        height: 40mm;
-        width: 100%;
+        padding: 4rem 1rem;
 
-        &:active, &:focus
-        {
+        &:active, &:focus {
             background-color: $theme-color-three;
             border-color: $theme-color-four;
             outline: none !important;
@@ -569,44 +751,80 @@ body {
         }
     }
 
+    .btn-dark:not(:disabled):not(.disabled).active {
+        background-color: $theme-color-four;
+        color: white;
+        border-color: $theme-color-five;
+    }
+
     //CATEGORY/{id} -h2 title NO ARTEFACTS
-    .category-h2
-    {
+    .category-h2 {
         color: $theme-color-four;
+    }
+
+    .cat-main-div {
+        margin-top: 2.4rem;
+    }
+
+    //CATEGORIES - Wrapper around Enter button
+    .cat-wrapper {
+        margin: auto;
+        display: block;
+        //align-content: center;
+        //margin:auto;
+        //display:block;
+    }
+
+    //CATEGORIES - Enter button
+    .btn.button-square.cat-enter-butt {
+        border-radius: 0;
+        bottom: 5%;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:active, &:focus, &:visited, &:hover {
+            outline: none;
+            box-shadow: none;
+            color: $theme-color-one;
+        }
+
+        &:hover {
+            color: $theme-color-four;
+        }
+    }
+
+    //VERIFY - main text
+    .ver-text {
+
+        margin-top: 50pt;
+
+        h2 {
+            text-align: center;
+            color: $theme-color-two;
+        }
     }
 }
 
-.arrow{
-    position: absolute;
-    width: 0;
-    height: 0;
-    margin: 2rem;
-    cursor:pointer;
-    border: 0.59055rem solid transparent;
-}
-
-.arrow-left {
-    margin-left: 80%;
-
-    border-right:0.59055rem solid $theme-color-five;
-    background-color: $theme-color-four !important;
-}
-
-.arrow-right {
-    border-left:0.59055rem solid $theme-color-four;
-
+.top-bar {
+    background-color: $theme-color-five;
+    min-height: 5rem;
     position: fixed;
-    z-index: 1;
+    width: 100%;
     top: 0;
-    left: 0;
+    z-index: 2;
+
+    .shadow {
+        box-shadow: none;
+    }
 }
 
 .sidenav {
     height: 100%;
-    //width: 0;
-    width: 250px;
+    width: 0;
+    //width: 250px;
     position: fixed;
-    z-index: 1;
+    z-index: 4;
     top: 0;
     left: 0;
     background-color: $theme-color-four;
@@ -619,41 +837,433 @@ body {
     color: $theme-color-five;
     display: block;
     transition: 0.3s;
+
+    &:hover {
+        color: $theme-color-four;
+        background-color: $theme-color-one;
+    }
+
+    &:active, &:focus, .active {
+        color: $theme-color-one;
+        background-color: $theme-color-four;
+    }
 }
 
-.sidenav a:hover {
-    color: $theme-color-four;
-    background-color: $theme-color-one;
+.bar-desktop {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav a {font-size: 18px;}
+.down {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 3rem;
 }
 
-@media (max-width: 990px) {}//Ponecháno pro případ, že se bude měnit login
+.menu-item {
+    padding: 0.25rem 1rem;
+    width: 100%;
+    border: 0;
 
-@media (max-width: 770px) {
-    body {
-        .pin-left {
-            margin-left: -33vw;
-            margin-top: 12rem;
-            //left: 20vw;
+    &:active, &.active, &:focus {
+        color: $theme-color-one;
+        //background-color: $theme-color-five;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.logo-kaplicky {
+    text-align: center;
+    display: none;
+
+    &:active, &.active, &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.navbar {
+    padding: unset;
+}
+
+.vertical-center {
+    margin-top: -5.1rem; // fixed navbar correction
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    color: $theme-color-one;
+    font-size: xx-large;
+    display: block;
+    text-align: center;
+}
+
+// login and registration alert bottom margin
+.al {
+    margin-bottom: 3rem;
+}
+
+.js-cookie-consent {
+    position: fixed;
+    z-index: 9999;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    padding: 10px;
+    background: $theme-color-four;
+}
+
+.js-cookie-consent-agree {
+    font-size: 8pt;
+    background-color: $theme-color-five;
+    color: $theme-color-one;
+    border: 0.5pt solid $theme-color-one;
+    border-radius: 0;
+    padding: 0.5rem 2rem;
+    font-weight: $font-weight-one;
+
+    &:active, &:focus, &:visited, &:hover {
+        outline: none;
+        box-shadow: none;
+        color: $theme-color-one;
+    }
+
+    &:hover {
+        color: $theme-color-four;
+    }
+}
+
+.cookie-consent__message {
+    padding: 1rem;
+    display: inline-block;
+}
+
+.bar-desktop {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+// books component
+.books-component {
+
+    .book-area {
+        .card-cus-bottom {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            .book-arrow {
+                &:after {
+                    content: '';
+                    bottom: 3rem;
+                    position: absolute;
+                    border-top: 1.25rem solid transparent;
+                    border-bottom: 1.25rem solid transparent;
+                }
+            }
+
+            .book-arrow-left {
+                &:after {
+                    left: 1.5625rem;
+                    border-right: 1.25rem solid $theme-color-two;
+                }
+            }
+
+            .book-arrow-right {
+                &:after {
+                    border-left: 1.25rem solid $theme-color-two;
+                }
+            }
+
+            .likes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .inter_like, .inter_like_filled {
+                    margin: 0 auto;
+
+                    &:before {
+                        margin-right: 0;
+                        height: 5rem;
+                        width: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .inter_like {
+                    &:before{
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                    }
+                }
+
+                .inter_like_filled {
+                    &:before{
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                    }
+                }
+
+                .artefact-likes {
+                    color: $theme-color-two;
+                    font-size: 12pt;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .info-area {
+        color: $theme-color-two;
+        margin-top: 0.625rem;
+        padding-left: 5rem;
+
+        /* could be use to hide overflowing notes
+        max-height: 80vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            width: 0 !important
+        } */
+
+        h3 {
+            font-weight: $font-weight-two;
+        }
+
+        .switch-view {
+            float: right;
+            color: $theme-color-one;
+            cursor: pointer;
+        }
+
+        .artefact-notes {
+            display: none;
+            color: $theme-color-two;
+
+            .pin-horizontal {
+                border-bottom: .042rem solid $theme-color-two;
+                display: inline-block;
+                margin: 2.75rem 2rem 0 0;
+
+                &:after {
+                    content: '';
+                    background-color: #ddd1b9;
+                    position: relative;
+                    height: .5rem;
+                    width: .5rem;
+                    border-radius: 50%;
+                    display: block;
+                    margin-left: auto;
+                    top: .25rem;
+                }
+
+                .metadata {
+                    position: relative;
+                    display: flex;
+                    align-items: baseline;
+
+                    a {
+                        color: $theme-color-two;
+                        text-decoration: none;
+
+                        span {
+                            font-size: 12pt;
+                            font-weight: $font-weight-two;
+                        }
+                    }
+
+                    .arrow-down {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 0.25rem solid transparent;
+                        border-right: 0.25rem solid transparent;
+                        border-top: 0.25rem solid $theme-color-two;
+                        margin: 0 0.5rem 0 0.5rem;
+                    }
+                }
+            }
+
+            .white-pin {
+                color: $theme-color-one;
+                border-bottom: .042rem solid $theme-color-one;
+
+                &:after {
+                    content: '';
+                    background-color: $theme-color-one;
+                }
+
+                .metadata {
+
+                    a {
+                        color: $theme-color-one;
+                    }
+
+                    .arrow-down {
+                        border-top: 0.25rem solid $theme-color-one;
+                    }
+                }
+            }
+
+            .metadata-text {
+                font-size: 12pt;
+                color: $theme-color-one;
+                padding-top: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+
+                .inter_like {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Empty.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+                .inter_like_filled {
+
+                    &:before {
+                        background-image: url(../images/interface/Heart_Filled.svg);
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover, &:focus, &:active {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+
+        .inter_info {
+
+            float: right;
+            color: $theme-color-one;
+            padding-right: 1rem;
+
+            &:before {
+                background-image: url(../images/interface/Button_Info_White.svg);
+                width: 1.875rem;
+                height: 1.875rem;
+            }
+
+            &:hover, &:focus, &:active {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
         }
     }
 }
 
-@media only screen and (max-width: 540px)
-{
-    .sidenav{
+@media (max-width: 610px) {
+    .js-cookie-consent-agree {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav a {
+        font-size: 18px;
+    }
+    .down {
+        bottom: unset;
+        margin-bottom: unset;
+    }
+}
+
+@media (max-width: 990px) {
+    .bar-desktop {
+        display: none;
+    }
+    .logo-kaplicky {
+        margin: 0 auto;
+        display: block;
+    }
+    .arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin: 2rem;
+        cursor: pointer;
+        border: 0.59055rem solid transparent;
+
+        &:active, &.active, &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .arrow-left {
+        margin-left: 80%;
+
+        border-right: 0.59055rem solid $theme-color-five;
+        background-color: $theme-color-four !important;
+    }
+    .arrow-right {
+        border-left: 0.59055rem solid $theme-color-four;
+
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+    }
+    .menu-item:active, .menu-item.active {
+        color: $theme-color-five;
+        background-color: $theme-color-one;
+    }
+}
+
+@media (max-width: 770px) {
+    .books-component {
+        .info-area {
+            padding-left: 1.5625rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .sidenav {
         width: 0;
     }
-    .head-title.text-center h1
-    {
+    .head-title.text-center h1 {
         font-size: 23pt;
         padding-top: 50pt;
         white-space: nowrap;
-
     }
+
 
     /*.btn-circle.rounded-circle.btn-sm
     {
@@ -673,7 +1283,7 @@ body {
         height: 180px;
     }*/
 
-    body{
+    body {
         .carousel {
             .carousel-inner {
                 .social-logo {
@@ -685,13 +1295,151 @@ body {
     }
 }
 
-@media (min-width: 330px) and (max-height: 900px)
-{
-    body{
+@media (min-width: 330px) and (max-height: 900px) {
+    body {
         .carousel {
             .carousel-inner {
                 .social-logo {
                     top: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    body {
+        .kaplicky {
+            text-align: center;
+            font-size: 30pt;
+            margin-bottom: 3rem;
+        }
+
+        .pin-left:before {
+            height: 1.125rem;
+            width: 1.125rem;
+            top: -1.125rem;
+            left: -0.56rem;
+        }
+
+        .text {
+            text-align: left;
+            font-size: 18pt;
+            line-height: 26pt;
+        }
+
+        .text2 {
+            text-align: left;
+            font-size: 18pt;
+            line-height: 26pt;
+        }
+
+        .carousel {
+            .carousel-inner {
+                .social-logo {
+                    justify-content: center;
+                    top: 90%;
+
+                    .logo {
+                        margin-left: 10rem;
+
+                        img {
+                            width: 3.125rem;
+                        }
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                .carousel-button {
+                    bottom: 15%;
+                }
+            }
+
+            .carousel-caption {
+                padding: 3.75rem 6.25rem 5em;
+
+                h2 {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .button-square {
+            font-size: 18pt;
+            padding: 0.28125rem 3.7rem;
+        }
+
+        .metadata-area {
+            .pin-horizontal {
+                margin: 5rem 3.125rem 0 0;
+
+                .metadata {
+
+                    margin-right: 0.5rem;
+
+                    .arrow-down {
+                        border-left: 0.5rem solid transparent;
+                        border-right: 0.5rem solid transparent;
+                        border-top: 0.5rem solid $theme-color-two;
+                    }
+
+                    a {
+                        span {
+                            font-size: 16pt;
+                        }
+                    }
+                }
+
+                &:after {
+                    height: 0.75rem;
+                    width: 0.75rem;
+                    top: 0.375rem;
+                }
+            }
+
+            .white-pin {
+                .metadata {
+                    .arrow-down {
+                        border-top: 0.5rem solid $theme-color-one;
+                    }
+                }
+            }
+
+            .metadata-text {
+                font-size: 19pt;
+                max-width: 50%;
+
+                .artefact-info {
+                    .artefact-name {
+                        font-size: 16pt;
+                    }
+
+                    .artefact-author {
+                        font-size: 12pt;
+                    }
+
+                    .inter_like_filled {
+                        &:before {
+                            width: 5rem;
+                            height: 5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1575px) {
+    body {
+        .carousel {
+            .carousel-inner {
+                .carousel-button {
+                    bottom: 20%;
                 }
             }
         }

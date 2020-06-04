@@ -4,9 +4,11 @@
 
 @section('content')
     <div class="container">
-        {{--<p>The id of the user is {{$user->id}}</p>--}}
         @if(isset($artefacts))
             @if(count($artefacts) >= 1)
+                <div class="fav-cat-mybooks">
+                    <h1>My books</h1>
+                </div>
                 @foreach($artefacts as $artefact)
                     <div class="artefacts-area mb-5">
                         <div class="card">
@@ -15,21 +17,29 @@
                             <img class="card-img-top" src="{{asset('images/artefacts/book_cover_01.jpg')}}" width="100%" height=auto>
                         </a>
                         <div class="container card-cus-bottom">
-                            <div class="flex-row row-list">
-                                <div class="col-xs-2 float-left left_panel_info">
+                            <div class="d-flex flex-row row-list">{{--<div class="flex-row row-list">--}}
+                                <div class="p-1 flex-fill bd-highlight left_panel_info">{{--<div class="col-xs-2 float-left left_panel_info">--}}
                                     <h5 class="card-title ">{{$artefact->name}}</h5>
                                     <h6 class="card-title">{{$artefact->author}}</h6>
                                 </div>
-                                <div class="col-xs-2 float-right right_panel_info">
-                                    <div class="float-left">
-                                        <button id="info_butt_{{$artefact->id}}" type="button" class="btn btn-primary button-image inter_info"></button>
-                                    </div>
-                                    <div class="float-right text-center">
-                                        <button id="like_butt_{{$artefact->id}}" onclick="myFunction({{$artefact->id}}, 1)" type="button" class="btn btn-primary button-image inter_like"></button>
-                                        <button id="like_butt2_{{$artefact->id}}" onclick="myFunction({{$artefact->id}}, 0)" type="button" class="btn btn-primary button-image inter_like_filled"></button>
-                                        <span class="likes_text">
-                                          <h6>{{$artefact->likes}}</h6>
-                                        </span>
+                                <div class="p-1 flex-fill bd-highlight float-right">{{--<div class="col-xs-2 float-right right_panel_info">--}}
+                                    <div class="text-right right_panel_info">{{--<div class="float-right text-center">--}}
+                                        <div class="float-left">
+                                            <button id="info_butt_{{$artefact->id}}" type="button" class="btn btn-primary float-left button-image inter_info"></button>
+                                        </div>
+                                        <div class="fav-cat-likes-t float-right">
+                                            <form method="POST" action="{{ url('/artefact/like/' . $artefact->id) }}">
+                                                @csrf
+                                                <button id="like_butt_{{$artefact->id}}" onclick="myFunction({{$artefact->id}}, 1)" type="submit" class="btn btn-primary button-image inter_like"></button>
+                                            </form>
+                                            <form method="POST" action="{{ url('/artefact/unlike/' . $artefact->id) }}">
+                                                @csrf
+                                                <button id="like_butt2_{{$artefact->id}}" onclick="myFunction({{$artefact->id}}, 0)" type="submit" class="btn btn-primary button-image inter_like_filled"></button>
+                                            </form>
+                                            <span class="likes_text">
+                                                <h6>{{$artefact->likes}}</h6>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +49,7 @@
                 @endforeach
             @else
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="list-group-item fav-cat-nofav">
                         <h3>No favorites were added!</h3>
                     </li>
                 </ul>

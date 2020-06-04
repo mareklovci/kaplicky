@@ -9,23 +9,25 @@
             <div class="logos-overlay">
                 <div class="museum-logo">
                     <div class="text-center">
-                        <img src="{{ asset('images/icons/upm-logo.png') }}" alt="upm">
+                        <a href="https://www.upm.cz/">
+                            <img src="{{ asset('images/icons/upm-logo.svg') }}" alt="upm">
+                        </a>
                     </div>
                 </div>
                 <div class="row social-logo">
-                    <div class="col-md-4">
-                        <a href="">
-                            <img src="{{ asset('images/icons/facebook.png') }}" alt="facebook">
+                    <div class="logo">
+                        <a href="https://www.facebook.com/upmpraha/">
+                            <img src="{{ asset('images/icons/facebook.svg') }}" alt="facebook">
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <img src="{{ asset('images/icons/instagram.png') }}" alt="instagram">
+                    <div class="logo">
+                        <a href="https://www.instagram.com/museumofdecorativeartsprague/">
+                            <img src="{{ asset('images/icons/instagram.svg') }}" alt="instagram">
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <img src="{{ asset('images/icons/wikipedia.png') }}" alt="wikipedia">
+                    <div class="logo">
+                        <a href="https://cs.wikipedia.org/wiki/Um%C4%9Bleckopr%C5%AFmyslov%C3%A9_muzeum_v_Praze">
+                            <img src="{{ asset('images/icons/wikipedia.svg') }}" alt="wikipedia">
                         </a>
                     </div>
                 </div>
@@ -44,13 +46,13 @@
                 Proin id tempor enim, eu ornare nisi. Phasellus ornare metus ut mi dapibus, varius elementum leo malesuada.
             </p>
         </div>
-        <a class="carousel-control-prev" href="#homepage_carousel" role="button" data-slide="prev">
+        <!-- <a class="carousel-control-prev" href="#homepage_carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#homepage_carousel" role="button" data-slide="next">
+        </a> -->
+        <!-- <a class="carousel-control-next" href="#homepage_carousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
+        </a> -->
     </div>
 @endsection

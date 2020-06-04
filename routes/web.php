@@ -15,13 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
 
+Route::get('/verify/{id}', 'VerifyRegisterController@verifyUser');
 Route::get('/artefact', 'ArtefactController@default');
 Route::get('/artefact/{id}', 'ArtefactController@view');
+Route::get('/artefact/like/{id}', 'ArtefactController@like');
+Route::get('/artefact/unlike/{id}', 'ArtefactController@unlike');
 Route::get('/category/{id}', 'ArtefactController@showCategory');
+Route::get('/category/multi/{id}', 'ArtefactController@showCategories');
+Route::get('/detail/like/{id}', 'DetailsController@like');
+Route::get('/detail/unlike/{id}', 'DetailsController@unlike');
 Route::resource('/detail', 'DetailsController', array('only' => array('index', 'show')));
 Route::resource('/categories', 'CategoriesController', array('only' => array('index')));
 Route::resource('/favartefacts', 'FavoriteArtefactsController', array('only' => array('index', 'show', 'store')));
+Route::resource('/charts', 'ChartsController', array('only' => array('index', 'show', 'store')));
 Route::get('/favmetadata', 'FavoriteMetadataController@index');
+Route::get('/favmetadata/unlike/{id}', 'FavoriteMetadataController@unlike');
+Route::get('/artefact/{id}', 'ArtefactController@view');
 
 
 Auth::routes();

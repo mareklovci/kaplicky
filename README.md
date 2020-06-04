@@ -38,9 +38,38 @@ Případně `php artisan migrate:refresh --seed`.
 
 Migrace dat z Mockaroo je tímto okamžikem obsolete.
 
+### Výchozí uživatel
+
+Je nadefinován výchozí (testovací) uživatel.
+
+**Login** admin@kaplicky.com **heslo** admin
+
 ## Jak zprovoznit bootstrap a kompilaci SASS souborů
 
 1. Ujistěte se, že v sekci **Run/Edit Configurations** máte nastavený **Document root** na složku `public` v kořenovém adresáři (jinak aplikace **nenajde** vygenerované css soubory).
 2. Spusťte `composer install` (soubor pro composer už by měl být updatován) pro nainstalování balíčku `laravel/ui`.
 3. Spusťte v terminálu příkaz `npm install && npm run dev`, příkaz zkompiluje všechny dostupné sass (`resources/sass`) do css souboru typicky do složky `public/css`.
     1. Nastavením příkazu `npm run watch` se sass automaticky překompiluje při detekci změny.
+
+## Nastavení Mailtrap účtu pro odesílání registračních zpráv
+
+Pro správné nastavení posílání emailů je nutné poupravit soubor `.env`. Najděte v souboru sekci `MAIL_...` a nahraďte je níže uvedenými hodnotami:
+
+```shell script
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=d1eae987fe913e
+MAIL_PASSWORD=d109bc15f3dc66
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=merlot@merlot.org
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+Pro přístup k mail serveru je nutné se příhlásit na stránce https://mailtrap.io/ s níže přidanými přihlašovacími údaji:
+
+email:`jnohac@students.zcu.cz`
+heslo:`merlot2020Betammajl`
+
+Následně je konkrétní mail server přístupný z Inboxu `Demo inbox`.
+
