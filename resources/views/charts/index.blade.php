@@ -19,12 +19,10 @@
                                             <h5 class="card-title highlight-white">{{$artefact->name}}</h5>
                                         </a>
                                         <h6 class="card-title ">{{$artefact->author}}</h6>
-
                                     </div>
-                                    <div class="p-1 flex-fill bd-highlight float-center">
+                                    <div class="p-1 flex-fill bd-highlight">
                                         <div class="text-center right_panel_info">
-
-                                            <div class="charts float-center">
+                                            <div class="charts float-right">
                                                 @if (!$artefact->favourite)
                                                     <a href="{{  action('ArtefactController@like', ['id' => $artefact->id]) }}">
                                                         <button id="like_butt_{{$artefact->id}}" type="button"

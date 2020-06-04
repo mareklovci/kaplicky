@@ -965,26 +965,19 @@ body {
             align-items: baseline;
 
             .book-arrow {
-                &:after {
-                    content: '';
-                    bottom: 3rem;
-                    position: absolute;
-                    border-top: 1.25rem solid transparent;
-                    border-bottom: 1.25rem solid transparent;
-                }
+                border-top: 1.25rem solid transparent;
+                border-bottom: 1.25rem solid transparent;
+                display: block;
+                position: relative;
+                top: 1rem;
             }
 
             .book-arrow-left {
-                &:after {
-                    left: 1.5625rem;
-                    border-right: 1.25rem solid $theme-color-two;
-                }
+                border-right: 1.25rem solid $theme-color-two;
             }
 
             .book-arrow-right {
-                &:after {
-                    border-left: 1.25rem solid $theme-color-two;
-                }
+                border-left: 1.25rem solid $theme-color-two;
             }
 
             .likes {
@@ -1010,13 +1003,13 @@ body {
                 }
 
                 .inter_like {
-                    &:before{
+                    &:before {
                         background-image: url(../images/interface/Heart_Empty.svg);
                     }
                 }
 
                 .inter_like_filled {
-                    &:before{
+                    &:before {
                         background-image: url(../images/interface/Heart_Filled.svg);
                     }
                 }
